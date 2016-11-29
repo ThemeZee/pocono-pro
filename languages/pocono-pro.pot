@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WorldStar Pro\n"
+"Project-Id-Version: Pocono Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
 "POT-Creation-Date: 2016-10-13 13:07+0100\n"
 "PO-Revision-Date: 2016-10-13 13:07+0100\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: worldstar-pro.php:204
+#: pocono-pro.php:204
 msgid "Settings"
 msgstr ""
 

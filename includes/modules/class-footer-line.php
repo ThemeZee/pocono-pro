@@ -5,7 +5,7 @@
  * Displays credit link and footer text based on theme options
  * Registers and displays footer navigation
  *
- * @package WorldStar Pro
+ * @package Pocono Pro
  */
 
 // Exit if accessed directly.
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
  * Footer Line Class
  */
-class WorldStar_Pro_Footer_Line {
+class Pocono_Pro_Footer_Line {
 
 	/**
 	 * Footer Line Setup
@@ -23,20 +23,20 @@ class WorldStar_Pro_Footer_Line {
 	 */
 	static function setup() {
 
-		// Return early if WorldStar Theme is not active.
-		if ( ! current_theme_supports( 'worldstar-pro' ) ) {
+		// Return early if Pocono Theme is not active.
+		if ( ! current_theme_supports( 'pocono-pro' ) ) {
 			return;
 		}
 
 		// Display footer navigation.
-		add_action( 'worldstar_before_footer', array( __CLASS__, 'display_footer_social_menu' ), 10 );
+		add_action( 'pocono_before_footer', array( __CLASS__, 'display_footer_social_menu' ), 10 );
 
 		// Remove default footer text function and replace it with new one.
-		remove_action( 'worldstar_footer_text', 'worldstar_footer_text' );
-		add_action( 'worldstar_footer_text', array( __CLASS__, 'display_footer_text' ) );
+		remove_action( 'pocono_footer_text', 'pocono_footer_text' );
+		add_action( 'pocono_footer_text', array( __CLASS__, 'display_footer_text' ) );
 
 		// Display social icons in footer.
-		add_action( 'worldstar_footer_menu', array( __CLASS__, 'display_footer_navigation' ) );
+		add_action( 'pocono_footer_menu', array( __CLASS__, 'display_footer_navigation' ) );
 
 		// Add Footer Settings in Customizer.
 		add_action( 'customize_register', array( __CLASS__, 'footer_settings' ) );
@@ -79,7 +79,7 @@ class WorldStar_Pro_Footer_Line {
 	static function display_footer_text() {
 
 		// Get Theme Options from Database.
-		$theme_options = WorldStar_Pro_Customizer::get_theme_options();
+		$theme_options = Pocono_Pro_Customizer::get_theme_options();
 
 		// Display Footer Text.
 		if ( '' !== $theme_options['footer_text'] ) :
@@ -91,9 +91,9 @@ class WorldStar_Pro_Footer_Line {
 		// Call Credit Link function of theme if credit link is activated.
 		if ( true == $theme_options['credit_link'] ) :
 
-			if ( function_exists( 'worldstar_footer_text' ) ) :
+			if ( function_exists( 'pocono_footer_text' ) ) :
 
-				worldstar_footer_text();
+				pocono_footer_text();
 
 			endif;
 
@@ -112,7 +112,7 @@ class WorldStar_Pro_Footer_Line {
 		if ( has_nav_menu( 'footer-social' ) ) {
 
 			// Get Theme Options from Database.
-			$theme_options = WorldStar_Pro_Customizer::get_theme_options();
+			$theme_options = Pocono_Pro_Customizer::get_theme_options();
 
 			echo '<div class="footer-social-icons-wrap">';
 
@@ -154,25 +154,25 @@ class WorldStar_Pro_Footer_Line {
 	static function footer_settings( $wp_customize ) {
 
 		// Add Sections for Footer Settings.
-		$wp_customize->add_section( 'worldstar_pro_section_footer', array(
-			'title'    => __( 'Footer Settings', 'worldstar-pro' ),
+		$wp_customize->add_section( 'pocono_pro_section_footer', array(
+			'title'    => __( 'Footer Settings', 'pocono-pro' ),
 			'priority' => 90,
-			'panel' => 'worldstar_options_panel',
+			'panel' => 'pocono_options_panel',
 			)
 		);
 
 		// Add Footer Social Icons Text setting.
-		$wp_customize->add_setting( 'worldstar_theme_options[footer_social_icons_text]', array(
-			'default'           => __( 'Stay in Touch', 'worldstar-pro' ),
+		$wp_customize->add_setting( 'pocono_theme_options[footer_social_icons_text]', array(
+			'default'           => __( 'Stay in Touch', 'pocono-pro' ),
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => array( __CLASS__, 'sanitize_footer_text' ),
 			)
 		);
-		$wp_customize->add_control( 'worldstar_theme_options[footer_social_icons_text]', array(
-			'label'    => __( 'Social Icons Text', 'worldstar-pro' ),
-			'section'  => 'worldstar_pro_section_footer',
-			'settings' => 'worldstar_theme_options[footer_social_icons_text]',
+		$wp_customize->add_control( 'pocono_theme_options[footer_social_icons_text]', array(
+			'label'    => __( 'Social Icons Text', 'pocono-pro' ),
+			'section'  => 'pocono_pro_section_footer',
+			'settings' => 'pocono_theme_options[footer_social_icons_text]',
 			'type'     => 'text',
 			'active_callback' => array( __CLASS__, 'has_social_menu' ),
 			'priority' => 10,
@@ -180,34 +180,34 @@ class WorldStar_Pro_Footer_Line {
 		);
 
 		// Add Footer Text setting.
-		$wp_customize->add_setting( 'worldstar_theme_options[footer_text]', array(
+		$wp_customize->add_setting( 'pocono_theme_options[footer_text]', array(
 			'default'           => '',
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => array( __CLASS__, 'sanitize_footer_text' ),
 			)
 		);
-		$wp_customize->add_control( 'worldstar_theme_options[footer_text]', array(
-			'label'    => __( 'Footer Text', 'worldstar-pro' ),
-			'section'  => 'worldstar_pro_section_footer',
-			'settings' => 'worldstar_theme_options[footer_text]',
+		$wp_customize->add_control( 'pocono_theme_options[footer_text]', array(
+			'label'    => __( 'Footer Text', 'pocono-pro' ),
+			'section'  => 'pocono_pro_section_footer',
+			'settings' => 'pocono_theme_options[footer_text]',
 			'type'     => 'textarea',
 			'priority' => 20,
 			)
 		);
 
 		// Add Credit Link setting.
-		$wp_customize->add_setting( 'worldstar_theme_options[credit_link]', array(
+		$wp_customize->add_setting( 'pocono_theme_options[credit_link]', array(
 			'default'           => true,
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
-			'sanitize_callback' => 'worldstar_sanitize_checkbox',
+			'sanitize_callback' => 'pocono_sanitize_checkbox',
 			)
 		);
-		$wp_customize->add_control( 'worldstar_theme_options[credit_link]', array(
-			'label'    => __( 'Display Credit Link to ThemeZee on footer line', 'worldstar-pro' ),
-			'section'  => 'worldstar_pro_section_footer',
-			'settings' => 'worldstar_theme_options[credit_link]',
+		$wp_customize->add_control( 'pocono_theme_options[credit_link]', array(
+			'label'    => __( 'Display Credit Link to ThemeZee on footer line', 'pocono-pro' ),
+			'section'  => 'pocono_pro_section_footer',
+			'settings' => 'pocono_theme_options[credit_link]',
 			'type'     => 'checkbox',
 			'priority' => 30,
 			)
@@ -253,21 +253,21 @@ class WorldStar_Pro_Footer_Line {
 	 */
 	static function register_footer_menu() {
 
-		// Return early if WorldStar Theme is not active.
-		if ( ! current_theme_supports( 'worldstar-pro' ) ) {
+		// Return early if Pocono Theme is not active.
+		if ( ! current_theme_supports( 'pocono-pro' ) ) {
 			return;
 		}
 
 		register_nav_menus( array(
-			'footer' => esc_html__( 'Footer Navigation', 'worldstar-pro' ),
-			'footer-social' => esc_html__( 'Footer Social Icons', 'worldstar-pro' ),
+			'footer' => esc_html__( 'Footer Navigation', 'pocono-pro' ),
+			'footer-social' => esc_html__( 'Footer Social Icons', 'pocono-pro' ),
 		) );
 
 	}
 }
 
 // Run Class.
-add_action( 'init', array( 'WorldStar_Pro_Footer_Line', 'setup' ) );
+add_action( 'init', array( 'Pocono_Pro_Footer_Line', 'setup' ) );
 
 // Register footer navigation in backend.
-add_action( 'after_setup_theme', array( 'WorldStar_Pro_Footer_Line', 'register_footer_menu' ), 30 );
+add_action( 'after_setup_theme', array( 'Pocono_Pro_Footer_Line', 'register_footer_menu' ), 30 );

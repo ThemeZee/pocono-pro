@@ -1,12 +1,12 @@
 <?php
 /**
- * WorldStar Pro Settings Class
+ * Pocono Pro Settings Class
  *
  * Registers all plugin settings with the WordPress Settings API.
  * Handles license key activation with the ThemeZee Store API.
  *
  * @link https://codex.wordpress.org/Settings_API
- * @package WorldStar Pro
+ * @package Pocono Pro
  */
 
 // Exit if accessed directly.
@@ -16,13 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
  * Settings Class
  */
-class WorldStar_Pro_Settings {
+class Pocono_Pro_Settings {
 	/** Singleton *************************************************************/
 
 	/**
 	 * Class instance
 	 *
-	 * @var instance The one true WorldStar_Pro_Settings instance
+	 * @var instance The one true Pocono_Pro_Settings instance
 	 */
 	private static $instance;
 
@@ -36,7 +36,7 @@ class WorldStar_Pro_Settings {
 	/**
 	 * Creates or returns an instance of this class.
 	 *
-	 * @return WorldStar_Pro_Settings A single instance of this class.
+	 * @return Pocono_Pro_Settings A single instance of this class.
 	 */
 	public static function instance() {
 
@@ -63,7 +63,7 @@ class WorldStar_Pro_Settings {
 		add_action( 'admin_init', array( $this, 'check_license' ) );
 
 		// Merge Plugin Options Array from Database with Default Settings array.
-		$this->options = wp_parse_args( get_option( 'worldstar_pro_settings' , array() ), $this->default_settings() );
+		$this->options = wp_parse_args( get_option( 'pocono_pro_settings' , array() ), $this->default_settings() );
 	}
 
 	/**
@@ -110,33 +110,33 @@ class WorldStar_Pro_Settings {
 	function register_settings() {
 
 		// Make sure that options exist in database.
-		if ( false == get_option( 'worldstar_pro_settings' ) ) {
-			add_option( 'worldstar_pro_settings' );
+		if ( false == get_option( 'pocono_pro_settings' ) ) {
+			add_option( 'pocono_pro_settings' );
 		}
 
 		// Add License Section.
-		add_settings_section( 'worldstar_pro_settings_license', esc_html__( 'Automatic Updates', 'worldstar-pro' ), array( $this, 'license_section_intro' ), 'worldstar_pro_settings' );
+		add_settings_section( 'pocono_pro_settings_license', esc_html__( 'Automatic Updates', 'pocono-pro' ), array( $this, 'license_section_intro' ), 'pocono_pro_settings' );
 
 		// Add License Status Setting.
 		add_settings_field(
-			'worldstar_pro_settings[license_status]',
-			esc_html__( 'License Status', 'worldstar-pro' ),
+			'pocono_pro_settings[license_status]',
+			esc_html__( 'License Status', 'pocono-pro' ),
 			array( $this, 'license_status' ),
-			'worldstar_pro_settings',
-			'worldstar_pro_settings_license'
+			'pocono_pro_settings',
+			'pocono_pro_settings_license'
 		);
 
 		// Add License Key Setting.
 		add_settings_field(
-			'worldstar_pro_settings[license_key]',
-			esc_html__( 'License Key', 'worldstar-pro' ),
+			'pocono_pro_settings[license_key]',
+			esc_html__( 'License Key', 'pocono-pro' ),
 			array( $this, 'license_key' ),
-			'worldstar_pro_settings',
-			'worldstar_pro_settings_license'
+			'pocono_pro_settings',
+			'pocono_pro_settings_license'
 		);
 
 		// Creates our settings in the options table.
-		register_setting( 'worldstar_pro_settings', 'worldstar_pro_settings', array( $this, 'sanitize_settings' ) );
+		register_setting( 'pocono_pro_settings', 'pocono_pro_settings', array( $this, 'sanitize_settings' ) );
 	}
 
 	/**
@@ -145,7 +145,7 @@ class WorldStar_Pro_Settings {
 	 * @return void
 	 */
 	function license_section_intro() {
-		printf( __( 'Please enter your license key. An active license key is needed for automatic plugin updates and <a href="%s" target="_blank">support</a>.', 'worldstar-pro' ), 'https://themezee.com/support/?utm_source=plugin-settings&utm_medium=textlink&utm_campaign=worldstar-pro&utm_content=support' );
+		printf( __( 'Please enter your license key. An active license key is needed for automatic plugin updates and <a href="%s" target="_blank">support</a>.', 'pocono-pro' ), 'https://themezee.com/support/?utm_source=plugin-settings&utm_medium=textlink&utm_campaign=pocono-pro&utm_content=support' );
 
 	}
 
@@ -161,7 +161,7 @@ class WorldStar_Pro_Settings {
 			return $input;
 		}
 
-		$saved    = get_option( 'worldstar_pro_settings', array() );
+		$saved    = get_option( 'pocono_pro_settings', array() );
 		if ( ! is_array( $saved ) ) {
 			$saved = array();
 		}
@@ -184,7 +184,7 @@ class WorldStar_Pro_Settings {
 	 *
 	 * Renders license status field.
 	 *
-	 * @global $this->options Array of all the WorldStar Pro Options
+	 * @global $this->options Array of all the Pocono Pro Options
 	 * @return void
 	 */
 	function license_status() {
@@ -195,25 +195,25 @@ class WorldStar_Pro_Settings {
 
 		if ( 'valid' === $license_status ) {
 
-			$html .= '<span class="license-status license-active">' . esc_html__( 'Active', 'worldstar-pro' ) . '</span>';
-			$html .= '<span class="license-description">' . esc_html__( 'You are receiving updates.', 'worldstar-pro' ) . '</span>';
+			$html .= '<span class="license-status license-active">' . esc_html__( 'Active', 'pocono-pro' ) . '</span>';
+			$html .= '<span class="license-description">' . esc_html__( 'You are receiving updates.', 'pocono-pro' ) . '</span>';
 
 		} elseif ( 'expired' === $license_status ) {
 
-			$renewal_url = esc_url( add_query_arg( array( 'edd_license_key' => $license_key, 'download_id' => WORLDSTAR_PRO_PRODUCT_ID ), 'https://themezee.com/checkout' ) );
+			$renewal_url = esc_url( add_query_arg( array( 'edd_license_key' => $license_key, 'download_id' => POCONO_PRO_PRODUCT_ID ), 'https://themezee.com/checkout' ) );
 
-			$html .= '<span class="license-status license-expired">' . esc_html__( 'Expired', 'worldstar-pro' ) . '</span>';
-			$html .= '<p class="license-description">' . esc_html__( 'Your license has expired, renew today to continue getting updates and support!', 'worldstar-pro' ) . '</p>';
-			$html .= '<a href="' . esc_url( $renewal_url ) . '" class="license-renewal button-primary">' . esc_html__( 'Renew Your License', 'worldstar-pro' ) . '</a>';
+			$html .= '<span class="license-status license-expired">' . esc_html__( 'Expired', 'pocono-pro' ) . '</span>';
+			$html .= '<p class="license-description">' . esc_html__( 'Your license has expired, renew today to continue getting updates and support!', 'pocono-pro' ) . '</p>';
+			$html .= '<a href="' . esc_url( $renewal_url ) . '" class="license-renewal button-primary">' . esc_html__( 'Renew Your License', 'pocono-pro' ) . '</a>';
 
 		} elseif ( 'invalid' === $license_status ) {
 
-			$html .= '<span class="license-status license-invalid">' . esc_html__( 'Invalid', 'worldstar-pro' ) . '</span>';
-			$html .= '<p class="license-description">' . esc_html__( 'Please make sure that you have not reached the site limit and expiration date.', 'worldstar-pro' ) . '</p>';
+			$html .= '<span class="license-status license-invalid">' . esc_html__( 'Invalid', 'pocono-pro' ) . '</span>';
+			$html .= '<p class="license-description">' . esc_html__( 'Please make sure that you have not reached the site limit and expiration date.', 'pocono-pro' ) . '</p>';
 
 		} else {
 
-			$html .= '<span class="license-status license-inactive">' . esc_html__( 'Inactive', 'worldstar-pro' ) . '</span>';
+			$html .= '<span class="license-status license-inactive">' . esc_html__( 'Inactive', 'pocono-pro' ) . '</span>';
 
 		}
 
@@ -225,7 +225,7 @@ class WorldStar_Pro_Settings {
 	 *
 	 * Renders license key field.
 	 *
-	 * @global $this->options Array of all the WorldStar Pro Options
+	 * @global $this->options Array of all the Pocono Pro Options
 	 * @return void
 	 */
 	function license_key() {
@@ -236,13 +236,13 @@ class WorldStar_Pro_Settings {
 
 		if ( 'valid' === $license_status && ! empty( $license_key ) ) {
 
-			$html .= '<input type="text" class="regular-text" readonly="readonly" id="worldstar_pro_settings[license_key]" name="worldstar_pro_settings[license_key]" value="' . esc_attr( stripslashes( $license_key ) ) . '"/><br/><br/>';
-			$html .= '<input type="submit" class="button" name="worldstar_pro_deactivate_license" value="' . esc_attr__( 'Deactivate License', 'worldstar-pro' ) . '"/>';
+			$html .= '<input type="text" class="regular-text" readonly="readonly" id="pocono_pro_settings[license_key]" name="pocono_pro_settings[license_key]" value="' . esc_attr( stripslashes( $license_key ) ) . '"/><br/><br/>';
+			$html .= '<input type="submit" class="button" name="pocono_pro_deactivate_license" value="' . esc_attr__( 'Deactivate License', 'pocono-pro' ) . '"/>';
 
 		} else {
 
-			$html .= '<input type="text" class="regular-text" id="worldstar_pro_settings[license_key]" name="worldstar_pro_settings[license_key]" value="' . esc_attr( stripslashes( $license_key ) ) . '"/><br/><br/>';
-			$html .= '<input type="submit" class="button" name="worldstar_pro_activate_license" value="' . esc_attr__( 'Activate License', 'worldstar-pro' ) . '"/>';
+			$html .= '<input type="text" class="regular-text" id="pocono_pro_settings[license_key]" name="pocono_pro_settings[license_key]" value="' . esc_attr( stripslashes( $license_key ) ) . '"/><br/><br/>';
+			$html .= '<input type="submit" class="button" name="pocono_pro_activate_license" value="' . esc_attr__( 'Activate License', 'pocono-pro' ) . '"/>';
 
 		}
 
@@ -256,33 +256,33 @@ class WorldStar_Pro_Settings {
 	 */
 	public function activate_license() {
 
-		if ( ! isset( $_POST['worldstar_pro_settings'] ) ) {
+		if ( ! isset( $_POST['pocono_pro_settings'] ) ) {
 			return;
 		}
 
-		if ( ! isset( $_POST['worldstar_pro_activate_license'] ) ) {
+		if ( ! isset( $_POST['pocono_pro_activate_license'] ) ) {
 			return;
 		}
 
-		if ( ! isset( $_POST['worldstar_pro_settings']['license_key'] ) ) {
+		if ( ! isset( $_POST['pocono_pro_settings']['license_key'] ) ) {
 			return;
 		}
 
 		// Retrieve the license from the database.
 		$status  = $this->get( 'license_status' );
-		$license = trim( $_POST['worldstar_pro_settings']['license_key'] );
+		$license = trim( $_POST['pocono_pro_settings']['license_key'] );
 
 		// Data to send in our API request.
 		$api_params = array(
 			'edd_action' => 'activate_license',
 			'license' 	=> $license,
-			'item_name' => urlencode( WORLDSTAR_PRO_NAME ),
-			'item_id'   => WORLDSTAR_PRO_PRODUCT_ID,
+			'item_name' => urlencode( POCONO_PRO_NAME ),
+			'item_id'   => POCONO_PRO_PRODUCT_ID,
 			'url'       => home_url(),
 		);
 
 		// Call the custom API.
-		$response = wp_remote_post( WORLDSTAR_PRO_STORE_API_URL, array( 'timeout' => 35, 'sslverify' => true, 'body' => $api_params ) );
+		$response = wp_remote_post( POCONO_PRO_STORE_API_URL, array( 'timeout' => 35, 'sslverify' => true, 'body' => $api_params ) );
 
 		// Make sure the response came back okay.
 		if ( is_wp_error( $response ) ) {
@@ -296,9 +296,9 @@ class WorldStar_Pro_Settings {
 
 		$options['license_status'] = $license_data->license;
 
-		update_option( 'worldstar_pro_settings', $options );
+		update_option( 'pocono_pro_settings', $options );
 
-		delete_transient( 'worldstar_pro_license_check' );
+		delete_transient( 'pocono_pro_license_check' );
 	}
 
 	/**
@@ -308,32 +308,32 @@ class WorldStar_Pro_Settings {
 	 */
 	public function deactivate_license() {
 
-		if ( ! isset( $_POST['worldstar_pro_settings'] ) ) {
+		if ( ! isset( $_POST['pocono_pro_settings'] ) ) {
 			return;
 		}
 
-		if ( ! isset( $_POST['worldstar_pro_deactivate_license'] ) ) {
+		if ( ! isset( $_POST['pocono_pro_deactivate_license'] ) ) {
 			return;
 		}
 
-		if ( ! isset( $_POST['worldstar_pro_settings']['license_key'] ) ) {
+		if ( ! isset( $_POST['pocono_pro_settings']['license_key'] ) ) {
 			return;
 		}
 
 		// Retrieve the license from the database.
-		$license = trim( $_POST['worldstar_pro_settings']['license_key'] );
+		$license = trim( $_POST['pocono_pro_settings']['license_key'] );
 
 		// Data to send in our API request.
 		$api_params = array(
 			'edd_action' => 'deactivate_license',
 			'license' 	=> $license,
-			'item_name' => urlencode( WORLDSTAR_PRO_NAME ),
-			'item_id'   => WORLDSTAR_PRO_PRODUCT_ID,
+			'item_name' => urlencode( POCONO_PRO_NAME ),
+			'item_id'   => POCONO_PRO_PRODUCT_ID,
 			'url'       => home_url(),
 		);
 
 		// Call the custom API.
-		$response = wp_remote_post( WORLDSTAR_PRO_STORE_API_URL, array( 'timeout' => 35, 'sslverify' => true, 'body' => $api_params ) );
+		$response = wp_remote_post( POCONO_PRO_STORE_API_URL, array( 'timeout' => 35, 'sslverify' => true, 'body' => $api_params ) );
 
 		// Make sure the response came back okay.
 		if ( is_wp_error( $response ) ) {
@@ -344,9 +344,9 @@ class WorldStar_Pro_Settings {
 
 		$options['license_status'] = 'inactive';
 
-		update_option( 'worldstar_pro_settings', $options );
+		update_option( 'pocono_pro_settings', $options );
 
-		delete_transient( 'worldstar_pro_license_check' );
+		delete_transient( 'pocono_pro_license_check' );
 	}
 
 	/**
@@ -356,11 +356,11 @@ class WorldStar_Pro_Settings {
 	 */
 	public function check_license() {
 
-		if ( ! empty( $_POST['worldstar_pro_settings'] ) ) {
+		if ( ! empty( $_POST['pocono_pro_settings'] ) ) {
 			return; // Don't fire when saving settings.
 		}
 
-		$status = get_transient( 'worldstar_pro_license_check' );
+		$status = get_transient( 'pocono_pro_license_check' );
 
 		// Run the license check a maximum of once per day.
 		if ( false === $status ) {
@@ -374,13 +374,13 @@ class WorldStar_Pro_Settings {
 				$api_params = array(
 					'edd_action' => 'check_license',
 					'license' 	=> $license_key,
-					'item_name' => urlencode( WORLDSTAR_PRO_NAME ),
-					'item_id'   => WORLDSTAR_PRO_PRODUCT_ID,
+					'item_name' => urlencode( POCONO_PRO_NAME ),
+					'item_id'   => POCONO_PRO_PRODUCT_ID,
 					'url'       => home_url(),
 				);
 
 				// Call the custom API.
-				$response = wp_remote_post( WORLDSTAR_PRO_STORE_API_URL, array( 'timeout' => 25, 'sslverify' => true, 'body' => $api_params ) );
+				$response = wp_remote_post( POCONO_PRO_STORE_API_URL, array( 'timeout' => 25, 'sslverify' => true, 'body' => $api_params ) );
 
 				// Make sure the response came back okay.
 				if ( is_wp_error( $response ) ) {
@@ -399,9 +399,9 @@ class WorldStar_Pro_Settings {
 
 			$options['license_status'] = $status;
 
-			update_option( 'worldstar_pro_settings', $options );
+			update_option( 'pocono_pro_settings', $options );
 
-			set_transient( 'worldstar_pro_license_check', $status, DAY_IN_SECONDS );
+			set_transient( 'pocono_pro_license_check', $status, DAY_IN_SECONDS );
 
 		}
 
@@ -419,4 +419,4 @@ class WorldStar_Pro_Settings {
 }
 
 // Run Setting Class.
-WorldStar_Pro_Settings::instance();
+Pocono_Pro_Settings::instance();

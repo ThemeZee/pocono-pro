@@ -1,5 +1,5 @@
 {
-  "name": "worldstar-pro",
+  "name": "pocono-pro",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -8,11 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://ThemeZee@bitbucket.org/ThemeZee/worldstar-pro.git"
+    "url": "git+https://ThemeZee@bitbucket.org/ThemeZee/pocono-pro.git"
   },
   "author": "Thomas Weichselbaumer <contact@themezee.com> (https://themezee.com)",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/ThemeZee/worldstar-pro#readme",
+  "homepage": "https://bitbucket.org/ThemeZee/pocono-pro#readme",
   "devDependencies": {
     "autoprefixer": "^6.5.2",
     "gulp": "^3.9.1",

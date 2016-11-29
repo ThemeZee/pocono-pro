@@ -4,7 +4,7 @@
  *
  * Adds custom font settings to Customizer and generates font CSS code
  *
- * @package WorldStar Pro
+ * @package Pocono Pro
  */
 
 // Exit if accessed directly.
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
  * Custom Fonts Class
  */
-class WorldStar_Pro_Custom_Fonts {
+class Pocono_Pro_Custom_Fonts {
 
 	/**
 	 * Custom Fonts Setup
@@ -22,21 +22,21 @@ class WorldStar_Pro_Custom_Fonts {
 	 */
 	static function setup() {
 
-		// Return early if WorldStar Theme is not active.
-		if ( ! current_theme_supports( 'worldstar-pro' ) ) {
+		// Return early if Pocono Theme is not active.
+		if ( ! current_theme_supports( 'pocono-pro' ) ) {
 			return;
 		}
 
 		// Include Font List Control Files.
-		require_once WORLDSTAR_PRO_PLUGIN_DIR . '/includes/customizer/class-font-list.php';
-		require_once WORLDSTAR_PRO_PLUGIN_DIR . '/includes/customizer/class-customize-font-control.php';
-		require_once WORLDSTAR_PRO_PLUGIN_DIR . '/includes/customizer/class-customize-font-list-control.php';
+		require_once POCONO_PRO_PLUGIN_DIR . '/includes/customizer/class-font-list.php';
+		require_once POCONO_PRO_PLUGIN_DIR . '/includes/customizer/class-customize-font-control.php';
+		require_once POCONO_PRO_PLUGIN_DIR . '/includes/customizer/class-customize-font-list-control.php';
 
 		// Add Custom Color CSS code to custom stylesheet output.
-		add_filter( 'worldstar_pro_custom_css_stylesheet', array( __CLASS__, 'custom_fonts_css' ) );
+		add_filter( 'pocono_pro_custom_css_stylesheet', array( __CLASS__, 'custom_fonts_css' ) );
 
 		// Load custom fonts from Google web font API.
-		add_filter( 'worldstar_google_fonts_url', array( __CLASS__, 'google_fonts_url' ) );
+		add_filter( 'pocono_google_fonts_url', array( __CLASS__, 'google_fonts_url' ) );
 
 		// Add Font Settings in Customizer.
 		add_action( 'customize_register', array( __CLASS__, 'font_settings' ) );
@@ -52,10 +52,10 @@ class WorldStar_Pro_Custom_Fonts {
 	static function custom_fonts_css( $custom_css ) {
 
 		// Get Theme Options from Database.
-		$theme_options = WorldStar_Pro_Customizer::get_theme_options();
+		$theme_options = Pocono_Pro_Customizer::get_theme_options();
 
 		// Get Default Fonts from settings.
-		$default_options = WorldStar_Pro_Customizer::get_default_options();
+		$default_options = Pocono_Pro_Customizer::get_default_options();
 
 		// Set Default Text Font.
 		if ( $theme_options['text_font'] != $default_options['text_font'] ) {
@@ -130,17 +130,17 @@ class WorldStar_Pro_Custom_Fonts {
 	/**
 	 * Replace default Google Fonts URL with custom Fonts from theme settings
 	 *
-	 * @uses worldstar_google_fonts_url filter hook
+	 * @uses pocono_google_fonts_url filter hook
 	 * @param String $google_fonts_url Google Fonts URL.
 	 * @return string Google Font URL
 	 */
 	static function google_fonts_url( $google_fonts_url ) {
 
 		// Get Theme Options from Database.
-		$theme_options = WorldStar_Pro_Customizer::get_theme_options();
+		$theme_options = Pocono_Pro_Customizer::get_theme_options();
 
 		// Default Fonts which haven't to be load from Google.
-		$default_fonts = WorldStar_Pro_Custom_Font_Lists::default_browser_fonts();
+		$default_fonts = Pocono_Pro_Custom_Font_Lists::default_browser_fonts();
 
 		// Set Google Font Array.
 		$google_font_families = array();
@@ -203,99 +203,99 @@ class WorldStar_Pro_Custom_Fonts {
 	static function font_settings( $wp_customize ) {
 
 		// Add Section for Theme Fonts.
-		$wp_customize->add_section( 'worldstar_pro_section_fonts', array(
-			'title'    => __( 'Theme Fonts', 'worldstar-pro' ),
+		$wp_customize->add_section( 'pocono_pro_section_fonts', array(
+			'title'    => __( 'Theme Fonts', 'pocono-pro' ),
 			'priority' => 70,
-			'panel' => 'worldstar_options_panel',
+			'panel' => 'pocono_options_panel',
 			)
 		);
 
 		// Get Default Fonts from settings.
-		$default_options = WorldStar_Pro_Customizer::get_default_options();
+		$default_options = Pocono_Pro_Customizer::get_default_options();
 
 		// Add settings and controls for theme fonts.
-		$wp_customize->add_setting( 'worldstar_theme_options[text_font]', array(
+		$wp_customize->add_setting( 'pocono_theme_options[text_font]', array(
 			'default'           => $default_options['text_font'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'esc_attr',
 			)
 		);
-		$wp_customize->add_control( new WorldStar_Pro_Customize_Font_Control(
+		$wp_customize->add_control( new Pocono_Pro_Customize_Font_Control(
 			$wp_customize, 'text_font', array(
-				'label'      => __( 'Base Font', 'worldstar-pro' ),
-				'section'    => 'worldstar_pro_section_fonts',
-				'settings'   => 'worldstar_theme_options[text_font]',
+				'label'      => __( 'Base Font', 'pocono-pro' ),
+				'section'    => 'pocono_pro_section_fonts',
+				'settings'   => 'pocono_theme_options[text_font]',
 				'priority' => 1,
 			)
 		) );
 
-		$wp_customize->add_setting( 'worldstar_theme_options[title_font]', array(
+		$wp_customize->add_setting( 'pocono_theme_options[title_font]', array(
 			'default'           => $default_options['title_font'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'esc_attr',
 			)
 		);
-		$wp_customize->add_control( new WorldStar_Pro_Customize_Font_Control(
+		$wp_customize->add_control( new Pocono_Pro_Customize_Font_Control(
 			$wp_customize, 'title_font', array(
-				'label'      => _x( 'Headings', 'font setting', 'worldstar-pro' ),
-				'section'    => 'worldstar_pro_section_fonts',
-				'settings'   => 'worldstar_theme_options[title_font]',
+				'label'      => _x( 'Headings', 'font setting', 'pocono-pro' ),
+				'section'    => 'pocono_pro_section_fonts',
+				'settings'   => 'pocono_theme_options[title_font]',
 				'priority' => 2,
 			)
 		) );
 
-		$wp_customize->add_setting( 'worldstar_theme_options[navi_font]', array(
+		$wp_customize->add_setting( 'pocono_theme_options[navi_font]', array(
 			'default'           => $default_options['navi_font'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'esc_attr',
 			)
 		);
-		$wp_customize->add_control( new WorldStar_Pro_Customize_Font_Control(
+		$wp_customize->add_control( new Pocono_Pro_Customize_Font_Control(
 			$wp_customize, 'navi_font', array(
-				'label'      => _x( 'Navigation', 'font setting', 'worldstar-pro' ),
-				'section'    => 'worldstar_pro_section_fonts',
-				'settings'   => 'worldstar_theme_options[navi_font]',
+				'label'      => _x( 'Navigation', 'font setting', 'pocono-pro' ),
+				'section'    => 'pocono_pro_section_fonts',
+				'settings'   => 'pocono_theme_options[navi_font]',
 				'priority' => 3,
 			)
 		) );
 
-		$wp_customize->add_setting( 'worldstar_theme_options[widget_title_font]', array(
+		$wp_customize->add_setting( 'pocono_theme_options[widget_title_font]', array(
 			'default'           => $default_options['widget_title_font'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'esc_attr',
 			)
 		);
-		$wp_customize->add_control( new WorldStar_Pro_Customize_Font_Control(
+		$wp_customize->add_control( new Pocono_Pro_Customize_Font_Control(
 			$wp_customize, 'widget_title_font', array(
-				'label'      => _x( 'Widget Titles', 'font setting', 'worldstar-pro' ),
-				'section'    => 'worldstar_pro_section_fonts',
-				'settings'   => 'worldstar_theme_options[widget_title_font]',
+				'label'      => _x( 'Widget Titles', 'font setting', 'pocono-pro' ),
+				'section'    => 'pocono_pro_section_fonts',
+				'settings'   => 'pocono_theme_options[widget_title_font]',
 				'priority' => 4,
 			)
 		) );
 
 		// Choose Available Fonts.
-		$wp_customize->add_setting( 'worldstar_theme_options[available_fonts]', array(
+		$wp_customize->add_setting( 'pocono_theme_options[available_fonts]', array(
 			'default'           => 'favorites',
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
-			'sanitize_callback' => array( 'WorldStar_Pro_Custom_Fonts', 'sanitize_available_fonts' ),
+			'sanitize_callback' => array( 'Pocono_Pro_Custom_Fonts', 'sanitize_available_fonts' ),
 			)
 		);
-		$wp_customize->add_control( new WorldStar_Pro_Customize_Font_List_Control(
-			$wp_customize, 'worldstar_control_available_fonts', array(
-				'label'      => __( 'Choose available Fonts', 'worldstar-pro' ),
-				'section'    => 'worldstar_pro_section_fonts',
-				'settings'   => 'worldstar_theme_options[available_fonts]',
+		$wp_customize->add_control( new Pocono_Pro_Customize_Font_List_Control(
+			$wp_customize, 'pocono_control_available_fonts', array(
+				'label'      => __( 'Choose available Fonts', 'pocono-pro' ),
+				'section'    => 'pocono_pro_section_fonts',
+				'settings'   => 'pocono_theme_options[available_fonts]',
 				'choices' => array(
-					'default' => __( 'Default Browser Fonts (12)', 'worldstar-pro' ),
-					'favorites' => __( 'ThemeZee Favorite Fonts (35)', 'worldstar-pro' ),
-					'popular' => __( 'Most Popular Google Fonts (100)', 'worldstar-pro' ),
-					'all' => __( 'All Google Fonts (650)', 'worldstar-pro' ),
+					'default' => __( 'Default Browser Fonts (12)', 'pocono-pro' ),
+					'favorites' => __( 'ThemeZee Favorite Fonts (35)', 'pocono-pro' ),
+					'popular' => __( 'Most Popular Google Fonts (100)', 'pocono-pro' ),
+					'all' => __( 'All Google Fonts (650)', 'pocono-pro' ),
 					),
 				'priority' => 5,
 			)
@@ -320,4 +320,4 @@ class WorldStar_Pro_Custom_Fonts {
 }
 
 // Run Class.
-add_action( 'init', array( 'WorldStar_Pro_Custom_Fonts', 'setup' ) );
+add_action( 'init', array( 'Pocono_Pro_Custom_Fonts', 'setup' ) );

@@ -2,9 +2,9 @@
 /**
  * Footer Widgets
  *
- * Registers footer widget areas and hooks into the WorldStar theme to display widgets
+ * Registers footer widget areas and hooks into the Pocono theme to display widgets
  *
- * @package WorldStar Pro
+ * @package Pocono Pro
  */
 
 // Exit if accessed directly.
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
  * Header Bar Class
  */
-class WorldStar_Pro_Header_Bar {
+class Pocono_Pro_Header_Bar {
 
 	/**
 	 * Footer Widgets Setup
@@ -22,13 +22,13 @@ class WorldStar_Pro_Header_Bar {
 	 */
 	static function setup() {
 
-		// Return early if WorldStar Theme is not active.
-		if ( ! current_theme_supports( 'worldstar-pro' ) ) {
+		// Return early if Pocono Theme is not active.
+		if ( ! current_theme_supports( 'pocono-pro' ) ) {
 			return;
 		}
 
 		// Display Header Bar.
-		add_action( 'worldstar_header_bar', array( __CLASS__, 'display_header_bar' ) );
+		add_action( 'pocono_header_bar', array( __CLASS__, 'display_header_bar' ) );
 
 	}
 
@@ -40,7 +40,7 @@ class WorldStar_Pro_Header_Bar {
 	static function display_header_bar() {
 
 		// Get Theme Options from Database.
-		$theme_options = WorldStar_Pro_Customizer::get_theme_options();
+		$theme_options = Pocono_Pro_Customizer::get_theme_options();
 
 		echo '<div id="header-bar" class="header-bar container clearfix">';
 
@@ -85,20 +85,20 @@ class WorldStar_Pro_Header_Bar {
 	 */
 	static function register_nav_menus() {
 
-		// Return early if WorldStar Theme is not active.
-		if ( ! current_theme_supports( 'worldstar-pro' ) ) {
+		// Return early if Pocono Theme is not active.
+		if ( ! current_theme_supports( 'pocono-pro' ) ) {
 			return;
 		}
 
 		register_nav_menus( array(
-			'secondary' => esc_html__( 'Top Navigation', 'worldstar-pro' ),
+			'secondary' => esc_html__( 'Top Navigation', 'pocono-pro' ),
 		) );
 
 	}
 }
 
 // Run Class.
-add_action( 'init', array( 'WorldStar_Pro_Header_Bar', 'setup' ) );
+add_action( 'init', array( 'Pocono_Pro_Header_Bar', 'setup' ) );
 
 // Register navigation menus in backend.
-add_action( 'after_setup_theme', array( 'WorldStar_Pro_Header_Bar', 'register_nav_menus' ), 20 );
+add_action( 'after_setup_theme', array( 'Pocono_Pro_Header_Bar', 'register_nav_menus' ), 20 );

@@ -1,5 +1,5 @@
 ===================================
-WorldStar Pro Changelog
+Pocono Pro Changelog
 ===================================
 
 Version 1.0.1

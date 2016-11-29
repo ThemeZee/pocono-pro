@@ -5,13 +5,13 @@
  * Display the latest posts from a selected category in a single layout.
  * Intented to be used in the Magazine Homepage widget area to built a magazine layouted page.
  *
- * @package WorldStar
+ * @package Pocono
  */
 
 /**
  * Magazine Widget Class
  */
-class WorldStar_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
+class Pocono_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 
 	/**
 	 * Widget Constructor
@@ -20,11 +20,11 @@ class WorldStar_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 
 		// Setup Widget.
 		parent::__construct(
-			'worldstar-magazine-posts-single', // ID.
-			sprintf( esc_html__( 'Magazine Posts: Single (%s)', 'worldstar-pro' ), 'WorldStar Pro' ), // Name.
+			'pocono-magazine-posts-single', // ID.
+			sprintf( esc_html__( 'Magazine Posts: Single (%s)', 'pocono-pro' ), 'Pocono Pro' ), // Name.
 			array(
-				'classname' => 'worldstar_magazine_posts_single',
-				'description' => esc_html__( 'Displays a single post from a selected category. Please use this widget ONLY in the Magazine Homepage widget area.', 'worldstar-pro' ),
+				'classname' => 'pocono_magazine_posts_single',
+				'description' => esc_html__( 'Displays a single post from a selected category. Please use this widget ONLY in the Magazine Homepage widget area.', 'pocono-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
@@ -64,7 +64,7 @@ class WorldStar_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 
 		// Get Widget Object Cache.
 		if ( ! $this->is_preview() ) {
-			$cache = wp_cache_get( 'widget_worldstar_magazine_posts_single', 'widget' );
+			$cache = wp_cache_get( 'widget_pocono_magazine_posts_single', 'widget' );
 		}
 		if ( ! is_array( $cache ) ) {
 			$cache = array();
@@ -104,7 +104,7 @@ class WorldStar_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 		// Set Cache.
 		if ( ! $this->is_preview() ) {
 			$cache[ $this->id ] = ob_get_flush();
-			wp_cache_set( 'widget_worldstar_magazine_posts_single', $cache, 'widget' );
+			wp_cache_set( 'widget_pocono_magazine_posts_single', $cache, 'widget' );
 		} else {
 			ob_end_flush();
 		}
@@ -142,9 +142,9 @@ class WorldStar_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 
 					<div class="post-image">
 
-						<?php worldstar_post_image(); ?>
+						<?php pocono_post_image(); ?>
 
-						<?php worldstar_entry_categories(); ?>
+						<?php pocono_entry_categories(); ?>
 
 					</div>
 
@@ -152,13 +152,13 @@ class WorldStar_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 
 						<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-						<?php worldstar_entry_meta(); ?>
+						<?php pocono_entry_meta(); ?>
 
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
 						<?php the_excerpt(); ?>
-						<?php worldstar_more_link(); ?>
+						<?php pocono_more_link(); ?>
 					</div><!-- .entry-content -->
 
 				</article>
@@ -183,19 +183,19 @@ class WorldStar_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 
 		if ( true === $settings['meta_date'] ) {
 
-			$postmeta .= worldstar_meta_date();
+			$postmeta .= pocono_meta_date();
 
 		}
 
 		if ( true === $settings['meta_author'] ) {
 
-			$postmeta .= worldstar_meta_author();
+			$postmeta .= pocono_meta_author();
 
 		}
 
 		if ( true === $settings['meta_category'] ) {
 
-			$postmeta .= worldstar_meta_category();
+			$postmeta .= pocono_meta_category();
 
 		}
 
@@ -225,7 +225,7 @@ class WorldStar_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 			if ( $settings['category'] > 0 ) :
 
 				// Set Link URL and Title for Category.
-				$link_title = sprintf( esc_html__( 'View all posts from category %s', 'worldstar-pro' ), get_cat_name( $settings['category'] ) );
+				$link_title = sprintf( esc_html__( 'View all posts from category %s', 'pocono-pro' ), get_cat_name( $settings['category'] ) );
 				$link_url = esc_url( get_category_link( $settings['category'] ) );
 
 				// Display Widget Title with link to category archive.
@@ -275,16 +275,16 @@ class WorldStar_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 		?>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title:', 'worldstar-pro' ); ?>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title:', 'pocono-pro' ); ?>
 				<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $settings['title']; ?>" />
 			</label>
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php esc_html_e( 'Category:', 'worldstar-pro' ); ?></label><br/>
+			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php esc_html_e( 'Category:', 'pocono-pro' ); ?></label><br/>
 			<?php // Display Category Select.
 				$args = array(
-					'show_option_all'    => esc_html__( 'All Categories', 'worldstar-pro' ),
+					'show_option_all'    => esc_html__( 'All Categories', 'pocono-pro' ),
 					'show_count' 		 => true,
 					'hide_empty'		 => false,
 					'selected'           => $settings['category'],
@@ -304,7 +304,7 @@ class WorldStar_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 	 */
 	public function delete_widget_cache() {
 
-		wp_cache_delete( 'widget_worldstar_magazine_posts_single', 'widget' );
+		wp_cache_delete( 'widget_pocono_magazine_posts_single', 'widget' );
 
 	}
 }

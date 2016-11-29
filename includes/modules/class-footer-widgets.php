@@ -2,9 +2,9 @@
 /**
  * Footer Widgets
  *
- * Registers footer widget areas and hooks into the WorldStar theme to display widgets
+ * Registers footer widget areas and hooks into the Pocono theme to display widgets
  *
- * @package WorldStar Pro
+ * @package Pocono Pro
  */
 
 // Exit if accessed directly.
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
  * Footer Widgets Class
  */
-class WorldStar_Pro_Footer_Widgets {
+class Pocono_Pro_Footer_Widgets {
 
 	/**
 	 * Footer Widgets Setup
@@ -22,20 +22,20 @@ class WorldStar_Pro_Footer_Widgets {
 	 */
 	static function setup() {
 
-		// Return early if WorldStar Theme is not active.
-		if ( ! current_theme_supports( 'worldstar-pro' ) ) {
+		// Return early if Pocono Theme is not active.
+		if ( ! current_theme_supports( 'pocono-pro' ) ) {
 			return;
 		}
 
 		// Display footer widgets.
-		add_action( 'worldstar_before_footer', array( __CLASS__, 'display_widgets' ), 20 );
+		add_action( 'pocono_before_footer', array( __CLASS__, 'display_widgets' ), 20 );
 
 	}
 
 	/**
 	 * Displays Footer Widgets
 	 *
-	 * Hooks into the worldstar_before_footer action hook in footer area.
+	 * Hooks into the pocono_before_footer action hook in footer area.
 	 */
 	static function display_widgets() {
 
@@ -100,16 +100,16 @@ class WorldStar_Pro_Footer_Widgets {
 	 */
 	static function register_widgets() {
 
-		// Return early if WorldStar Theme is not active.
-		if ( ! current_theme_supports( 'worldstar-pro' ) ) {
+		// Return early if Pocono Theme is not active.
+		if ( ! current_theme_supports( 'pocono-pro' ) ) {
 			return;
 		}
 
 		// Register Footer Column 1 widget area.
 		register_sidebar( array(
-			'name' => __( 'Footer Column 1', 'worldstar-pro' ),
+			'name' => __( 'Footer Column 1', 'pocono-pro' ),
 			'id' => 'footer-column-1',
-			'description' => __( 'Appears on the first footer column.', 'worldstar-pro' ),
+			'description' => __( 'Appears on the first footer column.', 'pocono-pro' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 			'after_widget' => '</aside>',
 			'before_title' => '<div class="widget-header"><h3 class="widget-title">',
@@ -118,9 +118,9 @@ class WorldStar_Pro_Footer_Widgets {
 
 		// Register Footer Column 2 widget area.
 		register_sidebar( array(
-			'name' => __( 'Footer Column 2', 'worldstar-pro' ),
+			'name' => __( 'Footer Column 2', 'pocono-pro' ),
 			'id' => 'footer-column-2',
-			'description' => __( 'Appears on the second footer column.', 'worldstar-pro' ),
+			'description' => __( 'Appears on the second footer column.', 'pocono-pro' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 			'after_widget' => '</aside>',
 			'before_title' => '<div class="widget-header"><h3 class="widget-title">',
@@ -129,9 +129,9 @@ class WorldStar_Pro_Footer_Widgets {
 
 		// Register Footer Column 3 widget area.
 		register_sidebar( array(
-			'name' => __( 'Footer Column 3', 'worldstar-pro' ),
+			'name' => __( 'Footer Column 3', 'pocono-pro' ),
 			'id' => 'footer-column-3',
-			'description' => __( 'Appears on the third footer column.', 'worldstar-pro' ),
+			'description' => __( 'Appears on the third footer column.', 'pocono-pro' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 			'after_widget' => '</aside>',
 			'before_title' => '<div class="widget-header"><h3 class="widget-title">',
@@ -140,9 +140,9 @@ class WorldStar_Pro_Footer_Widgets {
 
 		// Register Footer Column 4 widget area.
 		register_sidebar( array(
-			'name' => __( 'Footer Column 4', 'worldstar-pro' ),
+			'name' => __( 'Footer Column 4', 'pocono-pro' ),
 			'id' => 'footer-column-4',
-			'description' => __( 'Appears on the fourth footer column.', 'worldstar-pro' ),
+			'description' => __( 'Appears on the fourth footer column.', 'pocono-pro' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 			'after_widget' => '</aside>',
 			'before_title' => '<div class="widget-header"><h3 class="widget-title">',
@@ -153,7 +153,7 @@ class WorldStar_Pro_Footer_Widgets {
 }
 
 // Run Class.
-add_action( 'init', array( 'WorldStar_Pro_Footer_Widgets', 'setup' ) );
+add_action( 'init', array( 'Pocono_Pro_Footer_Widgets', 'setup' ) );
 
 // Register widgets in backend.
-add_action( 'widgets_init', array( 'WorldStar_Pro_Footer_Widgets', 'register_widgets' ), 20 );
+add_action( 'widgets_init', array( 'Pocono_Pro_Footer_Widgets', 'register_widgets' ), 20 );

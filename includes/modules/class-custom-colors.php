@@ -4,7 +4,7 @@
  *
  * Adds color settings to Customizer and generates color CSS code
  *
- * @package WorldStar Pro
+ * @package Pocono Pro
  */
 
 // Exit if accessed directly.
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
  * Custom Colors Class
  */
-class WorldStar_Pro_Custom_Colors {
+class Pocono_Pro_Custom_Colors {
 
 	/**
 	 * Custom Colors Setup
@@ -22,13 +22,13 @@ class WorldStar_Pro_Custom_Colors {
 	 */
 	static function setup() {
 
-		// Return early if WorldStar Theme is not active.
-		if ( ! current_theme_supports( 'worldstar-pro' ) ) {
+		// Return early if Pocono Theme is not active.
+		if ( ! current_theme_supports( 'pocono-pro' ) ) {
 			return;
 		}
 
 		// Add Custom Color CSS code to custom stylesheet output.
-		add_filter( 'worldstar_pro_custom_css_stylesheet', array( __CLASS__, 'custom_colors_css' ) );
+		add_filter( 'pocono_pro_custom_css_stylesheet', array( __CLASS__, 'custom_colors_css' ) );
 
 		// Add Custom Color Settings.
 		add_action( 'customize_register', array( __CLASS__, 'color_settings' ) );
@@ -44,10 +44,10 @@ class WorldStar_Pro_Custom_Colors {
 	static function custom_colors_css( $custom_css = '' ) {
 
 		// Get Theme Options from Database.
-		$theme_options = WorldStar_Pro_Customizer::get_theme_options();
+		$theme_options = Pocono_Pro_Customizer::get_theme_options();
 
 		// Get Default Fonts from settings.
-		$default_options = WorldStar_Pro_Customizer::get_default_options();
+		$default_options = Pocono_Pro_Customizer::get_default_options();
 
 		// Check if we are in Customizer Preview.
 		$is_customize_preview = is_customize_preview();
@@ -261,18 +261,18 @@ class WorldStar_Pro_Custom_Colors {
 		$transport = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
 		// Add Section for Theme Colors.
-		$wp_customize->add_section( 'worldstar_pro_section_colors', array(
-			'title'    => __( 'Theme Colors', 'worldstar-pro' ),
+		$wp_customize->add_section( 'pocono_pro_section_colors', array(
+			'title'    => __( 'Theme Colors', 'pocono-pro' ),
 			'priority' => 60,
-			'panel' => 'worldstar_options_panel',
+			'panel' => 'pocono_options_panel',
 			)
 		);
 
 		// Get Default Colors from settings.
-		$default_options = WorldStar_Pro_Customizer::get_default_options();
+		$default_options = Pocono_Pro_Customizer::get_default_options();
 
 		// Add Widget Title Color setting.
-		$wp_customize->add_setting( 'worldstar_theme_options[top_navi_color]', array(
+		$wp_customize->add_setting( 'pocono_theme_options[top_navi_color]', array(
 			'default'           => $default_options['top_navi_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
@@ -280,16 +280,16 @@ class WorldStar_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'worldstar_theme_options[top_navi_color]', array(
-				'label'      => _x( 'Top Navigation', 'color setting', 'worldstar-pro' ),
-				'section'    => 'worldstar_pro_section_colors',
-				'settings'   => 'worldstar_theme_options[top_navi_color]',
+			$wp_customize, 'pocono_theme_options[top_navi_color]', array(
+				'label'      => _x( 'Top Navigation', 'color setting', 'pocono-pro' ),
+				'section'    => 'pocono_pro_section_colors',
+				'settings'   => 'pocono_theme_options[top_navi_color]',
 				'priority' => 1,
 			)
 		) );
 
 		// Add Navigation Primary Color setting.
-		$wp_customize->add_setting( 'worldstar_theme_options[navi_primary_color]', array(
+		$wp_customize->add_setting( 'pocono_theme_options[navi_primary_color]', array(
 			'default'           => $default_options['navi_primary_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
@@ -297,16 +297,16 @@ class WorldStar_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'worldstar_theme_options[navi_primary_color]', array(
-				'label'      => _x( 'Navigation (primary)', 'color setting', 'worldstar-pro' ),
-				'section'    => 'worldstar_pro_section_colors',
-				'settings'   => 'worldstar_theme_options[navi_primary_color]',
+			$wp_customize, 'pocono_theme_options[navi_primary_color]', array(
+				'label'      => _x( 'Navigation (primary)', 'color setting', 'pocono-pro' ),
+				'section'    => 'pocono_pro_section_colors',
+				'settings'   => 'pocono_theme_options[navi_primary_color]',
 				'priority' => 2,
 			)
 		) );
 
 		// Add Navigation Secondary Color setting.
-		$wp_customize->add_setting( 'worldstar_theme_options[navi_secondary_color]', array(
+		$wp_customize->add_setting( 'pocono_theme_options[navi_secondary_color]', array(
 			'default'           => $default_options['navi_secondary_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
@@ -314,16 +314,16 @@ class WorldStar_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'worldstar_theme_options[navi_secondary_color]', array(
-				'label'      => _x( 'Navigation (secondary)', 'color setting', 'worldstar-pro' ),
-				'section'    => 'worldstar_pro_section_colors',
-				'settings'   => 'worldstar_theme_options[navi_secondary_color]',
+			$wp_customize, 'pocono_theme_options[navi_secondary_color]', array(
+				'label'      => _x( 'Navigation (secondary)', 'color setting', 'pocono-pro' ),
+				'section'    => 'pocono_pro_section_colors',
+				'settings'   => 'pocono_theme_options[navi_secondary_color]',
 				'priority' => 3,
 			)
 		) );
 
 		// Add Post Primary Color setting.
-		$wp_customize->add_setting( 'worldstar_theme_options[content_primary_color]', array(
+		$wp_customize->add_setting( 'pocono_theme_options[content_primary_color]', array(
 			'default'           => $default_options['content_primary_color'],
 			'type'           	=> 'option',
 			'transport'         => $transport,
@@ -331,16 +331,16 @@ class WorldStar_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'worldstar_theme_options[content_primary_color]', array(
-				'label'      => _x( 'Content (primary)', 'color setting', 'worldstar-pro' ),
-				'section'    => 'worldstar_pro_section_colors',
-				'settings'   => 'worldstar_theme_options[content_primary_color]',
+			$wp_customize, 'pocono_theme_options[content_primary_color]', array(
+				'label'      => _x( 'Content (primary)', 'color setting', 'pocono-pro' ),
+				'section'    => 'pocono_pro_section_colors',
+				'settings'   => 'pocono_theme_options[content_primary_color]',
 				'priority' => 4,
 			)
 		) );
 
 		// Add Link and Button Color setting.
-		$wp_customize->add_setting( 'worldstar_theme_options[content_secondary_color]', array(
+		$wp_customize->add_setting( 'pocono_theme_options[content_secondary_color]', array(
 			'default'           => $default_options['content_secondary_color'],
 			'type'           	=> 'option',
 			'transport'         => $transport,
@@ -348,16 +348,16 @@ class WorldStar_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'worldstar_theme_options[content_secondary_color]', array(
-				'label'      => _x( 'Content (secondary)', 'color setting', 'worldstar-pro' ),
-				'section'    => 'worldstar_pro_section_colors',
-				'settings'   => 'worldstar_theme_options[content_secondary_color]',
+			$wp_customize, 'pocono_theme_options[content_secondary_color]', array(
+				'label'      => _x( 'Content (secondary)', 'color setting', 'pocono-pro' ),
+				'section'    => 'pocono_pro_section_colors',
+				'settings'   => 'pocono_theme_options[content_secondary_color]',
 				'priority' => 5,
 			)
 		) );
 
 		// Add Widget Title Color setting.
-		$wp_customize->add_setting( 'worldstar_theme_options[widget_title_color]', array(
+		$wp_customize->add_setting( 'pocono_theme_options[widget_title_color]', array(
 			'default'           => $default_options['widget_title_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
@@ -365,16 +365,16 @@ class WorldStar_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'worldstar_theme_options[widget_title_color]', array(
-				'label'      => _x( 'Widget Titles', 'color setting', 'worldstar-pro' ),
-				'section'    => 'worldstar_pro_section_colors',
-				'settings'   => 'worldstar_theme_options[widget_title_color]',
+			$wp_customize, 'pocono_theme_options[widget_title_color]', array(
+				'label'      => _x( 'Widget Titles', 'color setting', 'pocono-pro' ),
+				'section'    => 'pocono_pro_section_colors',
+				'settings'   => 'pocono_theme_options[widget_title_color]',
 				'priority' => 6,
 			)
 		) );
 
 		// Add Footer Color setting.
-		$wp_customize->add_setting( 'worldstar_theme_options[footer_color]', array(
+		$wp_customize->add_setting( 'pocono_theme_options[footer_color]', array(
 			'default'           => $default_options['footer_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
@@ -382,10 +382,10 @@ class WorldStar_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'worldstar_theme_options[footer_color]', array(
-				'label'      => _x( 'Footer', 'color setting', 'worldstar-pro' ),
-				'section'    => 'worldstar_pro_section_colors',
-				'settings'   => 'worldstar_theme_options[footer_color]',
+			$wp_customize, 'pocono_theme_options[footer_color]', array(
+				'label'      => _x( 'Footer', 'color setting', 'pocono-pro' ),
+				'section'    => 'pocono_pro_section_colors',
+				'settings'   => 'pocono_theme_options[footer_color]',
 				'priority' => 7,
 			)
 		) );
@@ -393,16 +393,16 @@ class WorldStar_Pro_Custom_Colors {
 		// Add support for selective refresh.
 		if ( isset( $wp_customize->selective_refresh ) ) {
 
-			$wp_customize->selective_refresh->add_partial( 'worldstar_pro_custom_colors', array(
-				'selector' => '#worldstar-pro-custom-colors-css',
+			$wp_customize->selective_refresh->add_partial( 'pocono_pro_custom_colors', array(
+				'selector' => '#pocono-pro-custom-colors-css',
 				'settings' => array(
-					'worldstar_theme_options[top_navi_color]',
-					'worldstar_theme_options[navi_primary_color]',
-					'worldstar_theme_options[navi_secondary_color]',
-					'worldstar_theme_options[content_primary_color]',
-					'worldstar_theme_options[content_secondary_color]',
-					'worldstar_theme_options[widget_title_color]',
-					'worldstar_theme_options[footer_color]',
+					'pocono_theme_options[top_navi_color]',
+					'pocono_theme_options[navi_primary_color]',
+					'pocono_theme_options[navi_secondary_color]',
+					'pocono_theme_options[content_primary_color]',
+					'pocono_theme_options[content_secondary_color]',
+					'pocono_theme_options[widget_title_color]',
+					'pocono_theme_options[footer_color]',
 				),
 				'container_inclusive' => false,
 				'render_callback' => array( __CLASS__, 'custom_colors_css' ),
@@ -414,4 +414,4 @@ class WorldStar_Pro_Custom_Colors {
 }
 
 // Run Class.
-add_action( 'init', array( 'WorldStar_Pro_Custom_Colors', 'setup' ) );
+add_action( 'init', array( 'Pocono_Pro_Custom_Colors', 'setup' ) );

@@ -4,7 +4,7 @@
  *
  * Setup the Customizer and theme options for the Pro plugin
  *
- * @package WorldStar Pro
+ * @package Pocono Pro
  */
 
 // Exit if accessed directly.
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
  * Customizer Class
  */
-class WorldStar_Pro_Customizer {
+class Pocono_Pro_Customizer {
 
 	/**
 	 * Customizer Setup
@@ -22,8 +22,8 @@ class WorldStar_Pro_Customizer {
 	 */
 	static function setup() {
 
-		// Return early if WorldStar Theme is not active.
-		if ( ! current_theme_supports( 'worldstar-pro' ) ) {
+		// Return early if Pocono Theme is not active.
+		if ( ! current_theme_supports( 'pocono-pro' ) ) {
 			return;
 		}
 
@@ -32,7 +32,7 @@ class WorldStar_Pro_Customizer {
 		add_action( 'customize_controls_print_styles', array( __CLASS__, 'customize_preview_css' ) );
 
 		// Remove Upgrade section.
-		remove_action( 'customize_register', 'worldstar_customize_register_upgrade_settings' );
+		remove_action( 'customize_register', 'pocono_customize_register_upgrade_settings' );
 	}
 
 	/**
@@ -43,7 +43,7 @@ class WorldStar_Pro_Customizer {
 	static function get_theme_options() {
 
 		// Merge Theme Options Array from Database with Default Options Array.
-		$theme_options = wp_parse_args( get_option( 'worldstar_theme_options', array() ), self::get_default_options() );
+		$theme_options = wp_parse_args( get_option( 'pocono_theme_options', array() ), self::get_default_options() );
 
 		// Return theme options.
 		return $theme_options;
@@ -62,7 +62,7 @@ class WorldStar_Pro_Customizer {
 			'header_bar_text'             => '',
 			'logo_spacing'                => 0,
 			'header_spacing'              => 20,
-			'footer_social_icons_text'    => __( 'Stay in Touch', 'worldstar-pro' ),
+			'footer_social_icons_text'    => __( 'Stay in Touch', 'pocono-pro' ),
 			'footer_text'                 => '',
 			'credit_link'                 => true,
 			'top_navi_color'              => '#33bbdd',
@@ -90,7 +90,7 @@ class WorldStar_Pro_Customizer {
 	 */
 	static function customize_preview_js() {
 
-		wp_enqueue_script( 'worldstar-pro-customizer-js', WORLDSTAR_PRO_PLUGIN_URL . 'assets/js/customizer.js', array( 'customize-preview' ), WORLDSTAR_PRO_VERSION, true );
+		wp_enqueue_script( 'pocono-pro-customizer-js', POCONO_PRO_PLUGIN_URL . 'assets/js/customizer.js', array( 'customize-preview' ), POCONO_PRO_VERSION, true );
 
 	}
 
@@ -101,10 +101,10 @@ class WorldStar_Pro_Customizer {
 	 */
 	static function customize_preview_css() {
 
-		wp_enqueue_style( 'worldstar-pro-customizer-css', WORLDSTAR_PRO_PLUGIN_URL . 'assets/css/customizer.css', array(), WORLDSTAR_PRO_VERSION );
+		wp_enqueue_style( 'pocono-pro-customizer-css', POCONO_PRO_PLUGIN_URL . 'assets/css/customizer.css', array(), POCONO_PRO_VERSION );
 
 	}
 }
 
 // Run Class.
-add_action( 'init', array( 'WorldStar_Pro_Customizer', 'setup' ) );
+add_action( 'init', array( 'Pocono_Pro_Customizer', 'setup' ) );
