@@ -5,7 +5,7 @@ Plugin URI: http://themezee.com/addons/pocono-pro/
 Description: Adds additional features like custom colors, google fonts, widget areas and footer copyright to the Pocono theme.
 Author: ThemeZee
 Author URI: https://themezee.com/
-Version: 1.0.1
+Version: 1.0
 Text Domain: pocono-pro
 Domain Path: /languages/
 License: GPL v3
@@ -62,7 +62,7 @@ class Pocono_Pro {
 		define( 'POCONO_PRO_NAME', 'Pocono Pro' );
 
 		// Define Version Number.
-		define( 'POCONO_PRO_VERSION', '1.0.1' );
+		define( 'POCONO_PRO_VERSION', '1.0' );
 
 		// Define Plugin Name.
 		define( 'POCONO_PRO_PRODUCT_ID', 81120 );
@@ -109,17 +109,14 @@ class Pocono_Pro {
 		require_once POCONO_PRO_PLUGIN_DIR . '/includes/customizer/class-customizer.php';
 
 		// Include Pro Features.
-		require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-custom-colors.php';
-		require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-custom-fonts.php';
+		#require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-custom-colors.php';
+		#require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-custom-fonts.php';
 		require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-footer-line.php';
 		require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-footer-widgets.php';
-		require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-header-bar.php';
-		require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-header-settings.php';
-		require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-post-meta.php';
 
 		// Include Magazine Widgets.
 		require_once POCONO_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-boxed.php';
-		require_once POCONO_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-list.php';
+		require_once POCONO_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-columns.php';
 		require_once POCONO_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-single.php';
 
 	}
@@ -192,7 +189,7 @@ class Pocono_Pro {
 		}
 
 		register_widget( 'Pocono_Pro_Magazine_Posts_Boxed_Widget' );
-		register_widget( 'Pocono_Pro_Magazine_Posts_List_Widget' );
+		register_widget( 'Pocono_Pro_Magazine_Posts_Columns_Widget' );
 		register_widget( 'Pocono_Pro_Magazine_Posts_Single_Widget' );
 
 	}

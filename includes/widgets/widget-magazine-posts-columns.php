@@ -2,7 +2,7 @@
 /**
  * Magazine Posts List Widget
  *
- * Display the latest posts from a selected category in a list layout.
+ * Displays your posts from three selected categories in a column layout.
  * Intented to be used in the Magazine Homepage widget area to built a magazine layouted page.
  *
  * @package Pocono
@@ -11,7 +11,7 @@
 /**
  * Magazine Widget Class
  */
-class Pocono_Pro_Magazine_Posts_List_Widget extends WP_Widget {
+class Pocono_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 
 	/**
 	 * Widget Constructor
@@ -20,11 +20,11 @@ class Pocono_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 
 		// Setup Widget.
 		parent::__construct(
-			'pocono-magazine-posts-list', // ID.
-			sprintf( esc_html__( 'Magazine Posts: List (%s)', 'pocono-pro' ), 'Pocono Pro' ), // Name.
+			'pocono-magazine-posts-columns', // ID.
+			sprintf( esc_html__( 'Magazine Posts: Columns (%s)', 'pocono-pro' ), 'Pocono Pro' ), // Name.
 			array(
 				'classname' => 'pocono_magazine_posts_list',
-				'description' => esc_html__( 'Displays your posts from a selected category in a simple list layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'pocono-pro' ),
+				'description' => esc_html__( 'Displays your posts from three selected categories in a column layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'pocono-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
@@ -65,7 +65,7 @@ class Pocono_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 
 		// Get Widget Object Cache.
 		if ( ! $this->is_preview() ) {
-			$cache = wp_cache_get( 'widget_pocono_magazine_posts_list', 'widget' );
+			$cache = wp_cache_get( 'widget_pocono_magazine_posts_columns', 'widget' );
 		}
 		if ( ! is_array( $cache ) ) {
 			$cache = array();
@@ -86,7 +86,7 @@ class Pocono_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 		// Output.
 		echo $args['before_widget'];
 		?>
-		<div class="widget-magazine-posts-list widget-magazine-posts clearfix">
+		<div class="widget-magazine-posts-columns widget-magazine-posts clearfix">
 
 			<?php // Display Title.
 			$this->widget_title( $args, $settings ); ?>
@@ -105,7 +105,7 @@ class Pocono_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 		// Set Cache.
 		if ( ! $this->is_preview() ) {
 			$cache[ $this->id ] = ob_get_flush();
-			wp_cache_set( 'widget_pocono_magazine_posts_list', $cache, 'widget' );
+			wp_cache_set( 'widget_pocono_magazine_posts_columns', $cache, 'widget' );
 		} else {
 			ob_end_flush();
 		}
@@ -287,7 +287,7 @@ class Pocono_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 	 */
 	public function delete_widget_cache() {
 
-		wp_cache_delete( 'widget_pocono_magazine_posts_list', 'widget' );
+		wp_cache_delete( 'widget_pocono_magazine_posts_columns', 'widget' );
 
 	}
 }
