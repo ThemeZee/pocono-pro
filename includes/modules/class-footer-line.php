@@ -118,13 +118,6 @@ class Pocono_Pro_Footer_Line {
 
 			echo '<div id="footer-social-icons" class="footer-social-icons social-icons-navigation container clearfix">';
 
-			// Check if there is header bar text.
-			if ( '' !== $theme_options['footer_social_icons_text'] ) {
-
-				printf( '<h3 class="footer-social-icons-title">%s</h3>', wp_kses_post( $theme_options['footer_social_icons_text'] ) );
-
-			}
-
 			// Display Social Icons Menu.
 			wp_nav_menu( array(
 				'theme_location' => 'footer-social',
@@ -132,8 +125,8 @@ class Pocono_Pro_Footer_Line {
 				'menu_class' => 'social-icons-menu',
 				'echo' => true,
 				'fallback_cb' => '',
-				'link_before' => '<span class="screen-reader-text">',
-				'link_after' => '</span>',
+				'link_before' => '<div class="social-link-text">',
+				'link_after' => '</div>',
 				'depth' => 1,
 				)
 			);
@@ -161,24 +154,6 @@ class Pocono_Pro_Footer_Line {
 			)
 		);
 
-		// Add Footer Social Icons Text setting.
-		$wp_customize->add_setting( 'pocono_theme_options[footer_social_icons_text]', array(
-			'default'           => __( 'Stay in Touch', 'pocono-pro' ),
-			'type'           	=> 'option',
-			'transport'         => 'refresh',
-			'sanitize_callback' => array( __CLASS__, 'sanitize_footer_text' ),
-			)
-		);
-		$wp_customize->add_control( 'pocono_theme_options[footer_social_icons_text]', array(
-			'label'    => __( 'Social Icons Text', 'pocono-pro' ),
-			'section'  => 'pocono_pro_section_footer',
-			'settings' => 'pocono_theme_options[footer_social_icons_text]',
-			'type'     => 'text',
-			'active_callback' => array( __CLASS__, 'has_social_menu' ),
-			'priority' => 10,
-			)
-		);
-
 		// Add Footer Text setting.
 		$wp_customize->add_setting( 'pocono_theme_options[footer_text]', array(
 			'default'           => '',
@@ -192,7 +167,7 @@ class Pocono_Pro_Footer_Line {
 			'section'  => 'pocono_pro_section_footer',
 			'settings' => 'pocono_theme_options[footer_text]',
 			'type'     => 'textarea',
-			'priority' => 20,
+			'priority' => 10,
 			)
 		);
 
@@ -209,7 +184,7 @@ class Pocono_Pro_Footer_Line {
 			'section'  => 'pocono_pro_section_footer',
 			'settings' => 'pocono_theme_options[credit_link]',
 			'type'     => 'checkbox',
-			'priority' => 30,
+			'priority' => 20,
 			)
 		);
 
@@ -228,22 +203,6 @@ class Pocono_Pro_Footer_Line {
 		else :
 			return stripslashes( wp_filter_post_kses( addslashes( $value ) ) );
 		endif;
-	}
-
-	/**
-	 * Adds a callback function to retrieve wether a footer social icons menu was set or not.
-	 *
-	 * @param object $control / Instance of the Customizer Control.
-	 * @return bool
-	 */
-	static function has_social_menu( $control ) {
-
-		// Check if social icons menu exists.
-		if ( has_nav_menu( 'footer-social' ) ) {
-			return true;
-		}
-
-		return false;
 	}
 
 	/**
