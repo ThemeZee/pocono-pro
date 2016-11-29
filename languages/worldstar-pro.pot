@@ -1,0 +1,443 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WorldStar Pro\n"
+"Report-Msgid-Bugs-To: https://themezee.com/\n"
+"POT-Creation-Date: 2016-10-13 13:07+0100\n"
+"PO-Revision-Date: 2016-10-13 13:07+0100\n"
+"Last-Translator: \n"
+"Language-Team: ThemeZee <support@themezee.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
+"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
+"esc_html_x:1,2c\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: worldstar-pro.php:204
+msgid "Settings"
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:55
+#, php-format
+msgid ""
+"Please enter your license key for the %1$s add-on in order to receive "
+"updates and support. <a href=\"%2$s\">Enter License Key</a>"
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:60
+#: includes/admin/class-admin-notices.php:89
+#: includes/admin/class-admin-notices.php:114
+msgid "Dismiss Notice"
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:84
+#, php-format
+msgid ""
+"Your license for %1$s has expired. Please <a href=\"%2$s\">renew</a> to "
+"continue getting updates and support!"
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:110
+#, php-format
+msgid ""
+"The %1$s add-on needs the %2$s theme activated in order to work. You should "
+"deactivate %1$s if you have switched to another theme permanently."
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:137
+msgid "Security check failed"
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:137
+#: includes/admin/class-plugin-updater.php:339
+msgid "Error"
+msgstr ""
+
+#: includes/admin/class-plugin-updater.php:189
+#, php-format
+msgid ""
+"There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr ""
+
+#: includes/admin/class-plugin-updater.php:197
+#, php-format
+msgid ""
+"There is a new version of %1$s available. %2$sView version %3$s details%4$s "
+"or %5$supdate now%6$s."
+msgstr ""
+
+#: includes/admin/class-plugin-updater.php:339
+msgid "You do not have permission to install plugin updates"
+msgstr ""
+
+#: includes/admin/class-settings-page.php:46
+#: includes/admin/class-settings-page.php:47
+msgid "Pro Version"
+msgstr ""
+
+#: includes/admin/class-settings-page.php:81
+#, php-format
+msgid ""
+"You can find your license keys and manage your active sites on <a href=\"%s"
+"\" target=\"_blank\">themezee.com</a>."
+msgstr ""
+
+#: includes/admin/class-settings-page.php:81
+msgid "https://themezee.com/license-keys/"
+msgstr ""
+
+#: includes/admin/class-settings.php:118
+msgid "Automatic Updates"
+msgstr ""
+
+#: includes/admin/class-settings.php:123
+msgid "License Status"
+msgstr ""
+
+#: includes/admin/class-settings.php:132
+msgid "License Key"
+msgstr ""
+
+#: includes/admin/class-settings.php:148
+#, php-format
+msgid ""
+"Please enter your license key. An active license key is needed for automatic "
+"plugin updates and <a href=\"%s\" target=\"_blank\">support</a>."
+msgstr ""
+
+#: includes/admin/class-settings.php:198
+msgid "Active"
+msgstr ""
+
+#: includes/admin/class-settings.php:199
+msgid "You are receiving updates."
+msgstr ""
+
+#: includes/admin/class-settings.php:205
+msgid "Expired"
+msgstr ""
+
+#: includes/admin/class-settings.php:206
+msgid ""
+"Your license has expired, renew today to continue getting updates and "
+"support!"
+msgstr ""
+
+#: includes/admin/class-settings.php:207
+msgid "Renew Your License"
+msgstr ""
+
+#: includes/admin/class-settings.php:211
+msgid "Invalid"
+msgstr ""
+
+#: includes/admin/class-settings.php:212
+msgid ""
+"Please make sure that you have not reached the site limit and expiration "
+"date."
+msgstr ""
+
+#: includes/admin/class-settings.php:216
+msgid "Inactive"
+msgstr ""
+
+#: includes/admin/class-settings.php:240
+msgid "Deactivate License"
+msgstr ""
+
+#: includes/admin/class-settings.php:245
+msgid "Activate License"
+msgstr ""
+
+#: includes/customizer/class-customize-font-control.php:51
+msgid "Previous Font"
+msgstr ""
+
+#: includes/customizer/class-customize-font-control.php:52
+msgid "Next Font"
+msgstr ""
+
+#: includes/customizer/class-customize-font-control.php:53
+msgctxt "default font button"
+msgid "Default"
+msgstr ""
+
+#: includes/customizer/class-customize-font-list-control.php:44
+msgid "Update Fonts"
+msgstr ""
+
+#: includes/customizer/class-customizer.php:65
+#: includes/modules/class-footer-line.php:166
+msgid "Stay in Touch"
+msgstr ""
+
+#: includes/modules/class-custom-colors.php:276
+msgid "Theme Colors"
+msgstr ""
+
+#: includes/modules/class-custom-colors.php:295
+msgctxt "color setting"
+msgid "Top Navigation"
+msgstr ""
+
+#: includes/modules/class-custom-colors.php:312
+msgctxt "color setting"
+msgid "Navigation (primary)"
+msgstr ""
+
+#: includes/modules/class-custom-colors.php:329
+msgctxt "color setting"
+msgid "Navigation (secondary)"
+msgstr ""
+
+#: includes/modules/class-custom-colors.php:346
+msgctxt "color setting"
+msgid "Content (primary)"
+msgstr ""
+
+#: includes/modules/class-custom-colors.php:363
+msgctxt "color setting"
+msgid "Content (secondary)"
+msgstr ""
+
+#: includes/modules/class-custom-colors.php:380
+msgctxt "color setting"
+msgid "Widget Titles"
+msgstr ""
+
+#: includes/modules/class-custom-colors.php:397
+msgctxt "color setting"
+msgid "Footer"
+msgstr ""
+
+#: includes/modules/class-custom-fonts.php:207
+msgid "Theme Fonts"
+msgstr ""
+
+#: includes/modules/class-custom-fonts.php:226
+msgid "Base Font"
+msgstr ""
+
+#: includes/modules/class-custom-fonts.php:242
+msgctxt "font setting"
+msgid "Headings"
+msgstr ""
+
+#: includes/modules/class-custom-fonts.php:258
+msgctxt "font setting"
+msgid "Navigation"
+msgstr ""
+
+#: includes/modules/class-custom-fonts.php:274
+msgctxt "font setting"
+msgid "Widget Titles"
+msgstr ""
+
+#: includes/modules/class-custom-fonts.php:291
+msgid "Choose available Fonts"
+msgstr ""
+
+#: includes/modules/class-custom-fonts.php:295
+msgid "Default Browser Fonts (12)"
+msgstr ""
+
+#: includes/modules/class-custom-fonts.php:296
+msgid "ThemeZee Favorite Fonts (35)"
+msgstr ""
+
+#: includes/modules/class-custom-fonts.php:297
+msgid "Most Popular Google Fonts (100)"
+msgstr ""
+
+#: includes/modules/class-custom-fonts.php:298
+msgid "All Google Fonts (650)"
+msgstr ""
+
+#: includes/modules/class-footer-line.php:158
+msgid "Footer Settings"
+msgstr ""
+
+#: includes/modules/class-footer-line.php:173
+msgid "Social Icons Text"
+msgstr ""
+
+#: includes/modules/class-footer-line.php:191
+msgid "Footer Text"
+msgstr ""
+
+#: includes/modules/class-footer-line.php:208
+msgid "Display Credit Link to ThemeZee on footer line"
+msgstr ""
+
+#: includes/modules/class-footer-line.php:262
+msgid "Footer Navigation"
+msgstr ""
+
+#: includes/modules/class-footer-line.php:263
+msgid "Footer Social Icons"
+msgstr ""
+
+#: includes/modules/class-footer-widgets.php:110
+msgid "Footer Column 1"
+msgstr ""
+
+#: includes/modules/class-footer-widgets.php:112
+msgid "Appears on the first footer column."
+msgstr ""
+
+#: includes/modules/class-footer-widgets.php:121
+msgid "Footer Column 2"
+msgstr ""
+
+#: includes/modules/class-footer-widgets.php:123
+msgid "Appears on the second footer column."
+msgstr ""
+
+#: includes/modules/class-footer-widgets.php:132
+msgid "Footer Column 3"
+msgstr ""
+
+#: includes/modules/class-footer-widgets.php:134
+msgid "Appears on the third footer column."
+msgstr ""
+
+#: includes/modules/class-footer-widgets.php:143
+msgid "Footer Column 4"
+msgstr ""
+
+#: includes/modules/class-footer-widgets.php:145
+msgid "Appears on the fourth footer column."
+msgstr ""
+
+#: includes/modules/class-header-bar.php:94
+msgid "Top Navigation"
+msgstr ""
+
+#: includes/modules/class-header-settings.php:92
+msgid "Header Settings"
+msgstr ""
+
+#: includes/modules/class-header-settings.php:107
+msgid "Header Bar Text"
+msgstr ""
+
+#: includes/modules/class-header-settings.php:124
+msgid "Logo Spacing (default: 0)"
+msgstr ""
+
+#: includes/modules/class-header-settings.php:141
+msgid "Header Spacing (default: 20)"
+msgstr ""
+
+#: includes/modules/class-post-meta.php:52
+msgid "Post Meta"
+msgstr ""
+
+#: includes/modules/class-post-meta.php:67
+msgid "Display post date"
+msgstr ""
+
+#: includes/modules/class-post-meta.php:83
+msgid "Display post author"
+msgstr ""
+
+#: includes/modules/class-post-meta.php:99
+msgid "Display post categories"
+msgstr ""
+
+#: includes/modules/class-post-meta.php:117
+msgid "Single Posts"
+msgstr ""
+
+#: includes/modules/class-post-meta.php:132
+msgid "Display featured image on single posts"
+msgstr ""
+
+#: includes/modules/class-post-meta.php:148
+msgid "Display post tags on single posts"
+msgstr ""
+
+#: includes/modules/class-post-meta.php:163
+msgid "Display post navigation on single posts"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-boxed.php:24
+#, php-format
+msgid "Magazine Posts: Boxed (%s)"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-boxed.php:27
+msgid ""
+"Displays your posts from a selected category in a boxed layout. Please use "
+"this widget ONLY in the Magazine Homepage widget area."
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-boxed.php:357
+#: includes/widgets/widget-magazine-posts-list.php:204
+#: includes/widgets/widget-magazine-posts-single.php:228
+#, php-format
+msgid "View all posts from category %s"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-boxed.php:406
+#: includes/widgets/widget-magazine-posts-list.php:255
+#: includes/widgets/widget-magazine-posts-single.php:278
+msgid "Title:"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-boxed.php:412
+#: includes/widgets/widget-magazine-posts-list.php:261
+#: includes/widgets/widget-magazine-posts-single.php:284
+msgid "Category:"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-boxed.php:415
+#: includes/widgets/widget-magazine-posts-list.php:264
+#: includes/widgets/widget-magazine-posts-single.php:287
+msgid "All Categories"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-boxed.php:427
+msgid "Post Layout:"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-boxed.php:429
+msgid "Horizontal Arrangement"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-boxed.php:430
+msgid "Vertical Arrangement"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-list.php:24
+#, php-format
+msgid "Magazine Posts: List (%s)"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-list.php:27
+msgid ""
+"Displays your posts from a selected category in a simple list layout. Please "
+"use this widget ONLY in the Magazine Homepage widget area."
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-list.php:276
+msgid "Number of posts:"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-single.php:24
+#, php-format
+msgid "Magazine Posts: Single (%s)"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-single.php:27
+msgid ""
+"Displays a single post from a selected category. Please use this widget ONLY "
+"in the Magazine Homepage widget area."
+msgstr ""

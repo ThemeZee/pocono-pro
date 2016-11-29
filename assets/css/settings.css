@@ -1,0 +1,38 @@
+/*
+ * WorldStar Settings CSS
+ *
+ * CSS Stylesheet for settings page on Appearance -> Pro Version
+ *
+ * @package WorldStar Pro
+ */
+
+/* License Settings */
+.worldstar-pro-settings-wrap {
+	margin: 25px 0 0;
+}
+
+.worldstar-pro-settings-wrap .license-status {
+	display: inline-block;
+	margin: 0 12px 0 0;
+	padding: 4px 8px;
+	background: #444;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.worldstar-pro-settings-wrap .license-active {
+	background: green;
+}
+
+.worldstar-pro-settings-wrap .license-invalid,
+.worldstar-pro-settings-wrap .license-expired {
+	background: red;
+}
+
+.worldstar-pro-settings-wrap .license-description {
+	margin: 16px 0 0;
+}
+
+.worldstar-pro-settings-wrap .license-renewal {
+	margin: 16px 0 0;
+}
