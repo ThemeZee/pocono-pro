@@ -12,6 +12,52 @@
 # Magazine Widgets
 --------------------------------------------------------------*/
 
+/* Magazine Small Posts */
+.widget-magazine-posts .small-post {
+	display: block;
+	float: left;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.widget-magazine-posts .small-post .wp-post-image {
+	float: left;
+	margin: 0 1em 0 0;
+	max-width: 35%;
+}
+
+.widget-magazine-posts .small-post .entry-title {
+	font-size: 16px;
+	font-size: 1rem;
+}
+
+.widget-magazine-posts .small-post .entry-meta {
+	font-size: 13px;
+	font-size: 0.8125rem;
+
+}
+
+/* Magazine Posts Columns */
+.widget-magazine-posts-columns .magazine-posts-columns {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-right: -2em;
+}
+
+.widget-magazine-posts-columns .magazine-posts-columns .magazine-posts-column {
+	box-sizing: border-box;
+	padding-right: 2em;
+	width: 33.3333333333333%;
+}
+
+.widget-magazine-posts-columns .magazine-posts-columns .large-post .entry-title {
+	font-size: 20px;
+	font-size: 1.25rem;
+}
+
 /* Magazine Posts Boxed Widget Horizontal Style */
 .widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .post-image {
 	float: left;
@@ -462,6 +508,8 @@
 ## Mobile Large ( < 560px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 35em) {
+
+	/* Footer Widgets */
 	.footer-widgets {
 		margin-right: 0;
 	}
@@ -471,7 +519,6 @@
 		padding-right: 0;
 		width: 100%;
 	}
-
 }
 
 /*--------------------------------------------------------------

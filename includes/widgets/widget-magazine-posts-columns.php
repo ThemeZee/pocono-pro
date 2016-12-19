@@ -23,7 +23,7 @@ class Pocono_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 			'pocono-magazine-posts-columns', // ID.
 			sprintf( esc_html__( 'Magazine Posts: Columns (%s)', 'pocono-pro' ), 'Pocono Pro' ), // Name.
 			array(
-				'classname' => 'pocono_magazine_posts_list',
+				'classname' => 'pocono_magazine_posts_columns',
 				'description' => esc_html__( 'Displays your posts from three selected categories in a column layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'pocono-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
@@ -42,9 +42,12 @@ class Pocono_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 	private function default_settings() {
 
 		$defaults = array(
-			'title'				=> '',
-			'category'			=> 0,
-			'number'			=> 3,
+			'title'          => '',
+			'category_one'   => 0,
+			'category_two'   => 0,
+			'category_three' => 0,
+			'number'         => 4,
+			'highlight_post' => true,
 		);
 
 		return $defaults;
@@ -91,7 +94,7 @@ class Pocono_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 			<?php // Display Title.
 			$this->widget_title( $args, $settings ); ?>
 
-			<div class="widget-magazine-posts-content">
+			<div class="widget-magazine-posts-content clearfix">
 
 				<?php $this->render( $settings ); ?>
 
@@ -115,20 +118,62 @@ class Pocono_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 	/**
 	 * Renders the Widget Content
 	 *
-	 * Switches between horizontal and vertical layout style based on widget settings
+	 * Displays left and right column with posts
 	 *
-	 * @uses this->magazine_posts_horizontal() or this->magazine_posts_vertical()
+	 * @uses this->magazine_posts()
 	 * @used-by this->widget()
 	 *
 	 * @param array $settings / Settings for this widget instance.
 	 */
 	function render( $settings ) {
+	?>
+
+		<div class="magazine-posts-columns clearfix">
+
+			<div class="magazine-posts-column-one magazine-posts-column clearfix">
+
+				<div class="magazine-posts-columns-post-list clearfix">
+					<?php $this->magazine_posts( $settings, $settings['category_one'] ); ?>
+				</div>
+
+			</div>
+
+			<div class="magazine-posts-column-two magazine-posts-column clearfix">
+
+				<div class="magazine-posts-columns-post-list clearfix">
+					<?php $this->magazine_posts( $settings, $settings['category_two'] ); ?>
+				</div>
+
+			</div>
+
+			<div class="magazine-posts-column-three magazine-posts-column clearfix">
+
+				<div class="magazine-posts-columns-post-list clearfix">
+					<?php $this->magazine_posts( $settings, $settings['category_three'] ); ?>
+				</div>
+
+			</div>
+
+		</div>
+
+	<?php
+	}
+
+	/**
+	 * Display Magazine Posts Loop
+	 *
+	 * @used-by this->render()
+	 *
+	 * @param array $settings / Settings for this widget instance.
+	 * @param int   $category_id / ID of the selected category.
+	 */
+	function magazine_posts( $settings, $category_id ) {
 
 		// Get latest posts from database.
 		$query_arguments = array(
 			'posts_per_page' => (int) $settings['number'],
 			'ignore_sticky_posts' => true,
-			'cat' => (int) $settings['category'],
+			'cat' => (int) $category_id,
 		);
 		$posts_query = new WP_Query( $query_arguments );
 		$i = 0;
@@ -137,45 +182,68 @@ class Pocono_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 		if ( $posts_query->have_posts() ) :
 
 			// Limit the number of words for the excerpt.
-			add_filter( 'excerpt_length', 'pocono_magazine_posts_excerpt_length' );
+			add_filter( 'excerpt_length', 'pocono_excerpt_length' );
 
 			// Display Posts.
-			while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
+			while ( $posts_query->have_posts() ) :
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class( 'large-post clearfix' ); ?>>
+				$posts_query->the_post();
 
-					<div class="post-image">
+				if ( true === $settings['highlight_post'] and ( isset( $i ) and 0 === $i  ) ) : ?>
 
-						<?php pocono_post_image(); ?>
+					<article id="post-<?php the_ID(); ?>" <?php post_class( 'large-post clearfix' ); ?>>
 
-						<?php pocono_entry_categories(); ?>
+						<div class="post-image">
 
-					</div>
+							<?php pocono_post_image(); ?>
 
-					<div class="post-content">
+							<?php pocono_entry_categories(); ?>
 
-						<header class="entry-header">
+						</div>
 
-							<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+						<div class="post-content clearfix">
 
-							<?php pocono_entry_meta(); ?>
+							<header class="entry-header">
 
-						</header><!-- .entry-header -->
+								<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-						<div class="entry-content">
-							<?php the_excerpt(); ?>
-							<?php pocono_more_link(); ?>
-						</div><!-- .entry-content -->
+								<?php pocono_entry_meta(); ?>
 
-					</div>
+							</header><!-- .entry-header -->
 
-				</article>
+							<div class="entry-content entry-excerpt clearfix">
+								<?php the_excerpt(); ?>
+								<?php pocono_more_link(); ?>
+							</div><!-- .entry-content -->
 
-			<?php
+						</div>
+
+					</article>
+
+				<?php else : ?>
+
+					<article id="post-<?php the_ID(); ?>" <?php post_class( 'small-post clearfix' ); ?>>
+
+						<?php pocono_post_image( 'pocono-thumbnail-small' ); ?>
+
+						<div class="small-post-content">
+
+							<?php the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
+
+							<?php pocono_magazine_widgets_entry_meta(); ?>
+
+						</div>
+
+					</article>
+
+				<?php
+				endif;
+				$i++;
+
 			endwhile;
 
 			// Remove excerpt filter.
-			remove_filter( 'excerpt_length', 'pocono_magazine_posts_excerpt_length' );
+			remove_filter( 'excerpt_length', 'pocono_excerpt_length' );
 
 		endif;
 
@@ -231,9 +299,12 @@ class Pocono_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 
 		$instance = $old_instance;
-		$instance['title'] = sanitize_text_field( $new_instance['title'] );
-		$instance['category'] = (int) $new_instance['category'];
-		$instance['number'] = (int) $new_instance['number'];
+		$instance['title']          = sanitize_text_field( $new_instance['title'] );
+		$instance['category_one']   = (int) $new_instance['category_one'];
+		$instance['category_two']   = (int) $new_instance['category_two'];
+		$instance['category_three'] = (int) $new_instance['category_hree'];
+		$instance['number']         = (int) $new_instance['number'];
+		$instance['highlight_post'] = ! empty( $new_instance['highlight_post'] );
 
 		$this->delete_widget_cache();
 
@@ -258,15 +329,45 @@ class Pocono_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php esc_html_e( 'Category:', 'pocono-pro' ); ?></label><br/>
-			<?php // Display Category Select.
+			<label for="<?php echo $this->get_field_id( 'category_one' ); ?>"><?php esc_html_e( 'Category 1:', 'pocono-pro' ); ?></label><br/>
+			<?php // Display Category One Select.
 				$args = array(
 					'show_option_all'    => esc_html__( 'All Categories', 'pocono-pro' ),
 					'show_count' 		 => true,
 					'hide_empty'		 => false,
-					'selected'           => $settings['category'],
-					'name'               => $this->get_field_name( 'category' ),
-					'id'                 => $this->get_field_id( 'category' ),
+					'selected'           => $settings['category_one'],
+					'name'               => $this->get_field_name( 'category_one' ),
+					'id'                 => $this->get_field_id( 'category_one' ),
+				);
+				wp_dropdown_categories( $args );
+			?>
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'category_two' ); ?>"><?php esc_html_e( 'Category 2:', 'pocono-pro' ); ?></label><br/>
+			<?php // Display Category One Select.
+				$args = array(
+					'show_option_all'    => esc_html__( 'All Categories', 'pocono-pro' ),
+					'show_count' 		 => true,
+					'hide_empty'		 => false,
+					'selected'           => $settings['category_two'],
+					'name'               => $this->get_field_name( 'category_two' ),
+					'id'                 => $this->get_field_id( 'category_two' ),
+				);
+				wp_dropdown_categories( $args );
+			?>
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'category_three' ); ?>"><?php esc_html_e( 'Category 3:', 'pocono-pro' ); ?></label><br/>
+			<?php // Display Category One Select.
+				$args = array(
+					'show_option_all'    => esc_html__( 'All Categories', 'pocono-pro' ),
+					'show_count' 		 => true,
+					'hide_empty'		 => false,
+					'selected'           => $settings['category_three'],
+					'name'               => $this->get_field_name( 'category_three' ),
+					'id'                 => $this->get_field_id( 'category_three' ),
 				);
 				wp_dropdown_categories( $args );
 			?>
@@ -275,6 +376,13 @@ class Pocono_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php esc_html_e( 'Number of posts:', 'pocono-pro' ); ?>
 				<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $settings['number']; ?>" size="3" />
+			</label>
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'highlight_post' ); ?>">
+				<input class="checkbox" type="checkbox" <?php checked( $settings['highlight_post'] ); ?> id="<?php echo $this->get_field_id( 'highlight_post' ); ?>" name="<?php echo $this->get_field_name( 'highlight_post' ); ?>" />
+				<?php esc_html_e( 'Highlight first post (big image + excerpt)', 'pocono-pro' ); ?>
 			</label>
 		</p>
 
