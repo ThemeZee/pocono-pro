@@ -1,17 +1,17 @@
 <?php
 /**
- * Magazine Posts Single Widget
+ * Magazine Horizontal Box Widget
  *
- * Display the latest posts from a selected category in a single layout.
+ * Display the latest posts from a selected category in a horizontal box layout.
  * Intented to be used in the Magazine Homepage widget area to built a magazine layouted page.
  *
- * @package Pocono
+ * @package Pocono Pro
  */
 
 /**
  * Magazine Widget Class
  */
-class Pocono_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
+class Pocono_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 
 	/**
 	 * Widget Constructor
@@ -20,11 +20,11 @@ class Pocono_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 
 		// Setup Widget.
 		parent::__construct(
-			'pocono-magazine-posts-single', // ID.
-			sprintf( esc_html__( 'Magazine Posts: Single (%s)', 'pocono-pro' ), 'Pocono Pro' ), // Name.
+			'pocono-magazine-horizontal-box', // ID.
+			esc_html__( 'Magazine: Horizontal Box', 'pocono-pro' ), // Name.
 			array(
-				'classname' => 'pocono_magazine_posts_single',
-				'description' => esc_html__( 'Displays a single post from a selected category. Please use this widget ONLY in the Magazine Homepage widget area.', 'pocono-pro' ),
+				'classname' => 'pocono_magazine_horizontal_box',
+				'description' => esc_html__( 'Displays your posts from a selected category in a horizontal box layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'pocono-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
@@ -60,22 +60,6 @@ class Pocono_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 	 */
 	function widget( $args, $instance ) {
 
-		$cache = array();
-
-		// Get Widget Object Cache.
-		if ( ! $this->is_preview() ) {
-			$cache = wp_cache_get( 'widget_pocono_magazine_posts_single', 'widget' );
-		}
-		if ( ! is_array( $cache ) ) {
-			$cache = array();
-		}
-
-		// Display Widget from Cache if exists.
-		if ( isset( $cache[ $this->id ] ) ) {
-			echo $cache[ $this->id ];
-			return;
-		}
-
 		// Start Output Buffering.
 		ob_start();
 
@@ -85,7 +69,7 @@ class Pocono_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 		// Output.
 		echo $args['before_widget'];
 		?>
-		<div class="widget-magazine-posts-single widget-magazine-posts clearfix">
+		<div class="widget-magazine-horizontal-box widget-magazine-posts clearfix">
 
 			<?php // Display Title.
 			$this->widget_title( $args, $settings ); ?>
@@ -102,12 +86,7 @@ class Pocono_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 		echo $args['after_widget'];
 
 		// Set Cache.
-		if ( ! $this->is_preview() ) {
-			$cache[ $this->id ] = ob_get_flush();
-			wp_cache_set( 'widget_pocono_magazine_posts_single', $cache, 'widget' );
-		} else {
-			ob_end_flush();
-		}
+		ob_end_flush();
 
 	}
 
@@ -125,7 +104,7 @@ class Pocono_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 
 		// Get latest posts from database.
 		$query_arguments = array(
-			'posts_per_page' => 1,
+			'posts_per_page' => 5,
 			'ignore_sticky_posts' => true,
 			'cat' => (int) $settings['category'],
 		);
@@ -136,77 +115,47 @@ class Pocono_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 		if ( $posts_query->have_posts() ) :
 
 			// Display Posts.
-			while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
+			while ( $posts_query->have_posts() ) : $posts_query->the_post();
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				if ( $i < 2 ) :
 
-					<div class="post-image">
+					if ( 0 === $i ) :
+						echo '<div class="magazine-grid magazine-grid-two-columns clearfix">';
+					endif;
 
-						<?php pocono_post_image(); ?>
+					// Display excerpt for first post.
+					set_query_var( 'pocono_post_excerpt', true );
 
-						<?php pocono_entry_categories(); ?>
+					echo '<div class="post-column">';
+					Pocono_Pro::load_theme_template( 'template-parts/widgets/magazine-content', 'large-post' );
+					echo '</div>';
 
-					</div>
+					// Display no excerpts for medium posts.
+					set_query_var( 'pocono_post_excerpt', false );
 
-					<header class="entry-header">
+					if ( 1 === $i ) :
+						echo '</div>';
+						echo '<div class="magazine-grid magazine-grid-three-columns clearfix">';
+					endif;
 
-						<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+				else :
 
-						<?php pocono_entry_meta(); ?>
+					echo '<div class="post-column">';
+					Pocono_Pro::load_theme_template( 'template-parts/widgets/magazine-content', 'medium-post' );
+					echo '</div>';
 
-					</header><!-- .entry-header -->
+				endif; $i++;
 
-					<div class="entry-content">
-						<?php the_excerpt(); ?>
-						<?php pocono_more_link(); ?>
-					</div><!-- .entry-content -->
-
-				</article>
-
-			<?php
 			endwhile;
+
+			echo '</div><!-- end .magazine-three-columns -->';
+
 		endif;
 
 		// Reset Postdata.
 		wp_reset_postdata();
 
 	}
-
-	/**
-	 * Displays Entry Meta of Posts
-	 *
-	 * @param array $settings / Settings for this widget instance.
-	 */
-	function entry_meta( $settings ) {
-
-		$postmeta = '';
-
-		if ( true === $settings['meta_date'] ) {
-
-			$postmeta .= pocono_meta_date();
-
-		}
-
-		if ( true === $settings['meta_author'] ) {
-
-			$postmeta .= pocono_meta_author();
-
-		}
-
-		if ( true === $settings['meta_category'] ) {
-
-			$postmeta .= pocono_meta_category();
-
-		}
-
-		if ( $postmeta ) {
-
-			echo '<div class="entry-meta">' . $postmeta . '</div>';
-
-		}
-
-	} // entry_meta()
-
 
 	/**
 	 * Displays Widget Title
@@ -225,12 +174,13 @@ class Pocono_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 			if ( $settings['category'] > 0 ) :
 
 				// Set Link URL and Title for Category.
-				$link_title = sprintf( esc_html__( 'View all posts from category %s', 'pocono-pro' ), get_cat_name( $settings['category'] ) );
-				$link_url = esc_url( get_category_link( $settings['category'] ) );
+				$link_title = sprintf( __( 'View all posts from category %s', 'pocono-pro' ), get_cat_name( $settings['category'] ) );
+				$link_url = get_category_link( $settings['category'] );
 
 				// Display Widget Title with link to category archive.
 				echo '<div class="widget-header">';
-				echo '<h1 class="widget-title"><a class="category-archive-link" href="' . $link_url . '" title="' . $link_title . '">' . $widget_title . '</a></h1>';
+				echo '<h3 class="widget-title"><a class="category-archive-link" href="' . esc_url( $link_url ) . '" title="' . esc_attr( $link_title ) . '">' . $widget_title . '</a></h3>';
+				echo '<div class="category-description">' . category_description( $settings['category'] ) . '</div>';
 				echo '</div>';
 
 			else :
@@ -304,7 +254,7 @@ class Pocono_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 	 */
 	public function delete_widget_cache() {
 
-		wp_cache_delete( 'widget_pocono_magazine_posts_single', 'widget' );
+		wp_cache_delete( 'widget_pocono_magazine_horizontal_box', 'widget' );
 
 	}
 }

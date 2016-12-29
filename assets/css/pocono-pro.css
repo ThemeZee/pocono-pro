@@ -12,124 +12,34 @@
 # Magazine Widgets
 --------------------------------------------------------------*/
 
-/* Magazine Small Posts */
-.widget-magazine-posts .small-post {
-	display: block;
+/* Magazine Vertical Boxed Widget */
+.widget-magazine-vertical-box .large-post {
 	float: left;
 	box-sizing: border-box;
-	width: 100%;
-}
-
-.widget-magazine-posts .small-post .wp-post-image {
-	float: left;
-	margin: 0 1em 0 0;
-	max-width: 35%;
-}
-
-.widget-magazine-posts .small-post .entry-title {
-	font-size: 16px;
-	font-size: 1rem;
-}
-
-.widget-magazine-posts .small-post .entry-meta {
-	font-size: 13px;
-	font-size: 0.8125rem;
-
-}
-
-/* Magazine Posts Columns */
-.widget-magazine-posts-columns .magazine-posts-columns {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-	margin-right: -2em;
-}
-
-.widget-magazine-posts-columns .magazine-posts-columns .magazine-posts-column {
-	box-sizing: border-box;
-	padding-right: 2em;
-	width: 33.3333333333333%;
-}
-
-.widget-magazine-posts-columns .magazine-posts-columns .large-post .entry-title {
-	font-size: 20px;
-	font-size: 1.25rem;
-}
-
-/* Magazine Posts Boxed Widget Horizontal Style */
-.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .post-image {
-	float: left;
-	box-sizing: border-box;
-	margin: 0;
 	padding-right: 1em;
 	width: 50%;
 }
 
-.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .post-image .entry-categories {
-	right: 1em;
-	width: auto;
-}
-
-.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .post-content {
+.widget-magazine-vertical-box .small-posts {
 	float: right;
 	box-sizing: border-box;
 	padding-left: 1em;
 	width: 50%;
 }
 
-.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .entry-content .more-link {
-	display: none;
-}
-
-.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .medium-posts {
-	margin-right: -2em;
-}
-
-/* Magazine Posts Boxed Widget Vertical Style */
-.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .large-post {
+/* Magazine Posts Columns Widget */
+.widget-magazine-columns .magazine-column-left {
 	float: left;
 	box-sizing: border-box;
-	margin-bottom: 1em;
 	padding-right: 1em;
 	width: 50%;
 }
 
-.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .small-posts {
-	box-sizing: border-box;
-	margin-left: 50%;
-	padding-left: 1em;
-	width: 50%;
-}
-
-/* Magazine Posts List Widget */
-.widget-magazine-posts-list .type-post {
-	margin: 0 0 1.5em;
-}
-
-.widget-magazine-posts-list .type-post .post-image {
-	float: left;
-	box-sizing: border-box;
-	margin: 0;
-	padding-right: 1em;
-	width: 50%;
-}
-
-.widget-magazine-posts-list .type-post .post-image .entry-categories {
-	right: 1em;
-	width: auto;
-}
-
-.widget-magazine-posts-list .type-post .post-content {
+.widget-magazine-columns .magazine-column-right {
 	float: right;
 	box-sizing: border-box;
 	padding-left: 1em;
 	width: 50%;
-}
-
-.widget-magazine-posts-list .type-post .post-content .entry-content .more-link {
-	display: none;
 }
 
 /*--------------------------------------------------------------
@@ -323,10 +233,7 @@
 }
 
 @media only screen and (max-width: 70em) {
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .entry-content,
-	.widget-magazine-posts-list .type-post .post-content .entry-content {
-		display: none;
-	}
+
 }
 
 /*--------------------------------------------------------------
@@ -389,18 +296,31 @@
 ## Tablet Large ( < 880px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 55em) {
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .entry-content,
-	.widget-magazine-posts-list .type-post .post-content .entry-content {
-		display: block;
-	}
+
 }
 
 /*--------------------------------------------------------------
 ## Tablet Medium ( < 800px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 50em) {
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .entry-content,
-	.widget-magazine-posts-list .type-post .post-content .entry-content {
+
+	/* Magazine Widgets */
+	.widget-magazine-vertical-box .large-post,
+	.widget-magazine-columns .magazine-column-left {
+		padding-right:  0.75em;
+	}
+
+	.widget-magazine-vertical-box .small-posts,
+	.widget-magazine-columns .magazine-column-right {
+		padding-left:  0.75em;
+	}
+
+	.widget-magazine-vertical-box .large-post .entry-content .more-link {
+		display: none;
+	}
+
+	/* Magazine Horizontal Boxed Widget */
+	.widget-magazine-horizontal-box .magazine-grid-three-columns .post-column:last-child {
 		display: none;
 	}
 
@@ -442,54 +362,17 @@
 ## Tablet Small ( < 720px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 45em) {
-
+	/* Magazine Post Widgets */
+	.widget-magazine-vertical-box .large-post .entry-content {
+		display: none;
+	}
 }
 
 /*--------------------------------------------------------------
 ## Mobile Extra Large ( < 640px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 40em) {
-	/* Magazine Post Widgets */
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .post-image,
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .post-content,
-	.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .large-post,
-	.widget-magazine-posts-list .type-post .post-image,
-	.widget-magazine-posts-list .type-post .post-content {
-		float: none;
-		padding: 0;
-		width: 100%;
-	}
 
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .post-image,
-	.widget-magazine-posts-list .type-post .post-image {
-		margin: 0 0 0.75em;
-	}
-
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .post-image .entry-categories,
-	.widget-magazine-posts-list .type-post .post-image .entry-categories {
-		right: 0;
-	}
-
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .entry-content,
-	.widget-magazine-posts-list .type-post .post-content .entry-content {
-		display: block;
-	}
-
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .entry-content .more-link,
-	.widget-magazine-posts-list .type-post .post-content .entry-content .more-link {
-		display: inline-block;
-	}
-
-	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .medium-posts {
-		margin: 0;
-	}
-
-	.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .small-posts {
-		margin-left: 0;
-		padding-top: 1em;
-		padding-left: 0;
-		width: 100%;
-	}
 
 	/* Footer Social Icons */
 	.footer-social-icons .footer-social-icons-title {
@@ -509,6 +392,35 @@
 --------------------------------------------------------------*/
 @media only screen and (max-width: 35em) {
 
+	/* Magazine Posts Columns Widget */
+	.widget-magazine-columns .magazine-column-left,
+	.widget-magazine-columns .magazine-column-right {
+		float: none;
+		padding: 0;
+		width: 100%;
+	}
+
+	/* Magazine Vertical Boxed Widget */
+	.widget-magazine-vertical-box .large-post,
+	.widget-magazine-vertical-box .small-posts {
+		float: none;
+		padding: 0;
+		width: 100%;
+	}
+
+	.widget-magazine-vertical-box .large-post .entry-content {
+		display: block;
+	}
+
+	.widget-magazine-vertical-box .large-post .entry-content .more-link {
+		display: inline-block;
+	}
+
+	/* Magazine Horizontal Boxed Widget */
+	.widget-magazine-horizontal-box .magazine-grid-three-columns .post-column:last-child {
+		display: block;
+	}
+
 	/* Footer Widgets */
 	.footer-widgets {
 		margin-right: 0;
@@ -525,6 +437,7 @@
 ## Mobile Medium ( < 480px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 30em) {
+
 
 }
 
