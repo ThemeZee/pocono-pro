@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Themes + Pro Versions + Add-ons package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Pocono Pro\n"
+"Project-Id-Version: Themes and Plugins\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2016-10-13 13:07+0100\n"
-"PO-Revision-Date: 2016-10-13 13:15+0100\n"
+"POT-Creation-Date: 2016-12-30 16:40+0100\n"
+"PO-Revision-Date: 2016-12-30 16:40+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: de_DE\n"
@@ -13,12 +13,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-
-#: pocono-pro.php:204
-msgid "Settings"
-msgstr "Einstellungen"
 
 #: includes/admin/class-admin-notices.php:55
 #, php-format
@@ -191,113 +187,93 @@ msgid "Update Fonts"
 msgstr "Schriftarten aktualisieren"
 
 #: includes/customizer/class-customizer.php:65
-#: includes/modules/class-footer-line.php:166
 msgid "Stay in Touch"
 msgstr "Bleibe in Kontakt"
 
-#: includes/modules/class-custom-colors.php:276
+#: includes/modules/class-custom-colors.php:250
 msgid "Theme Colors"
 msgstr "Theme Farben"
 
-#: includes/modules/class-custom-colors.php:295
+#: includes/modules/class-custom-colors.php:269
 msgctxt "color setting"
-msgid "Top Navigation"
-msgstr "Obere Navigation"
+msgid "Header"
+msgstr "Header"
 
-#: includes/modules/class-custom-colors.php:312
+#: includes/modules/class-custom-colors.php:286
 msgctxt "color setting"
-msgid "Navigation (primary)"
-msgstr "Navigation (primär)"
+msgid "Navigation"
+msgstr "Navigation"
 
-#: includes/modules/class-custom-colors.php:329
+#: includes/modules/class-custom-colors.php:303
 msgctxt "color setting"
-msgid "Navigation (secondary)"
-msgstr "Navigation (sekundär)"
+msgid "Links and Buttons"
+msgstr "Links und Buttons"
 
-#: includes/modules/class-custom-colors.php:346
+#: includes/modules/class-custom-colors.php:320
 msgctxt "color setting"
-msgid "Content (primary)"
-msgstr "Content Bereich (primär)"
+msgid "Headings"
+msgstr "Überschriften"
 
-#: includes/modules/class-custom-colors.php:363
-msgctxt "color setting"
-msgid "Content (secondary)"
-msgstr "Content Bereich (sekundär)"
-
-#: includes/modules/class-custom-colors.php:380
-msgctxt "color setting"
-msgid "Widget Titles"
-msgstr "Widget Titel"
-
-#: includes/modules/class-custom-colors.php:397
+#: includes/modules/class-custom-colors.php:337
 msgctxt "color setting"
 msgid "Footer"
 msgstr "Footer"
 
-#: includes/modules/class-custom-fonts.php:207
+#: includes/modules/class-custom-fonts.php:181
 msgid "Theme Fonts"
 msgstr "Theme Schriftarten"
 
-#: includes/modules/class-custom-fonts.php:226
+#: includes/modules/class-custom-fonts.php:200
 msgid "Base Font"
 msgstr "Basis Schriftart"
 
-#: includes/modules/class-custom-fonts.php:242
+#: includes/modules/class-custom-fonts.php:216
 msgctxt "font setting"
 msgid "Headings"
 msgstr "Überschriften"
 
-#: includes/modules/class-custom-fonts.php:258
+#: includes/modules/class-custom-fonts.php:232
 msgctxt "font setting"
 msgid "Navigation"
 msgstr "Navigation"
 
-#: includes/modules/class-custom-fonts.php:274
-msgctxt "font setting"
-msgid "Widget Titles"
-msgstr "Widget Titel"
-
-#: includes/modules/class-custom-fonts.php:291
+#: includes/modules/class-custom-fonts.php:249
 msgid "Choose available Fonts"
 msgstr "Verfügbare Schriftarten wählen"
 
-#: includes/modules/class-custom-fonts.php:295
+#: includes/modules/class-custom-fonts.php:253
 msgid "Default Browser Fonts (12)"
 msgstr "Standard Browser Schriftarten (12)"
 
-#: includes/modules/class-custom-fonts.php:296
+#: includes/modules/class-custom-fonts.php:254
 msgid "ThemeZee Favorite Fonts (35)"
 msgstr "Favoriten von ThemeZee (35)"
 
-#: includes/modules/class-custom-fonts.php:297
+#: includes/modules/class-custom-fonts.php:255
 msgid "Most Popular Google Fonts (100)"
 msgstr "Beliebteste Google Schriftarten (100)"
 
-#: includes/modules/class-custom-fonts.php:298
+#: includes/modules/class-custom-fonts.php:256
 msgid "All Google Fonts (650)"
 msgstr "Alle Google Schriftarten (650)"
 
-#: includes/modules/class-footer-line.php:158
+#: includes/modules/class-footer-line.php:151
 msgid "Footer Settings"
 msgstr "Footer Einstellungen"
 
-#: includes/modules/class-footer-line.php:173
-msgid "Social Icons Text"
-msgstr "Social Icons Text"
-
-#: includes/modules/class-footer-line.php:191
+#: includes/modules/class-footer-line.php:166
 msgid "Footer Text"
 msgstr "Footer Text"
 
-#: includes/modules/class-footer-line.php:208
+#: includes/modules/class-footer-line.php:183
 msgid "Display Credit Link to ThemeZee on footer line"
 msgstr "Zeige Link zu ThemeZee im Footer"
 
-#: includes/modules/class-footer-line.php:262
+#: includes/modules/class-footer-line.php:221
 msgid "Footer Navigation"
 msgstr "Footer Navigation"
 
-#: includes/modules/class-footer-line.php:263
+#: includes/modules/class-footer-line.php:222
 msgid "Footer Social Icons"
 msgstr "Social Icons im Footer"
 
@@ -333,137 +309,424 @@ msgstr "Footer Spalte 4"
 msgid "Appears on the fourth footer column."
 msgstr "Erscheint in der vierten Footer Spalte."
 
-#: includes/modules/class-header-bar.php:94
-msgid "Top Navigation"
-msgstr "Obere Navigation"
+#: includes/widgets/widget-magazine-columns.php:24
+msgid "Magazine: Columns"
+msgstr "Magazin: Spalten"
 
-#: includes/modules/class-header-settings.php:92
-msgid "Header Settings"
-msgstr "Header Einstellungen"
-
-#: includes/modules/class-header-settings.php:107
-msgid "Header Bar Text"
-msgstr "Header Bar Text"
-
-#: includes/modules/class-header-settings.php:124
-msgid "Logo Spacing (default: 0)"
-msgstr "Logo Abstand (Standard: 0)"
-
-#: includes/modules/class-header-settings.php:141
-msgid "Header Spacing (default: 20)"
-msgstr "Header Abstand (Standard: 20)"
-
-#: includes/modules/class-post-meta.php:52
-msgid "Post Meta"
-msgstr "Beitrags-Metadaten"
-
-#: includes/modules/class-post-meta.php:67
-msgid "Display post date"
-msgstr "Zeige Datum des Beitrags"
-
-#: includes/modules/class-post-meta.php:83
-msgid "Display post author"
-msgstr "Zeige Autor des Beitrags"
-
-#: includes/modules/class-post-meta.php:99
-msgid "Display post categories"
-msgstr "Zeige Kategorien des Beitrags"
-
-#: includes/modules/class-post-meta.php:117
-msgid "Single Posts"
-msgstr "Einzelne Beiträge"
-
-#: includes/modules/class-post-meta.php:132
-msgid "Display featured image on single posts"
-msgstr "Zeige Beitragsbilder in einzelnen Beiträgen"
-
-#: includes/modules/class-post-meta.php:148
-msgid "Display post tags on single posts"
-msgstr "Zeige Schlagwörter in einzelnen Beiträgen"
-
-#: includes/modules/class-post-meta.php:163
-msgid "Display post navigation on single posts"
-msgstr "Zeige Beitrags-Navigation"
-
-#: includes/widgets/widget-magazine-posts-boxed.php:24
-#, php-format
-msgid "Magazine Posts: Boxed (%s)"
-msgstr "Magazin Beiträge: Box (%s)"
-
-#: includes/widgets/widget-magazine-posts-boxed.php:27
+#: includes/widgets/widget-magazine-columns.php:27
 msgid ""
-"Displays your posts from a selected category in a boxed layout. Please use "
-"this widget ONLY in the Magazine Homepage widget area."
+"Displays your posts from two selected categories. Please use this widget "
+"ONLY in the Magazine Homepage widget area."
 msgstr ""
-"Zeigt die Beiträge einer gewählten Kategorie in einem Box Layout. Bitte "
+"Zeigt die Beiträge von zwei gewählten Kategorien in zwei Spalten. Bitte "
 "verwende dieses Widget NUR in dem Magazin Startseite Widgetbereich."
 
-#: includes/widgets/widget-magazine-posts-boxed.php:357
-#: includes/widgets/widget-magazine-posts-list.php:204
-#: includes/widgets/widget-magazine-posts-single.php:228
+#: includes/widgets/widget-magazine-columns.php:228
+#: includes/widgets/widget-magazine-horizontal-box.php:177
+#: includes/widgets/widget-magazine-vertical-box.php:184
 #, php-format
 msgid "View all posts from category %s"
 msgstr "Alle Beiträge in der Kategorie %s ansehen"
 
-#: includes/widgets/widget-magazine-posts-boxed.php:406
-#: includes/widgets/widget-magazine-posts-list.php:255
-#: includes/widgets/widget-magazine-posts-single.php:278
-msgid "Title:"
-msgstr "Titel:"
+#: includes/widgets/widget-magazine-columns.php:282
+msgid "Left Category Title:"
+msgstr "Titel der linken Kategorie:"
 
-#: includes/widgets/widget-magazine-posts-boxed.php:412
-#: includes/widgets/widget-magazine-posts-list.php:261
-#: includes/widgets/widget-magazine-posts-single.php:284
-msgid "Category:"
-msgstr "Kategorie:"
+#: includes/widgets/widget-magazine-columns.php:288
+msgid "Left Category:"
+msgstr "Linke Kategorie:"
 
-#: includes/widgets/widget-magazine-posts-boxed.php:415
-#: includes/widgets/widget-magazine-posts-list.php:264
-#: includes/widgets/widget-magazine-posts-single.php:287
+#: includes/widgets/widget-magazine-columns.php:291
+#: includes/widgets/widget-magazine-columns.php:312
+#: includes/widgets/widget-magazine-horizontal-box.php:237
+#: includes/widgets/widget-magazine-vertical-box.php:244
 msgid "All Categories"
 msgstr "Alle Kategorien"
 
-#: includes/widgets/widget-magazine-posts-boxed.php:427
-msgid "Post Layout:"
-msgstr "Beitrags-Layout:"
+#: includes/widgets/widget-magazine-columns.php:303
+msgid "Right Category Title:"
+msgstr "Titel der rechten Kategorie:"
 
-#: includes/widgets/widget-magazine-posts-boxed.php:429
-msgid "Horizontal Arrangement"
-msgstr "Horizontale Anordnung"
+#: includes/widgets/widget-magazine-columns.php:309
+msgid "Right Category:"
+msgstr "Rechte Kategorie:"
 
-#: includes/widgets/widget-magazine-posts-boxed.php:430
-msgid "Vertical Arrangement"
-msgstr "Vertikale Anordnung"
-
-#: includes/widgets/widget-magazine-posts-list.php:24
-#, php-format
-msgid "Magazine Posts: List (%s)"
-msgstr "Magazin Beiträge: Liste (%s)"
-
-#: includes/widgets/widget-magazine-posts-list.php:27
-msgid ""
-"Displays your posts from a selected category in a simple list layout. Please "
-"use this widget ONLY in the Magazine Homepage widget area."
-msgstr ""
-"Zeigt die Beiträge einer gewählten Kategorie in einer Liste. Bitte verwende "
-"dieses Widget NUR in dem Magazin Startseite Widgetbereich."
-
-#: includes/widgets/widget-magazine-posts-list.php:276
+#: includes/widgets/widget-magazine-columns.php:324
 msgid "Number of posts:"
 msgstr "Anzahl der Beiträge:"
 
-#: includes/widgets/widget-magazine-posts-single.php:24
-#, php-format
-msgid "Magazine Posts: Single (%s)"
-msgstr "Magazin Beiträge: Single (%s)"
+#: includes/widgets/widget-magazine-columns.php:332
+msgid "Highlight first post (big image + excerpt)"
+msgstr "Ersten Beitrag hervorheben (großes Bild + Textauszug)"
 
-#: includes/widgets/widget-magazine-posts-single.php:27
+#: includes/widgets/widget-magazine-horizontal-box.php:24
+msgid "Magazine: Horizontal Box"
+msgstr "Magazin: Horizontale Box"
+
+#: includes/widgets/widget-magazine-horizontal-box.php:27
 msgid ""
-"Displays a single post from a selected category. Please use this widget ONLY "
-"in the Magazine Homepage widget area."
+"Displays your posts from a selected category in a horizontal box layout. "
+"Please use this widget ONLY in the Magazine Homepage widget area."
 msgstr ""
-"Zeigt einen einzelnen Beitrag einer gewählten Kategorie. Bitte verwende "
-"dieses Widget NUR in dem Magazin Startseite Widgetbereich."
+"Zeigt die Beiträge einer gewählten Kategorie in einem horizontalen Box "
+"Layout. Bitte verwende dieses Widget NUR in dem Magazin Startseite "
+"Widgetbereich."
+
+#: includes/widgets/widget-magazine-horizontal-box.php:228
+#: includes/widgets/widget-magazine-vertical-box.php:235
+msgid "Title:"
+msgstr "Titel:"
+
+#: includes/widgets/widget-magazine-horizontal-box.php:234
+#: includes/widgets/widget-magazine-vertical-box.php:241
+msgid "Category:"
+msgstr "Kategorie:"
+
+#: includes/widgets/widget-magazine-vertical-box.php:24
+msgid "Magazine: Vertical Box"
+msgstr "Magazin: Vertikale Box"
+
+#: includes/widgets/widget-magazine-vertical-box.php:27
+msgid ""
+"Displays your posts from a selected category in a vertical box layout. "
+"Please use this widget ONLY in the Magazine Homepage widget area."
+msgstr ""
+"Zeigt die Beiträge einer gewählten Kategorie in einem vertikalen Box Layout. "
+"Bitte verwende dieses Widget NUR in dem Magazin Startseite Widgetbereich."
+
+#: pocono-pro.php:205
+msgid "Settings"
+msgstr "Einstellungen"
+
+#~ msgid "ThemeZee"
+#~ msgstr "ThemeZee"
+
+#~ msgid "https://themezee.com"
+#~ msgstr "https://themezee.com/de/"
+
+#~ msgid "Full-width Page"
+#~ msgstr "Volle Breite (Fullwidth)"
+
+#~ msgctxt "color setting"
+#~ msgid "Content (primary)"
+#~ msgstr "Content Bereich (primär)"
+
+#~ msgctxt "color setting"
+#~ msgid "Content (secondary)"
+#~ msgstr "Content Bereich (sekundär)"
+
+#~ msgctxt "color setting"
+#~ msgid "Main Sidebar Title"
+#~ msgstr "Titel der Basis Sidebar"
+
+#~ msgctxt "color setting"
+#~ msgid "Small Sidebar Title"
+#~ msgstr "Titel der kleinen Sidebar"
+
+#~ msgctxt "color setting"
+#~ msgid "Footer Widgets"
+#~ msgstr "Footer Widgets"
+
+#~ msgctxt "color setting"
+#~ msgid "Footer Line"
+#~ msgstr "Footerzeile"
+
+#~ msgctxt "font setting"
+#~ msgid "Widget Titles"
+#~ msgstr "Widget Titel"
+
+#~ msgid "Footer"
+#~ msgstr "Footer"
+
+#~ msgid "Appears on the footer area."
+#~ msgstr "Erscheint im Footerbereich."
+
+#~ msgid "Header Navigation"
+#~ msgstr "Header Navigation"
+
+#~ msgid "Header Spacing"
+#~ msgstr "Header Abstände"
+
+#~ msgid "Logo Spacing (default: 0)"
+#~ msgstr "Logo Abstand (Standard: 0)"
+
+#~ msgid "Header Spacing (default: 25)"
+#~ msgstr "Header Abstand (Standard: 25)"
+
+#~ msgid "Header"
+#~ msgstr "Header"
+
+#~ msgid "Appears on header area. You can use a search or ad widget here."
+#~ msgstr ""
+#~ "Erscheint im Header Bereich. Du kannst hier Widgets für ein Suchfeld oder "
+#~ "Werbebanner verwenden."
+
+#~ msgid "Magazine Posts: Boxed (%s)"
+#~ msgstr "Magazin Beiträge: Box (%s)"
+
+#~ msgid ""
+#~ "Displays your posts from a selected category in a boxed layout. Please "
+#~ "use this widget ONLY in the Magazine Homepage widget area."
+#~ msgstr ""
+#~ "Zeigt die Beiträge einer gewählten Kategorie in einem Box Layout. Bitte "
+#~ "verwende dieses Widget NUR in dem Magazin Startseite Widgetbereich."
+
+#~ msgid "Post Layout:"
+#~ msgstr "Beitrags-Layout:"
+
+#~ msgid "Horizontal Arrangement"
+#~ msgstr "Horizontale Anordnung"
+
+#~ msgid "Vertical Arrangement"
+#~ msgstr "Vertikale Anordnung"
+
+#~ msgid "Display post meta"
+#~ msgstr "Zeige Meta-Daten des Beitrags"
+
+#~ msgid "Magazine Posts: List (%s)"
+#~ msgstr "Magazin Beiträge: Liste (%s)"
+
+#~ msgid ""
+#~ "Displays your posts from a selected category in a simple list layout. "
+#~ "Please use this widget ONLY in the Magazine Homepage widget area."
+#~ msgstr ""
+#~ "Zeigt die Beiträge einer gewählten Kategorie in einer Liste. Bitte "
+#~ "verwende dieses Widget NUR in dem Magazin Startseite Widgetbereich."
+
+#~ msgid "Display post date"
+#~ msgstr "Zeige Datum des Beitrags"
+
+#~ msgid "Display post comments"
+#~ msgstr "Zeige Kommentare"
+
+#~ msgid "Magazine Posts: Single (%s)"
+#~ msgstr "Magazin Beiträge: Single (%s)"
+
+#~ msgid ""
+#~ "Displays a single post from a selected category. Please use this widget "
+#~ "ONLY in the Magazine Homepage widget area."
+#~ msgstr ""
+#~ "Zeigt einen einzelnen Beitrag einer gewählten Kategorie. Bitte verwende "
+#~ "dieses Widget NUR in dem Magazin Startseite Widgetbereich."
+
+#~ msgid "Footer Left"
+#~ msgstr "Footer Links"
+
+#~ msgid "Appears on footer on the left hand side."
+#~ msgstr "Erscheint im Footer auf der linken Seite."
+
+#~ msgid "Footer Center Left"
+#~ msgstr "Footer Mitte Links"
+
+#~ msgid "Appears on footer on center left position."
+#~ msgstr "Erscheint im Footer auf der mittleren linken Seite."
+
+#~ msgid "Footer Center Right"
+#~ msgstr "Footer Mitte Rechts"
+
+#~ msgid "Appears on footer on center right position."
+#~ msgstr "Erscheint im Footer auf der mittleren rechten Seite."
+
+#~ msgid "Footer Right"
+#~ msgstr "Footer Rechts"
+
+#~ msgid "Appears on footer on the right hand side."
+#~ msgstr "Erscheint im Footer auf der rechten Seite."
+
+#~ msgid ""
+#~ "There is a new version of %1$s available. <a target=\"_blank\" class="
+#~ "\"thickbox\" href=\"%2$s\">View version %3$s details</a>."
+#~ msgstr ""
+#~ "Es gibt eine neue Version von %1$s. <a target=\"_blank\" class=\"thickbox"
+#~ "\" href=\"%2$s\">Details zu Version %3$s ansehen</a>."
+
+#~ msgid ""
+#~ "There is a new version of %1$s available. <a target=\"_blank\" class="
+#~ "\"thickbox\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s"
+#~ "\">update now</a>."
+#~ msgstr ""
+#~ "Es gibt eine neue Version von %1$s. <a target=\"_blank\" class=\"thickbox"
+#~ "\" href=\"%2$s\">Details zu Version %3$s ansehen</a> oder <a href=\"%4$s"
+#~ "\">jetzt aktualisieren</a>."
+
+#~ msgctxt "color setting"
+#~ msgid "Links & Buttons"
+#~ msgstr "Links & Buttons"
+
+#~ msgctxt "color setting"
+#~ msgid "Post Titles"
+#~ msgstr "Beitrags-Titel"
+
+#~ msgctxt "color setting"
+#~ msgid "Widget Titles"
+#~ msgstr "Widget Titel"
+
+#~ msgctxt "color setting"
+#~ msgid "Widget Links"
+#~ msgstr "Widget Links"
+
+#~ msgid "Display Credit Link to ThemeZee on footer line."
+#~ msgstr "Zeige Link zu ThemeZee im Footer"
+
+#~ msgid "Logo Image (replaces Site Title)"
+#~ msgstr "Logo Bild (ersetzt Titel der Website)"
+
+#~ msgctxt "color setting"
+#~ msgid "Top Navigation"
+#~ msgstr "Obere Navigation"
+
+#~ msgctxt "color setting"
+#~ msgid "Navigation (primary)"
+#~ msgstr "Navigation (primär)"
+
+#~ msgctxt "color setting"
+#~ msgid "Navigation (secondary)"
+#~ msgstr "Navigation (sekundär)"
+
+#~ msgctxt "color setting"
+#~ msgid "Post Slider"
+#~ msgstr "Beitrags-Slider"
+
+#~ msgctxt "color setting"
+#~ msgid "Footer Navigation"
+#~ msgstr "Footer Navigation"
+
+#~ msgid "Top Navigation"
+#~ msgstr "Obere Navigation"
+
+#~ msgid "Header Social Icons"
+#~ msgstr "Header Social Icons"
+
+#~ msgid "Header Spacing (default: 20)"
+#~ msgstr "Header Abstand (Standard: 20)"
+
+#~ msgid "Post Meta"
+#~ msgstr "Beitrags-Metadaten"
+
+#~ msgid "Display post author"
+#~ msgstr "Zeige Autor des Beitrags"
+
+#~ msgid "Display post categories"
+#~ msgstr "Zeige Kategorien des Beitrags"
+
+#~ msgid "Single Posts"
+#~ msgstr "Einzelne Beiträge"
+
+#~ msgid "Display featured image on single posts"
+#~ msgstr "Zeige Beitragsbilder in einzelnen Beiträgen"
+
+#~ msgid "Display post tags on single posts"
+#~ msgstr "Zeige Schlagwörter in einzelnen Beiträgen"
+
+#~ msgid "Display post navigation on single posts"
+#~ msgstr "Zeige Beitrags-Navigation"
+
+#~ msgid "Display post category"
+#~ msgstr "Zeige Kategorie des Beitrags"
+
+#~ msgctxt "color setting"
+#~ msgid "Links"
+#~ msgstr "Links"
+
+#~ msgctxt "color setting"
+#~ msgid "Header & Menu (primary)"
+#~ msgstr "Header & Menü (primär)"
+
+#~ msgctxt "color setting"
+#~ msgid "Header & Menu (secondary)"
+#~ msgstr "Header & Menü (sekundär)"
+
+#~ msgctxt "color setting"
+#~ msgid "Post Area (primary)"
+#~ msgstr "Content Bereich (primär)"
+
+#~ msgctxt "color setting"
+#~ msgid "Post Area (secondary)"
+#~ msgstr "Content Bereich (sekundär)"
+
+#~ msgctxt "color setting"
+#~ msgid "Slider (primary)"
+#~ msgstr "Slider (primär)"
+
+#~ msgctxt "color setting"
+#~ msgid "Slider (secondary)"
+#~ msgstr "Slider (sekundär)"
+
+#~ msgid "Remove spacing on header area for fullwidth logo images."
+#~ msgstr "Entferne Abstände im Header für Fullwidth Logo Bilder."
+
+#~ msgid "Appears on footer area."
+#~ msgstr "Erscheint im Footerbereich."
+
+#~ msgid "Logo Spacing (default: 10)"
+#~ msgstr "Logo Abstand (Standard: 10)"
+
+#~ msgid "Navigation Spacing (default: 10)"
+#~ msgstr "Navigationsmenü Abstand (Standard: 10)"
+
+#~ msgid "Read more"
+#~ msgstr "Weiterlesen"
+
+#~ msgid "Magazine Posts: 2 Columns (%s)"
+#~ msgstr "Magazin Beiträge: 2 Spalten (%s)"
+
+#~ msgctxt "color setting"
+#~ msgid "Footer Border"
+#~ msgstr "Footer Rahmen"
+
+#~ msgctxt "color setting"
+#~ msgid "Main Navigation"
+#~ msgstr "Hauptnavigation"
+
+#~ msgid "Social Icons"
+#~ msgstr "Social Icons"
+
+#~ msgid "Header Settings"
+#~ msgstr "Header Einstellungen"
+
+#~ msgid "Header Spacing (default: 30)"
+#~ msgstr "Header Abstand (Standard: 30)"
+
+#~ msgid "Magazine Posts: Sidebar (%s)"
+#~ msgstr "Magazin Beiträge: Sidebar (%s)"
+
+#~ msgid ""
+#~ "Displays your posts from a selected category. You can use this widget in "
+#~ "the Sidebar widget area."
+#~ msgstr ""
+#~ "Zeigt die Beiträge einer gewählten Kategorie. Bitte verwende dieses "
+#~ "Widget in der Sidebar."
+
+#~ msgid "Display post excerpt"
+#~ msgstr "Zeige Auszug des Beitrags"
+
+#~ msgid "Logo Spacing (default: 15)"
+#~ msgstr "Logo Abstand (Standard: 15)"
+
+#~ msgctxt "color setting"
+#~ msgid "Post Titles (primary)"
+#~ msgstr "Content Bereich (primär)"
+
+#~ msgctxt "color setting"
+#~ msgid "Post Titles (secondary)"
+#~ msgstr "Content Bereich (sekundär)"
+
+#~ msgctxt "color setting"
+#~ msgid "Header Border"
+#~ msgstr "Header Rahmen"
+
+#~ msgctxt "color setting"
+#~ msgid "Navigation Hover"
+#~ msgstr "Navigation Hover"
+
+#~ msgid "Header Spacing (default: 10)"
+#~ msgstr "Header Abstand (Standard: 10)"
+
+#~ msgid "Social Icons Text"
+#~ msgstr "Social Icons Text"
+
+#~ msgid "Header Bar Text"
+#~ msgstr "Header Bar Text"
 
 #~ msgid "404: Page not found"
 #~ msgstr "404: Seite nicht gefunden"
@@ -492,9 +755,6 @@ msgstr ""
 
 #~ msgid "Sidebar Navigation"
 #~ msgstr "Sidebar Navigation"
-
-#~ msgid "Social Icons"
-#~ msgstr "Social Icons"
 
 #~ msgid "Main Sidebar"
 #~ msgstr "Basis Sidebar"
@@ -525,75 +785,24 @@ msgstr ""
 #~ msgid "Skip to content"
 #~ msgstr "Zum Inhalt springen"
 
-#~ msgid "Search Results for: %s"
-#~ msgstr "Suchergebnisse für: %s"
-
-#~ msgctxt "label"
-#~ msgid "Search for:"
-#~ msgstr "Suche nach:"
-
-#~ msgctxt "placeholder"
-#~ msgid "Search &hellip;"
-#~ msgstr "Suchen &hellip;"
-
-#~ msgctxt "submit button"
-#~ msgid "Search"
-#~ msgstr "Suche"
-
-#~ msgid ""
-#~ "Please go to Appearance &#8594; Widgets and add at least one widget to "
-#~ "the \"Magazine Homepage\" widget area. You can use the Magazine Posts "
-#~ "widgets to set up the theme like the demo website."
-#~ msgstr ""
-#~ "Bitte gehe zu Design &#8594; Widgets und füge mindestens ein Widget dem "
-#~ "\"Magazin Startseite\" Widget Bereich hinzu. Du kannst die Magazin "
-#~ "Beiträge Widgets verwenden, um das Theme wie die Demo Webseite "
-#~ "einzurichten."
-
-#~ msgid "Pages:"
-#~ msgstr "Seiten:"
-
 #~ msgid ""
 #~ "%1$s requires at least WordPress version %2$s. You are running version "
 #~ "%3$s. Please upgrade and try again."
 #~ msgstr ""
-#~ "%$1s benötigt mindestens WordPress Version %2$s. Du verwendest Version %"
-#~ "$3s. Bitte aktualisiere und versuche es erneut."
+#~ "%1$s benötigt mindestens WordPress Version %2$s. Du verwendest Version "
+#~ "%3$s. Bitte aktualisiere und versuche es erneut."
 
-#~ msgid "View all posts by %s"
-#~ msgstr "Alle Beiträge von %s ansehen"
+#~ msgid "Theme Options"
+#~ msgstr "Theme Optionen"
 
-#~ msgid "No comments"
-#~ msgstr "Keine Kommentare"
+#~ msgid "Background"
+#~ msgstr "Hintergrund"
 
-#~ msgctxt "post author"
-#~ msgid "Posted by %s"
-#~ msgstr "Veröffentlicht von %s"
+#~ msgid "Display Site Title"
+#~ msgstr "Zeige Titel der Seite"
 
-#~ msgctxt "post navigation"
-#~ msgid "Previous Post:"
-#~ msgstr "Vorheriger Beitrag:"
-
-#~ msgctxt "post navigation"
-#~ msgid "Next Post:"
-#~ msgstr "Nächster Beitrag:"
-
-#~ msgctxt "pagination"
-#~ msgid "Next Posts"
-#~ msgstr "Nächste Beiträge"
-
-#~ msgctxt "pagination"
-#~ msgid "Previous Posts"
-#~ msgstr "Vorherige Beiträge"
-
-#~ msgid "Powered by %1$s and %2$s."
-#~ msgstr "Erstellt mit %1$s und %2$s."
-
-#~ msgid "Welcome to %1$s %2$s"
-#~ msgstr "Willkommen bei %1$s %2$s"
-
-#~ msgid "Theme Info"
-#~ msgstr "Theme Info"
+#~ msgid "Display Tagline"
+#~ msgstr "Zeige Untertitel"
 
 #~ msgid "Theme Links"
 #~ msgstr "Theme Links"
@@ -618,35 +827,6 @@ msgstr ""
 
 #~ msgid "Rate this theme"
 #~ msgstr "Theme bewerten"
-
-#~ msgid "Getting Started with %s"
-#~ msgstr "Erste Schritte mit %s"
-
-#~ msgid ""
-#~ "You need help to setup and configure this theme? We got you covered with "
-#~ "an extensive theme documentation on our website."
-#~ msgstr ""
-#~ "Du brauchst Hilfe bei der Einrichtung und Konfiguration dieses Themes? "
-#~ "Wir haben eine ausführliche Dokumentation auf unserer Webseite."
-
-#~ msgid "View %s Documentation"
-#~ msgstr "%s Dokumentation ansehen"
-
-#~ msgid "Theme Options"
-#~ msgstr "Theme Optionen"
-
-#~ msgid ""
-#~ "%s makes use of the Customizer for all theme settings. Click on "
-#~ "\"Customize Theme\" to open the Customizer now."
-#~ msgstr ""
-#~ "%s verwendet den Anpassen-Dialog (Customizer) für alle Theme "
-#~ "Einstellungen. Klicke auf \"Theme anpassen\", um den Customizer zu öffnen."
-
-#~ msgid "Customize Theme"
-#~ msgstr "Theme anpassen"
-
-#~ msgid "Get more features"
-#~ msgstr "Mehr Features"
 
 #~ msgid "Pro Version Add-on"
 #~ msgstr "Pro Version Add-on"
@@ -677,44 +857,11 @@ msgstr ""
 #~ msgid "Install Plugins"
 #~ msgstr "Plugins installieren"
 
-#~ msgid ""
-#~ "%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)"
-#~ msgstr ""
-#~ "%1$s wird stolz präsentiert von %2$s. Falls dir dieses Theme gefällt, "
-#~ "%3$s :)"
-
-#~ msgid "https://themezee.com/"
-#~ msgstr "https://themezee.com/de/"
-
-#~ msgid "Review Admiral"
-#~ msgstr "Admiral bewerten"
-
-#~ msgid "rate it"
-#~ msgstr "bewerte es"
-
-#~ msgid "Background"
-#~ msgstr "Hintergrund"
-
-#~ msgid "Display Site Title"
-#~ msgstr "Zeige Titel der Seite"
-
-#~ msgid "Display Tagline"
-#~ msgstr "Zeige Untertitel"
-
-#~ msgid "Sidebar"
-#~ msgstr "Sidebar"
-
 #~ msgid "General Settings"
 #~ msgstr "Allgemeine Einstellungen"
 
 #~ msgid "Blog Title"
 #~ msgstr "Blog-Titel"
-
-#~ msgid "Main Sidebar Title"
-#~ msgstr "Titel der Basis Sidebar"
-
-#~ msgid "Small Sidebar Title"
-#~ msgstr "Titel der kleinen Sidebar"
 
 #~ msgid "Post Settings"
 #~ msgstr "Beitrags-Einstellungen"
@@ -730,9 +877,6 @@ msgstr ""
 
 #~ msgid "Excerpt Length"
 #~ msgstr "Länge des Beitragsauszugs"
-
-#~ msgid "Display post comments"
-#~ msgstr "Zeige Kommentare"
 
 #~ msgid "Display post author on single posts"
 #~ msgstr "Zeige Autor in einzelnen Beiträgen"
@@ -770,33 +914,81 @@ msgstr ""
 #~ msgid "More Features"
 #~ msgstr "Mehr Features"
 
-#~ msgid "Magazine Posts: 2 Columns (%s)"
-#~ msgstr "Magazin Beiträge: 2 Spalten (%s)"
+#~ msgid "View all posts by %s"
+#~ msgstr "Alle Beiträge von %s ansehen"
+
+#~ msgid "No comments"
+#~ msgstr "Keine Kommentare"
+
+#~ msgctxt "post author"
+#~ msgid "Posted by %s"
+#~ msgstr "Veröffentlicht von %s"
+
+#~ msgctxt "post navigation"
+#~ msgid "Previous Post:"
+#~ msgstr "Vorheriger Beitrag:"
+
+#~ msgctxt "post navigation"
+#~ msgid "Next Post:"
+#~ msgstr "Nächster Beitrag:"
+
+#~ msgctxt "pagination"
+#~ msgid "Next Posts"
+#~ msgstr "Nächste Beiträge"
+
+#~ msgctxt "pagination"
+#~ msgid "Previous Posts"
+#~ msgstr "Vorherige Beiträge"
+
+#~ msgid "Powered by %1$s and %2$s."
+#~ msgstr "Erstellt mit %1$s und %2$s."
+
+#~ msgid "Welcome to %1$s %2$s"
+#~ msgstr "Willkommen bei %1$s %2$s"
+
+#~ msgid "Theme Info"
+#~ msgstr "Theme Info"
+
+#~ msgid "Getting Started with %s"
+#~ msgstr "Erste Schritte mit %s"
 
 #~ msgid ""
-#~ "Displays your posts from two selected categories. Please use this widget "
-#~ "ONLY in the Magazine Homepage widget area."
+#~ "You need help to setup and configure this theme? We got you covered with "
+#~ "an extensive theme documentation on our website."
 #~ msgstr ""
-#~ "Zeigt die Beiträge von zwei gewählten Kategorien in zwei Spalten. Bitte "
-#~ "verwende dieses Widget NUR in dem Magazin Startseite Widgetbereich."
+#~ "Du brauchst Hilfe bei der Einrichtung und Konfiguration dieses Themes? "
+#~ "Wir haben eine ausführliche Dokumentation auf unserer Webseite."
 
-#~ msgid "Left Category Title:"
-#~ msgstr "Titel der linken Kategorie:"
+#~ msgid "View %s Documentation"
+#~ msgstr "%s Dokumentation ansehen"
 
-#~ msgid "Left Category:"
-#~ msgstr "Linke Kategorie:"
+#~ msgid ""
+#~ "%s makes use of the Customizer for all theme settings. Click on "
+#~ "\"Customize Theme\" to open the Customizer now."
+#~ msgstr ""
+#~ "%s verwendet den Customizer für alle Theme Einstellungen. Klicke auf "
+#~ "\"Theme anpassen\", um den Customizer zu öffnen."
 
-#~ msgid "Right Category Title:"
-#~ msgstr "Titel der rechten Kategorie:"
+#~ msgid "Customize Theme"
+#~ msgstr "Theme anpassen"
 
-#~ msgid "Right Category:"
-#~ msgstr "Rechte Kategorie:"
+#~ msgid "Get more features"
+#~ msgstr "Mehr Features"
 
-#~ msgid "Highlight first post (big image + excerpt)"
-#~ msgstr "Ersten Beitrag hervorheben (großes Bild + Textauszug)"
+#~ msgid ""
+#~ "%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)"
+#~ msgstr ""
+#~ "%1$s wird stolz präsentiert von %2$s. Falls dir dieses Theme gefällt, "
+#~ "%3$s :)"
 
-#~ msgid "Display post meta"
-#~ msgstr "Zeige Meta-Daten des Beitrags"
+#~ msgid "https://themezee.com/"
+#~ msgstr "https://themezee.com/de/"
+
+#~ msgid "Review Admiral"
+#~ msgstr "Admiral bewerten"
+
+#~ msgid "rate it"
+#~ msgstr "bewerte es"
 
 #~ msgid "Magazine Posts: Grid (%s)"
 #~ msgstr "Magazin Beiträge: Raster (%s)"
@@ -817,18 +1009,37 @@ msgstr ""
 #~ msgid "Three Columns Grid"
 #~ msgstr "Dreispaltiges Raster"
 
-#~ msgid "Display post excerpt"
-#~ msgstr "Zeige Auszug des Beitrags"
-
-#~ msgid "Magazine Posts: Sidebar (%s)"
-#~ msgstr "Magazin Beiträge: Sidebar (%s)"
-
 #~ msgid ""
 #~ "Displays your posts from a selected category. You can use this widget in "
 #~ "the Main Sidebar widget area."
 #~ msgstr ""
 #~ "Zeigt die Beiträge einer gewählten Kategorie. Bitte verwende dieses "
 #~ "Widget in der Sidebar. "
+
+#~ msgid "Search Results for: %s"
+#~ msgstr "Suchergebnisse für: %s"
+
+#~ msgctxt "label"
+#~ msgid "Search for:"
+#~ msgstr "Suche nach:"
+
+#~ msgctxt "placeholder"
+#~ msgid "Search &hellip;"
+#~ msgstr "Suchen &hellip;"
+
+#~ msgctxt "submit button"
+#~ msgid "Search"
+#~ msgstr "Suche"
+
+#~ msgid ""
+#~ "Please go to Appearance &#8594; Widgets and add at least one widget to "
+#~ "the \"Magazine Homepage\" widget area. You can use the Magazine Posts "
+#~ "widgets to set up the theme like the demo website."
+#~ msgstr ""
+#~ "Bitte gehe zu Design &#8594; Widgets und füge mindestens ein Widget dem "
+#~ "\"Magazin Startseite\" Widget Bereich hinzu. Du kannst die Magazin "
+#~ "Beiträge Widgets verwenden, um das Theme wie die Demo Webseite "
+#~ "einzurichten."
 
 #~ msgid "Nothing Found"
 #~ msgstr "Nichts gefunden"
@@ -853,6 +1064,9 @@ msgstr ""
 #~ "Es scheint wir können hier nichts finden. Vielleicht kann eine Suche "
 #~ "helfen."
 
+#~ msgid "Pages:"
+#~ msgstr "Seiten:"
+
 #~ msgid "Enter password to view comments."
 #~ msgstr "Passwort eingeben, um Kommentare zu sehen."
 
@@ -871,94 +1085,15 @@ msgstr ""
 #~ "Slider hinzu. Die Slideshow zeigt alle Beiträge, die mit diesem "
 #~ "Schlagwort getaggt sind."
 
+#~ msgid "Sidebar"
+#~ msgstr "Sidebar"
+
 #~ msgid ""
 #~ "Appears on Magazine Homepage template only. You can use the Category "
 #~ "Posts widgets here."
 #~ msgstr ""
 #~ "Erscheint nur auf dem Magazin Startseite Template. Du kannst hier die "
 #~ "Kategorie Beiträge Widgets verwenden."
-
-#~ msgid "No matches"
-#~ msgstr "Keine Treffer"
-
-#~ msgid ""
-#~ "Please try again, or use the navigation menus to find what you search for."
-#~ msgstr ""
-#~ "Bitte versuche es erneut oder verwende die Navigationsmenüs, um dein Ziel "
-#~ "zu finden."
-
-#~ msgid ""
-#~ "Please go to Appearance &#8594; Widgets and add some widgets to your "
-#~ "sidebar."
-#~ msgstr ""
-#~ "Bitte gehe zu Design &#8594; Widgets, um Widgets in der Sidebar "
-#~ "hinzuzufügen."
-
-#~ msgid ""
-#~ "Please go to Appearance &#8594; Widgets and add at least one widget to "
-#~ "the \"Magazine Homepage\" widget area. You can use the Category Posts "
-#~ "widgets to set up the theme like the demo website."
-#~ msgstr ""
-#~ "Bitte gehe zu Design &#8594; Widgets und füge mindestens ein Widget dem "
-#~ "\"Magazin Startseite\" Widget Bereich hinzu. Du kannst die Kategorie "
-#~ "Beiträge Widgets verwenden, um das Theme wie die Demo Webseite "
-#~ "einzurichten."
-
-#~ msgid "Tag name"
-#~ msgstr "Schlagwort"
-
-#~ msgid "Hide tag from displaying in post meta and tag clouds."
-#~ msgstr ""
-#~ "Verberge das Schlagwort in den Beitrags-Metadaten und der Schlagwort-"
-#~ "Wolke."
-
-#~ msgid "Display featured posts in latest blog post listing."
-#~ msgstr "Zeige hervorgehobene Beiträge im Blog Index."
-
-#~ msgctxt "post date"
-#~ msgid "Posted on %s"
-#~ msgstr "Veröffentlicht am %s"
-
-#~ msgctxt "post author"
-#~ msgid "by %s"
-#~ msgstr "von %s"
-
-#~ msgid ""
-#~ "Please go to Appearance &#8594; Menus and create a new custom menu with "
-#~ "custom links to all your social networks. Then click on \"Manage Locations"
-#~ "\" tab and assign your created menu to the \"Social Icons\" location."
-#~ msgstr ""
-#~ "Bitte gehe zu Design &#8594;  Menüs und erstelle ein neues Menü mit Links "
-#~ "zu all deinen sozialen Netzwerken. Klicke danach auf den Tab 'Positionen "
-#~ "verwalten' und weise deinem erstelltes Menü die \"Social Icons\" Position "
-#~ "zu."
-
-#~ msgid "Pingback:"
-#~ msgstr "Pingback:"
-
-#~ msgid "(Edit)"
-#~ msgstr "(Bearbeiten)"
-
-#~ msgid "Your comment is awaiting moderation."
-#~ msgstr "Dein Kommentar wartet auf Freischaltung."
-
-#~ msgid "%1$s at %2$s"
-#~ msgstr "%1$s am %2$s"
-
-#~ msgid "https://themezee.com/themes/anderson/"
-#~ msgstr "https://themezee.com/de/themes/anderson/"
-
-#~ msgid "https://themezee.com/docs/anderson-documentation/"
-#~ msgstr "https://themezee.com/de/docs/anderson-dokumentation/"
-
-#~ msgid "https://wordpress.org/support/theme/anderson/reviews/?filter=5"
-#~ msgstr "https://wordpress.org/support/theme/anderson/reviews/?filter=5"
-
-#~ msgid "https://themezee.com/addons/anderson-pro/"
-#~ msgstr "https://themezee.com/de/addons/anderson-pro/"
-
-#~ msgid "Review Anderson"
-#~ msgstr "Anderson bewerten"
 
 #~ msgid "Display Tagline below site title."
 #~ msgstr "Zeige Untertitel unter dem Seitentitel."
@@ -969,8 +1104,20 @@ msgstr ""
 #~ msgid "Hide header image on front page"
 #~ msgstr "Header-Bild auf der Startseite verbergen"
 
+#~ msgid "https://themezee.com/themes/anderson/"
+#~ msgstr "https://themezee.com/de/themes/anderson/"
+
+#~ msgid "https://themezee.com/docs/anderson-documentation/"
+#~ msgstr "https://themezee.com/de/docs/anderson-dokumentation/"
+
+#~ msgid "https://wordpress.org/support/theme/anderson/reviews/?filter=5"
+#~ msgstr "https://wordpress.org/support/theme/anderson/reviews/?filter=5"
+
 #~ msgid "Menu"
 #~ msgstr "Menü"
+
+#~ msgid "https://themezee.com/addons/anderson-pro/"
+#~ msgstr "https://themezee.com/de/addons/anderson-pro/"
 
 #~ msgid "Theme Layout"
 #~ msgstr "Theme Layout"
@@ -1050,6 +1197,50 @@ msgstr ""
 #~ "Die Slideshow zeigt alle hervorgehobenen Beiträge. Du kannst deine "
 #~ "Beiträge ganz leicht mit einem Schlagwort deiner Wahl hervorheben."
 
+#~ msgid "Tag name"
+#~ msgstr "Schlagwort"
+
+#~ msgid "Hide tag from displaying in post meta and tag clouds."
+#~ msgstr ""
+#~ "Verberge das Schlagwort in den Beitrags-Metadaten und der Schlagwort-"
+#~ "Wolke."
+
+#~ msgid "Display featured posts in latest blog post listing."
+#~ msgstr "Zeige hervorgehobene Beiträge im Blog Index."
+
+#~ msgctxt "post date"
+#~ msgid "Posted on %s"
+#~ msgstr "Veröffentlicht am %s"
+
+#~ msgctxt "post author"
+#~ msgid "by %s"
+#~ msgstr "von %s"
+
+#~ msgid ""
+#~ "Please go to Appearance &#8594; Menus and create a new custom menu with "
+#~ "custom links to all your social networks. Then click on \"Manage Locations"
+#~ "\" tab and assign your created menu to the \"Social Icons\" location."
+#~ msgstr ""
+#~ "Bitte gehe zu Design &#8594;  Menüs und erstelle ein neues Menü mit Links "
+#~ "zu all deinen sozialen Netzwerken. Klicke danach auf den Tab 'Positionen "
+#~ "verwalten' und weise deinem erstelltes Menü die \"Social Icons\" Position "
+#~ "zu."
+
+#~ msgid "Pingback:"
+#~ msgstr "Pingback:"
+
+#~ msgid "(Edit)"
+#~ msgstr "(Bearbeiten)"
+
+#~ msgid "Your comment is awaiting moderation."
+#~ msgstr "Dein Kommentar wartet auf Freischaltung."
+
+#~ msgid "%1$s at %2$s"
+#~ msgstr "%1$s am %2$s"
+
+#~ msgid "Review Anderson"
+#~ msgstr "Anderson bewerten"
+
 #~ msgid "Category Posts: Boxed (%s)"
 #~ msgstr "Kategorie Beiträge: Box (%s)"
 
@@ -1087,16 +1278,31 @@ msgstr ""
 #~ msgid "Category Posts: Horizontal (%s)"
 #~ msgstr "Kategorie Beiträge: Horizontal (%s)"
 
-#~ msgid "Header"
-#~ msgstr "Header"
+#~ msgid "No matches"
+#~ msgstr "Keine Treffer"
 
-#~ msgid "Appears on header area. You can use a search or ad widget here."
+#~ msgid ""
+#~ "Please try again, or use the navigation menus to find what you search for."
 #~ msgstr ""
-#~ "Erscheint im Header Bereich. Du kannst hier Widgets für ein Suchfeld oder "
-#~ "Werbebanner verwenden."
+#~ "Bitte versuche es erneut oder verwende die Navigationsmenüs, um dein Ziel "
+#~ "zu finden."
 
-#~ msgid "Read more"
-#~ msgstr "Weiterlesen"
+#~ msgid ""
+#~ "Please go to Appearance &#8594; Widgets and add some widgets to your "
+#~ "sidebar."
+#~ msgstr ""
+#~ "Bitte gehe zu Design &#8594; Widgets, um Widgets in der Sidebar "
+#~ "hinzuzufügen."
+
+#~ msgid ""
+#~ "Please go to Appearance &#8594; Widgets and add at least one widget to "
+#~ "the \"Magazine Homepage\" widget area. You can use the Category Posts "
+#~ "widgets to set up the theme like the demo website."
+#~ msgstr ""
+#~ "Bitte gehe zu Design &#8594; Widgets und füge mindestens ein Widget dem "
+#~ "\"Magazin Startseite\" Widget Bereich hinzu. Du kannst die Kategorie "
+#~ "Beiträge Widgets verwenden, um das Theme wie die Demo Webseite "
+#~ "einzurichten."
 
 #~ msgid "https://themezee.com/themes/beetle/"
 #~ msgstr "https://themezee.com/de/themes/beetle/"
@@ -1107,14 +1313,11 @@ msgstr ""
 #~ msgid "https://wordpress.org/support/theme/beetle/reviews/?filter=5"
 #~ msgstr "https://wordpress.org/support/theme/beetle/reviews/?filter=5"
 
-#~ msgid "https://themezee.com/addons/beetle-pro/"
-#~ msgstr "https://themezee.com/de/addons/beetle-pro/"
-
-#~ msgid "Review Beetle"
-#~ msgstr "Beetle bewerten"
-
 #~ msgid "Latest Posts"
 #~ msgstr "Letzte Beiträge"
+
+#~ msgid "https://themezee.com/addons/beetle-pro/"
+#~ msgstr "https://themezee.com/de/addons/beetle-pro/"
 
 #~ msgid "Show featured image beside content"
 #~ msgstr "Zeige Beitragsbild neben dem Inhalt"
@@ -1125,11 +1328,8 @@ msgstr ""
 #~ msgid "Post Length (archive pages)"
 #~ msgstr "Beitragslänge (Archivseiten)"
 
-#~ msgid "Edit Post"
-#~ msgstr "Beitrag bearbeiten"
-
-#~ msgid "Leave a comment"
-#~ msgstr "Kommentar hinterlassen"
+#~ msgid "Review Beetle"
+#~ msgstr "Beetle bewerten"
 
 #~ msgid "https://themezee.com/themes/courage/"
 #~ msgstr "https://themezee.com/de/themes/courage/"
@@ -1142,9 +1342,6 @@ msgstr ""
 
 #~ msgid "https://themezee.com/addons/courage-pro/"
 #~ msgstr "https://themezee.com/de/addons/courage-pro/"
-
-#~ msgid "Review Courage"
-#~ msgstr "Courage bewerten"
 
 #~ msgid "Theme Design"
 #~ msgstr "Theme Design"
@@ -1161,6 +1358,15 @@ msgstr ""
 #~ msgid "Display search field on header area"
 #~ msgstr "Suchfeld im Header Bereich anzeigen"
 
+#~ msgid "Edit Post"
+#~ msgstr "Beitrag bearbeiten"
+
+#~ msgid "Leave a comment"
+#~ msgstr "Kommentar hinterlassen"
+
+#~ msgid "Review Courage"
+#~ msgstr "Courage bewerten"
+
 #~ msgid "Post Meta:"
 #~ msgstr "Beitrags-Metadaten:"
 
@@ -1176,9 +1382,6 @@ msgstr ""
 #~ msgid "Read more &raquo;"
 #~ msgstr "Weiterlesen &raquo;"
 
-#~ msgid "tagged with %1$s"
-#~ msgstr "Schlagwörter: %1$s"
-
 #~ msgid "https://themezee.com/themes/dynamicnews/"
 #~ msgstr "https://themezee.com/de/themes/dynamicnews/"
 
@@ -1192,9 +1395,6 @@ msgstr ""
 
 #~ msgid "https://themezee.com/addons/dynamicnews-pro/"
 #~ msgstr "https://themezee.com/de/addons/dynamicnews-pro/"
-
-#~ msgid "Review Dynamic News"
-#~ msgstr "Dynamic News bewerten"
 
 #~ msgid "Wide Layout (Fullwidth)"
 #~ msgstr "Breites Layout (Fullwidth)"
@@ -1235,6 +1435,12 @@ msgstr ""
 #~ msgid "Display Social Icons on top navigation"
 #~ msgstr "Zeige Social Icons in der oberen Navigation"
 
+#~ msgid "tagged with %1$s"
+#~ msgstr "Schlagwörter: %1$s"
+
+#~ msgid "Review Dynamic News"
+#~ msgstr "Dynamic News bewerten"
+
 #~ msgid "Display Category Titles"
 #~ msgstr "Zeige Kategorien als Titel"
 
@@ -1243,9 +1449,6 @@ msgstr ""
 
 #~ msgid "Display date, author and comments"
 #~ msgstr "Zeige Datum, Autor und Kommentare"
-
-#~ msgid "https://wordpress.org"
-#~ msgstr "https://de.wordpress.org"
 
 #~ msgid "https://themezee.com/themes/gambit/"
 #~ msgstr "https://themezee.com/de/themes/gambit/"
@@ -1258,9 +1461,6 @@ msgstr ""
 
 #~ msgid "https://themezee.com/addons/gambit-pro/"
 #~ msgstr "https://themezee.com/de/addons/gambit-pro/"
-
-#~ msgid "Review Gambit"
-#~ msgstr "Gambit bewerten"
 
 #~ msgid "Theme Width"
 #~ msgstr "Theme Breite"
@@ -1277,20 +1477,14 @@ msgstr ""
 #~ msgid "Content Right"
 #~ msgstr "Content Rechts"
 
+#~ msgid "https://wordpress.org"
+#~ msgstr "https://de.wordpress.org"
+
+#~ msgid "Review Gambit"
+#~ msgstr "Gambit bewerten"
+
 #~ msgid "Continue reading &raquo;"
 #~ msgstr "Weiterlesen &raquo;"
-
-#~ msgid "Featured Content"
-#~ msgstr "Hervorgehobene Beiträge"
-
-#~ msgid ""
-#~ "Easily feature all posts with the <a href=\"%1$s\">\"featured\" tag</a> "
-#~ "or a tag of your choice. Your theme supports up to %2$s posts in its "
-#~ "featured content area."
-#~ msgstr ""
-#~ "Du kannst deine Beiträge ganz einfach mit dem <a href=\"%1$s\">\"featured"
-#~ "\" Schlagwort</a> oder einem Schlagwort deiner Wahl hervorheben. Dein "
-#~ "Theme unterstützt %2$s Beiträge im Featured Content Bereich."
 
 #~ msgid "https://themezee.com/themes/glades/"
 #~ msgstr "https://themezee.com/de/themes/glades/"
@@ -1303,6 +1497,18 @@ msgstr ""
 
 #~ msgid "https://themezee.com/addons/glades-pro/"
 #~ msgstr "https://themezee.com/de/addons/glades-pro/"
+
+#~ msgid "Featured Content"
+#~ msgstr "Hervorgehobene Beiträge"
+
+#~ msgid ""
+#~ "Easily feature all posts with the <a href=\"%1$s\">\"featured\" tag</a> "
+#~ "or a tag of your choice. Your theme supports up to %2$s posts in its "
+#~ "featured content area."
+#~ msgstr ""
+#~ "Du kannst deine Beiträge ganz einfach mit dem <a href=\"%1$s\">\"featured"
+#~ "\" Schlagwort</a> oder einem Schlagwort deiner Wahl hervorheben. Dein "
+#~ "Theme unterstützt %2$s Beiträge im Featured Content Bereich."
 
 #~ msgid "Review Glades"
 #~ msgstr "Glades bewerten"
@@ -1321,9 +1527,6 @@ msgstr ""
 
 #~ msgid "https://themezee.com/addons/gridbox-pro/"
 #~ msgstr "https://themezee.com/de/addons/gridbox-pro/"
-
-#~ msgid "Review Gridbox"
-#~ msgstr "Gridbox bewerten"
 
 #~ msgid "Featured Posts"
 #~ msgstr "Hervorgehobene Beiträge"
@@ -1355,14 +1558,11 @@ msgstr ""
 #~ msgid "Four Columns"
 #~ msgstr "Vier Spalten"
 
+#~ msgid "Review Gridbox"
+#~ msgstr "Gridbox bewerten"
+
 #~ msgid "Excerpt Length:"
 #~ msgstr "Länge des Beitragsauszugs:"
-
-#~ msgid "Category: %s"
-#~ msgstr "Kategorie: %s"
-
-#~ msgid "Tags: %1$s"
-#~ msgstr "Schlagwörter: %1$s"
 
 #~ msgid "https://themezee.com/themes/leeway/"
 #~ msgstr "https://themezee.com/de/themes/leeway/"
@@ -1375,6 +1575,12 @@ msgstr ""
 
 #~ msgid "https://themezee.com/addons/leeway-pro/"
 #~ msgstr "https://themezee.com/de/addons/leeway-pro/"
+
+#~ msgid "Category: %s"
+#~ msgstr "Kategorie: %s"
+
+#~ msgid "Tags: %1$s"
+#~ msgstr "Schlagwörter: %1$s"
 
 #~ msgid "Review Leeway"
 #~ msgstr "Leeway bewerten"
@@ -1391,11 +1597,11 @@ msgstr ""
 #~ msgid "https://themezee.com/addons/maxwell-pro/"
 #~ msgstr "https://themezee.com/de/addons/maxwell-pro/"
 
-#~ msgid "Review Maxwell"
-#~ msgstr "Maxwell bewerten"
-
 #~ msgid "Three Columns without Sidebar"
 #~ msgstr "Drei Spalten ohne Sidebar"
+
+#~ msgid "Review Maxwell"
+#~ msgstr "Maxwell bewerten"
 
 #~ msgid "Comment navigation"
 #~ msgstr "Kommentar-Navigation"
@@ -1417,9 +1623,6 @@ msgstr ""
 
 #~ msgid "https://themezee.com/addons/merlin-pro/"
 #~ msgstr "https://themezee.com/de/addons/merlin-pro/"
-
-#~ msgid "Review Merlin"
-#~ msgstr "Merlin bewerten"
 
 #~ msgid "Sticky Navigation"
 #~ msgstr "Sticky Navigation"
@@ -1454,12 +1657,11 @@ msgstr ""
 #~ msgid "Display post categories and comments on single posts"
 #~ msgstr "Zeige Kategorien und Kommentare in einzelnen Beiträgen"
 
+#~ msgid "Review Merlin"
+#~ msgstr "Merlin bewerten"
+
 #~ msgid "Display post excerpt and read more button"
 #~ msgstr "Zeige Auszug und Weiterlesen Button"
-
-#~ msgctxt "placeholder"
-#~ msgid "To search, type and hit enter &hellip;"
-#~ msgstr "Gebe dein Suchwort ein und drücke Enter &hellip;"
 
 #~ msgid "https://themezee.com/themes/momentous/"
 #~ msgstr "https://themezee.com/de/themes/momentous/"
@@ -1474,9 +1676,6 @@ msgstr ""
 #~ msgid "https://themezee.com/addons/momentous-pro/"
 #~ msgstr "https://themezee.com/de/addons/momentous-pro/"
 
-#~ msgid "Review Momentous Lite"
-#~ msgstr "Momentous Lite bewerten"
-
 #~ msgid "Activate dropdown search field on header area"
 #~ msgstr "Dropdown Suchfeld im Header aktivieren"
 
@@ -1486,13 +1685,15 @@ msgstr ""
 #~ msgid "Post Layout"
 #~ msgstr "Beitrags-Layout"
 
-#~ msgctxt "post navigation"
-#~ msgid "Previous Post"
-#~ msgstr "Vorheriger Beitrag"
+#~ msgid "Post Length"
+#~ msgstr "Beitrags-Länge"
 
-#~ msgctxt "post navigation"
-#~ msgid "Next Post"
-#~ msgstr "Nächster Beitrag"
+#~ msgid "Review Momentous Lite"
+#~ msgstr "Momentous Lite bewerten"
+
+#~ msgctxt "placeholder"
+#~ msgid "To search, type and hit enter &hellip;"
+#~ msgstr "Gebe dein Suchwort ein und drücke Enter &hellip;"
 
 #~ msgid "https://themezee.com/themes/napoli/"
 #~ msgstr "https://themezee.com/de/themes/napoli/"
@@ -1506,17 +1707,29 @@ msgstr ""
 #~ msgid "https://themezee.com/addons/napoli-pro/"
 #~ msgstr "https://themezee.com/de/addons/napoli-pro/"
 
-#~ msgid "Review Napoli"
-#~ msgstr "Napoli bewerten"
-
 #~ msgid "Single Post Meta"
 #~ msgstr "Meta-Daten einzelner Beiträge"
 
 #~ msgid "Single Post Features"
 #~ msgstr "Features für einzelne Beiträge"
 
-#~ msgid "Tags"
-#~ msgstr "Schlagwörter"
+#~ msgctxt "post navigation"
+#~ msgid "Previous Post"
+#~ msgstr "Vorheriger Beitrag"
+
+#~ msgctxt "post navigation"
+#~ msgid "Next Post"
+#~ msgstr "Nächster Beitrag"
+
+#~ msgid "Review Napoli"
+#~ msgstr "Napoli bewerten"
+
+#~ msgid ""
+#~ "Appears on blog index and Magazine Homepage template. You can use the "
+#~ "Magazine Posts widgets here."
+#~ msgstr ""
+#~ "Erscheint auf dem Blog Index und Magazin Startseite Template. Du kannst "
+#~ "hier die Magazin Widgets verwenden."
 
 #~ msgid "https://themezee.com/themes/palm-beach/"
 #~ msgstr "https://themezee.com/de/themes/palm-beach/"
@@ -1530,9 +1743,6 @@ msgstr ""
 #~ msgid "https://themezee.com/addons/palm-beach-pro/"
 #~ msgstr "https://themezee.com/de/addons/palm-beach-pro/"
 
-#~ msgid "Review Palm Beach"
-#~ msgstr "Palm Beach bewerten"
-
 #~ msgid "Display post categories on single posts"
 #~ msgstr "Zeige Kategorien in einzelnen Beiträgen"
 
@@ -1541,6 +1751,15 @@ msgstr ""
 
 #~ msgid "Show Slider on blog index"
 #~ msgstr "Zeige Slider im Blog Index"
+
+#~ msgid "Tags"
+#~ msgstr "Schlagwörter"
+
+#~ msgid "Review Palm Beach"
+#~ msgstr "Palm Beach bewerten"
+
+#~ msgid "Appears only on single posts and pages."
+#~ msgstr "Erscheint auf einzelnen Beiträgen und Seiten."
 
 #~ msgid "Navigation Menu"
 #~ msgstr "Navigationsmenü"
@@ -1560,17 +1779,14 @@ msgstr ""
 #~ msgid "https://themezee.com/addons/pocono-pro/"
 #~ msgstr "https://themezee.com/de/addons/pocono-pro/"
 
-#~ msgid "Review Pocono"
-#~ msgstr "Pocono bewerten"
-
 #~ msgid "Archives Layout"
 #~ msgstr "Archiv-Layout"
 
-#~ msgid "Single Posts Layout"
-#~ msgstr "Layout einzelner Beiträge"
+#~ msgid "Sidebar Position (Single Posts)"
+#~ msgstr "Sidebar Position (Beiträge)"
 
-#~ msgid "No Sidebar"
-#~ msgstr "Keine Sidebar"
+#~ msgid "Review Pocono"
+#~ msgstr "Pocono bewerten"
 
 #~ msgid "https://themezee.com/themes/poseidon/"
 #~ msgstr "https://themezee.com/de/themes/poseidon/"
@@ -1583,9 +1799,6 @@ msgstr ""
 
 #~ msgid "https://themezee.com/addons/poseidon-pro/"
 #~ msgstr "https://themezee.com/de/addons/poseidon-pro/"
-
-#~ msgid "Review Poseidon"
-#~ msgstr "Poseidon bewerten"
 
 #~ msgid "Show featured image above content"
 #~ msgstr "Zeige Beitragsbild über dem Inhalt"
@@ -1602,6 +1815,9 @@ msgstr ""
 #~ msgid "Excerpt More Text"
 #~ msgstr "Beitragsauszug Text"
 
+#~ msgid "Review Poseidon"
+#~ msgstr "Poseidon bewerten"
+
 #~ msgid "https://themezee.com/themes/rubine/"
 #~ msgstr "https://themezee.com/de/themes/rubine/"
 
@@ -1611,18 +1827,15 @@ msgstr ""
 #~ msgid "https://wordpress.org/support/theme/rubine-lite/reviews/?filter=5"
 #~ msgstr "https://wordpress.org/support/theme/rubine-lite/reviews/?filter=5"
 
-#~ msgid "https://themezee.com/addons/rubine-pro/"
-#~ msgstr "https://themezee.com/de/addons/rubine-pro/"
-
-#~ msgid "Review Rubine"
-#~ msgstr "Rubine bewerten"
-
 #~ msgid ""
 #~ "Purchase the Pro Version of %s to get additional features and advanced "
 #~ "customization options."
 #~ msgstr ""
 #~ "Kaufe die Pro Version von %s und erhalte zusätzliche Features und "
 #~ "erweiterte Theme Optionen."
+
+#~ msgid "https://themezee.com/addons/rubine-pro/"
+#~ msgstr "https://themezee.com/de/addons/rubine-pro/"
 
 #~ msgid "ThemeZee Plugins"
 #~ msgstr "ThemeZee Plugins"
@@ -1652,6 +1865,12 @@ msgstr ""
 #~ msgid "Header Area"
 #~ msgstr "Header Bereich"
 
+#~ msgid "Review Rubine"
+#~ msgstr "Rubine bewerten"
+
+#~ msgid "Display Tagline beside site title."
+#~ msgstr "Zeige Untertitel neben dem Seitentitel."
+
 #~ msgid "https://themezee.com/themes/smartline/"
 #~ msgstr "https://themezee.com/de/themes/smartline/"
 
@@ -1668,9 +1887,6 @@ msgstr ""
 #~ msgid "Review Smartline"
 #~ msgstr "Smartline bewerten"
 
-#~ msgid "Display Tagline beside site title."
-#~ msgstr "Zeige Untertitel neben dem Seitentitel."
-
 #~ msgid "https://themezee.com/themes/tortuga/"
 #~ msgstr "https://themezee.com/de/themes/tortuga/"
 
@@ -1686,20 +1902,20 @@ msgstr ""
 #~ msgid "Review Tortuga"
 #~ msgstr "Tortuga bewerten"
 
-#~ msgid "https://themezee.com/themes/pocono/"
-#~ msgstr "https://themezee.com/de/themes/pocono/"
+#~ msgid "https://themezee.com/themes/worldstar/"
+#~ msgstr "https://themezee.com/de/themes/worldstar/"
 
-#~ msgid "https://themezee.com/docs/pocono-documentation/"
-#~ msgstr "https://themezee.com/de/docs/pocono-dokumentation/"
+#~ msgid "https://themezee.com/docs/worldstar-documentation/"
+#~ msgstr "https://themezee.com/de/docs/worldstar-dokumentation/"
 
-#~ msgid "https://wordpress.org/support/theme/pocono/reviews/?filter=5"
-#~ msgstr "https://wordpress.org/support/theme/pocono/reviews/?filter=5"
+#~ msgid "https://wordpress.org/support/theme/worldstar/reviews/?filter=5"
+#~ msgstr "https://wordpress.org/support/theme/worldstar/reviews/?filter=5"
 
-#~ msgid "https://themezee.com/addons/pocono-pro/"
-#~ msgstr "https://themezee.com/de/addons/pocono-pro/"
+#~ msgid "https://themezee.com/addons/worldstar-pro/"
+#~ msgstr "https://themezee.com/de/addons/worldstar-pro/"
 
-#~ msgid "Review Pocono"
-#~ msgstr "Pocono bewerten"
+#~ msgid "Review WorldStar"
+#~ msgstr "WorldStar bewerten"
 
 #~ msgid "https://themezee.com/themes/zeedynamic/"
 #~ msgstr "https://themezee.com/de/themes/zeedynamic/"
@@ -1716,200 +1932,17 @@ msgstr ""
 #~ msgid "Review zeeDynamic"
 #~ msgstr "zeeDynamic bewerten"
 
-#~ msgctxt "color setting"
-#~ msgid "Navigation"
-#~ msgstr "Navigation"
-
-#~ msgctxt "color setting"
-#~ msgid "Header"
-#~ msgstr "Header"
-
-#~ msgctxt "color setting"
 #~ msgid "Main Sidebar Title"
 #~ msgstr "Titel der Basis Sidebar"
 
-#~ msgctxt "color setting"
 #~ msgid "Small Sidebar Title"
 #~ msgstr "Titel der kleinen Sidebar"
 
-#~ msgctxt "color setting"
-#~ msgid "Footer Widgets"
-#~ msgstr "Footer Widgets"
+#~ msgid "Single Posts Layout"
+#~ msgstr "Layout einzelner Beiträge"
 
-#~ msgctxt "color setting"
-#~ msgid "Footer Line"
-#~ msgstr "Footerzeile"
-
-#~ msgid "Footer"
-#~ msgstr "Footer"
-
-#~ msgid "Appears on the footer area."
-#~ msgstr "Erscheint im Footerbereich."
-
-#~ msgid "Header Navigation"
-#~ msgstr "Header Navigation"
-
-#~ msgid "Header Spacing"
-#~ msgstr "Header Abstände"
-
-#~ msgid "Header Spacing (default: 25)"
-#~ msgstr "Header Abstand (Standard: 25)"
-
-#~ msgid "Footer Left"
-#~ msgstr "Footer Links"
-
-#~ msgid "Appears on footer on the left hand side."
-#~ msgstr "Erscheint im Footer auf der linken Seite."
-
-#~ msgid "Footer Center Left"
-#~ msgstr "Footer Mitte Links"
-
-#~ msgid "Appears on footer on center left position."
-#~ msgstr "Erscheint im Footer auf der mittleren linken Seite."
-
-#~ msgid "Footer Center Right"
-#~ msgstr "Footer Mitte Rechts"
-
-#~ msgid "Appears on footer on center right position."
-#~ msgstr "Erscheint im Footer auf der mittleren rechten Seite."
-
-#~ msgid "Footer Right"
-#~ msgstr "Footer Rechts"
-
-#~ msgid "Appears on footer on the right hand side."
-#~ msgstr "Erscheint im Footer auf der rechten Seite."
-
-#~ msgid ""
-#~ "There is a new version of %1$s available. <a target=\"_blank\" class="
-#~ "\"thickbox\" href=\"%2$s\">View version %3$s details</a>."
-#~ msgstr ""
-#~ "Es gibt eine neue Version von %1$s. <a target=\"_blank\" class=\"thickbox"
-#~ "\" href=\"%2$s\">Details zu Version %3$s ansehen</a>."
-
-#~ msgid ""
-#~ "There is a new version of %1$s available. <a target=\"_blank\" class="
-#~ "\"thickbox\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s"
-#~ "\">update now</a>."
-#~ msgstr ""
-#~ "Es gibt eine neue Version von %1$s. <a target=\"_blank\" class=\"thickbox"
-#~ "\" href=\"%2$s\">Details zu Version %3$s ansehen</a> oder <a href=\"%4$s"
-#~ "\">jetzt aktualisieren</a>."
-
-#~ msgctxt "color setting"
-#~ msgid "Links & Buttons"
-#~ msgstr "Links & Buttons"
-
-#~ msgctxt "color setting"
-#~ msgid "Post Titles"
-#~ msgstr "Beitrags-Titel"
-
-#~ msgctxt "color setting"
-#~ msgid "Widget Links"
-#~ msgstr "Widget Links"
-
-#~ msgid "Display Credit Link to ThemeZee on footer line."
-#~ msgstr "Zeige Link zu ThemeZee im Footer"
-
-#~ msgid "Logo Image (replaces Site Title)"
-#~ msgstr "Logo Bild (ersetzt Titel der Website)"
-
-#~ msgctxt "color setting"
-#~ msgid "Post Slider"
-#~ msgstr "Beitrags-Slider"
-
-#~ msgctxt "color setting"
-#~ msgid "Footer Navigation"
-#~ msgstr "Footer Navigation"
-
-#~ msgid "Header Social Icons"
-#~ msgstr "Header Social Icons"
-
-#~ msgid "Display post category"
-#~ msgstr "Zeige Kategorie des Beitrags"
-
-#~ msgctxt "color setting"
-#~ msgid "Links"
-#~ msgstr "Links"
-
-#~ msgctxt "color setting"
-#~ msgid "Header & Menu (primary)"
-#~ msgstr "Header & Menü (primär)"
-
-#~ msgctxt "color setting"
-#~ msgid "Header & Menu (secondary)"
-#~ msgstr "Header & Menü (sekundär)"
-
-#~ msgctxt "color setting"
-#~ msgid "Post Area (primary)"
-#~ msgstr "Content Bereich (primär)"
-
-#~ msgctxt "color setting"
-#~ msgid "Post Area (secondary)"
-#~ msgstr "Content Bereich (sekundär)"
-
-#~ msgctxt "color setting"
-#~ msgid "Slider (primary)"
-#~ msgstr "Slider (primär)"
-
-#~ msgctxt "color setting"
-#~ msgid "Slider (secondary)"
-#~ msgstr "Slider (sekundär)"
-
-#~ msgid "Remove spacing on header area for fullwidth logo images."
-#~ msgstr "Entferne Abstände im Header für Fullwidth Logo Bilder."
-
-#~ msgid "Appears on footer area."
-#~ msgstr "Erscheint im Footerbereich."
-
-#~ msgid "Logo Spacing (default: 10)"
-#~ msgstr "Logo Abstand (Standard: 10)"
-
-#~ msgid "Navigation Spacing (default: 10)"
-#~ msgstr "Navigationsmenü Abstand (Standard: 10)"
-
-#~ msgctxt "color setting"
-#~ msgid "Footer Border"
-#~ msgstr "Footer Rahmen"
-
-#~ msgctxt "color setting"
-#~ msgid "Links and Buttons"
-#~ msgstr "Links und Buttons"
-
-#~ msgctxt "color setting"
-#~ msgid "Main Navigation"
-#~ msgstr "Hauptnavigation"
-
-#~ msgid "Header Spacing (default: 30)"
-#~ msgstr "Header Abstand (Standard: 30)"
-
-#~ msgid ""
-#~ "Displays your posts from a selected category. You can use this widget in "
-#~ "the Sidebar widget area."
-#~ msgstr ""
-#~ "Zeigt die Beiträge einer gewählten Kategorie. Bitte verwende dieses "
-#~ "Widget in der Sidebar."
-
-#~ msgid "Logo Spacing (default: 15)"
-#~ msgstr "Logo Abstand (Standard: 15)"
-
-#~ msgctxt "color setting"
-#~ msgid "Post Titles (primary)"
-#~ msgstr "Content Bereich (primär)"
-
-#~ msgctxt "color setting"
-#~ msgid "Post Titles (secondary)"
-#~ msgstr "Content Bereich (sekundär)"
-
-#~ msgctxt "color setting"
-#~ msgid "Header Border"
-#~ msgstr "Header Rahmen"
-
-#~ msgctxt "color setting"
-#~ msgid "Navigation Hover"
-#~ msgstr "Navigation Hover"
-
-#~ msgid "Header Spacing (default: 10)"
-#~ msgstr "Header Abstand (Standard: 10)"
+#~ msgid "No Sidebar"
+#~ msgstr "Keine Sidebar"
 
 #~ msgid "Appears on posts and pages except full width template."
 #~ msgstr ""
