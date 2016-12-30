@@ -110,7 +110,7 @@ class Pocono_Pro {
 
 		// Include Pro Features.
 		#require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-custom-colors.php';
-		#require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-custom-fonts.php';
+		require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-custom-fonts.php';
 		require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-footer-line.php';
 		require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-footer-widgets.php';
 

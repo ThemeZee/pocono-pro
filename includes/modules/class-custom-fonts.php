@@ -63,6 +63,7 @@ class Pocono_Pro_Custom_Fonts {
 			$custom_css .= '
 				/* Base Font Setting */
 				body,
+				button,
 				input,
 				select,
 				textarea {
@@ -76,16 +77,15 @@ class Pocono_Pro_Custom_Fonts {
 		if ( $theme_options['title_font'] != $default_options['title_font'] ) {
 
 			$custom_css .= '
-				/* Headings Font Setting */
+				/* Title Font Setting */
 				.site-title,
+				.page-header .archive-title,
 				.page-title,
 				.entry-title,
-				.more-link,
-				.infinite-scroll #infinite-handle span,
-				button,
-				input[type="button"],
-				input[type="reset"],
-				input[type="submit"] {
+				.comments-header .comments-title,
+				.comment-reply-title span,
+				.widget-title,
+				.widget-magazine-posts .widget-header .widget-title {
 					font-family: "' . esc_attr( $theme_options['title_font'] ) . '";
 				}
 				';
@@ -98,26 +98,8 @@ class Pocono_Pro_Custom_Fonts {
 			$custom_css .= '
 				/* Navigation Font Setting */
 				.main-navigation-menu a,
-				.main-navigation-toggle,
-				.header-bar-text,
-				.top-navigation-menu a,
 				.footer-navigation-menu a {
 					font-family: "' . esc_attr( $theme_options['navi_font'] ) . '";
-				}
-				';
-
-		}
-
-		// Set Widget Title Font.
-		if ( $theme_options['widget_title_font'] != $default_options['widget_title_font'] ) {
-
-			$custom_css .= '
-				/* Widget Titles Font Setting */
-				.page-header .archive-title,
-				.comments-header .comments-title,
-				.comment-reply-title span,
-				.widget-title {
-					font-family: "' . esc_attr( $theme_options['widget_title_font'] ) . '";
 				}
 				';
 
@@ -169,14 +151,6 @@ class Pocono_Pro_Custom_Fonts {
 
 			$google_font_families[] = $theme_options['navi_font'] . $font_styles;
 			$default_fonts[] = $theme_options['navi_font'];
-
-		}
-
-		// Add Widget Title Font.
-		if ( isset( $theme_options['widget_title_font'] ) and ! in_array( $theme_options['widget_title_font'], $default_fonts ) ) {
-
-			$google_font_families[] = $theme_options['widget_title_font'] . $font_styles;
-			$default_fonts[] = $theme_options['widget_title_font'];
 
 		}
 
@@ -259,22 +233,6 @@ class Pocono_Pro_Custom_Fonts {
 				'section'    => 'pocono_pro_section_fonts',
 				'settings'   => 'pocono_theme_options[navi_font]',
 				'priority' => 3,
-			)
-		) );
-
-		$wp_customize->add_setting( 'pocono_theme_options[widget_title_font]', array(
-			'default'           => $default_options['widget_title_font'],
-			'type'           	=> 'option',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'esc_attr',
-			)
-		);
-		$wp_customize->add_control( new Pocono_Pro_Customize_Font_Control(
-			$wp_customize, 'widget_title_font', array(
-				'label'      => _x( 'Widget Titles', 'font setting', 'pocono-pro' ),
-				'section'    => 'pocono_pro_section_fonts',
-				'settings'   => 'pocono_theme_options[widget_title_font]',
-				'priority' => 4,
 			)
 		) );
 

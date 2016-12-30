@@ -72,10 +72,9 @@ class Pocono_Pro_Customizer {
 			'content_secondary_color'     => '#33bbdd',
 			'widget_title_color'          => '#222222',
 			'footer_color'                => '#222222',
-			'text_font'                   => 'Open Sans',
-			'title_font'                  => 'Oswald',
-			'navi_font'                   => 'Open Sans',
-			'widget_title_font'           => 'Oswald',
+			'text_font'                   => 'Roboto',
+			'title_font'                  => 'Montserrat',
+			'navi_font'                   => 'Montserrat',
 			'available_fonts'             => 'favorites',
 		);
 
