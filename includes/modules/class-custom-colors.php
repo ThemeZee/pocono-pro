@@ -36,12 +36,12 @@ class Pocono_Pro_Custom_Colors {
 	}
 
 	/**
-	 * Builds all custom color CSS styles.
+	 * Adds Color CSS styles in the head area to override default colors
 	 *
 	 * @param String $custom_css Custom Styling CSS.
 	 * @return string CSS code
 	 */
-	static function custom_colors_css( $custom_css = '' ) {
+	static function custom_colors_css( $custom_css ) {
 
 		// Get Theme Options from Database.
 		$theme_options = Pocono_Pro_Customizer::get_theme_options();
@@ -49,201 +49,189 @@ class Pocono_Pro_Custom_Colors {
 		// Get Default Fonts from settings.
 		$default_options = Pocono_Pro_Customizer::get_default_options();
 
-		// Check if we are in Customizer Preview.
-		$is_customize_preview = is_customize_preview();
-
-		// Set Top Navigation Color.
-		if ( $theme_options['top_navi_color'] !== $default_options['top_navi_color'] || $is_customize_preview ) {
+		// Set Header Color.
+		if ( $theme_options['header_color'] != $default_options['header_color'] ) {
 
 			$custom_css .= '
-				/* Top Navigation Color Setting */
-				.top-navigation-menu a:hover,
-				.top-navigation-menu a:active,
-				.top-navigation-toggle:hover:after,
-				.top-navigation-menu .submenu-dropdown-toggle:hover:before {
-					color: ' . $theme_options['top_navi_color'] . ';
-				}
-				.top-navigation-menu ul {
-					background: ' . $theme_options['top_navi_color'] . ';
+				.site-header {
+					background: ' . $theme_options['header_color'] . ';
 				}
 				';
 
+			// Check if a dark background color was chosen.
+			if ( self::is_color_dark( $theme_options['header_color'] ) ) {
+				$custom_css .= '
+					.site-title,
+					.site-title a:link,
+					.site-title a:visited,
+					.sidebar-navigation-toggle,
+					.header-social-icons .social-icons-menu li a {
+						color: #fff;
+					}
+					.site-title a:hover,
+					.site-title a:active {
+						color: #ff5555;
+					}
+					';
+			}
 		}
 
-		// Set Primary Navigation Color.
-		if ( $theme_options['navi_primary_color'] !== $default_options['navi_primary_color'] || $is_customize_preview ) {
+		// Set Navigation Color.
+		if ( $theme_options['navigation_color'] != $default_options['navigation_color'] ) {
 
 			$custom_css .= '
-				/* Main Navigation Color Setting */
-				.primary-navigation-wrap,
-				.main-navigation-toggle {
-					background: ' . $theme_options['navi_primary_color'] . ';
+				.primary-navigation-wrap {
+					background: ' . $theme_options['navigation_color'] . ';
 				}
 				';
 
+			// Check if a dark background color was chosen.
+			if ( self::is_color_dark( $theme_options['navigation_color'] ) ) {
+				$custom_css .= '
+					.main-navigation-menu a,
+					.main-navigation-menu a:link,
+					.main-navigation-menu a:visited,
+					.main-navigation-menu > .menu-item-has-children > a:after {
+						color: #ffffff;
+					}
+					.main-navigation-menu a:hover,
+					.main-navigation-menu a:active {
+						color: #ff5555;
+					}
+					';
+			}
 		}
 
-		// Set Secondary Navigation Color.
-		if ( $theme_options['navi_secondary_color'] !== $default_options['navi_secondary_color'] || $is_customize_preview ) {
+		// Set Navigation Color.
+		if ( $theme_options['footer_color'] != $default_options['footer_color'] ) {
 
 			$custom_css .= '
-
-				/* Secondary Navigation Color Setting */
-				.main-navigation-menu ul,
-				.main-navigation-toggle:hover,
-				.main-navigation-toggle:active {
-					background: ' . $theme_options['navi_secondary_color'] . ';
+				.footer-wrap {
+					background: ' . $theme_options['footer_color'] . ';
 				}
 				';
 
+			// Check if a dark background color was chosen.
+			if ( self::is_color_dark( $theme_options['footer_color'] ) ) {
+				$custom_css .= '
+					.site-footer,
+					.site-footer .site-info a:hover,
+					.site-footer .site-info a:active,
+					.footer-navigation-menu a:link,
+					.footer-navigation-menu a:visited {
+						color: #ffffff;
+					}
+					.footer-navigation-menu a:hover,
+					.footer-navigation-menu a:active {
+						color: #ff5555;
+					}
+					';
+			}
 		}
 
-		// Set Primary Content Color.
-		if ( $theme_options['content_primary_color'] !== $default_options['content_primary_color'] || $is_customize_preview ) {
+		// Set Title Color.
+		if ( $theme_options['title_color'] != $default_options['title_color'] ) {
 
 			$custom_css .= '
-				/* Content Primary Color Setting */
-				.site-title,
-				.site-title a:link,
-				.site-title a:visited,
+				.widget-title,
+				.widget-title a:link,
+				.widget-title a:visited,
 				.page-title,
 				.entry-title,
 				.entry-title a:link,
 				.entry-title a:visited {
-					color: ' . $theme_options['content_primary_color'] . ';
+					color: ' . $theme_options['title_color'] . ';
 				}
 
-				.site-title a:hover,
-				.site-title a:active,
+				.widget-title a:hover,
+				.widget-title a:active,
 				.entry-title a:hover,
 				.entry-title a:active {
-					color: #33bbdd;
+					color: #ff5555;
 				}
 				';
-
 		}
 
-		// Set Link Color.
-		if ( $theme_options['content_secondary_color'] !== $default_options['content_secondary_color'] || $is_customize_preview ) {
+		// Set Primary Content Color.
+		if ( $theme_options['link_color'] != $default_options['link_color'] ) {
 
 			$custom_css .= '
-				/* Content Secondary Color Setting */
 				a,
 				a:link,
 				a:visited,
 				.site-title a:hover,
 				.site-title a:active,
+				.sidebar-navigation-toggle:hover,
+				.header-social-icons .social-icons-menu li a:hover,
+				.main-navigation-menu a:hover,
+				.main-navigation-menu a:active,
+				.main-navigation-toggle:hover,
+				.main-navigation-toggle:active,
+				.main-navigation-menu .submenu-dropdown-toggle:hover:before,
+				.main-navigation-menu .submenu-dropdown-toggle:active:before,
+				.widget-title a:link,
+				.widget-title a:visited,
+				.widget-magazine-posts .widget-header .widget-title,
+				.page-header .archive-title,
+				.comments-header .comments-title,
+				.comment-reply-title span,
+				.related-posts-title,
 				.entry-title a:hover,
-				.entry-title a:active {
-					color: ' . $theme_options['content_secondary_color'] . ';
+				.entry-title a:active,
+				.entry-categories .meta-category a:hover,
+				.entry-categories .meta-category a:active,
+				.footer-navigation-menu a:hover,
+				.footer-navigation-menu a:active {
+					color: ' . $theme_options['link_color'] . ';
 				}
 
 				a:hover,
 				a:focus,
-				a:active {
-					color: #222;
+				a:active,
+				.widget-title a:hover,
+				.widget-title a:active {
+					color: #373737;
+				}
+
+				.page-header .archive-title,
+				.widget-magazine-posts .widget-header .widget-title,
+				.comments-header .comments-title,
+				.comment-reply-title span,
+				.related-posts-title {
+					border-color: ' . $theme_options['link_color'] . ';
 				}
 
 				button,
 				input[type="button"],
 				input[type="reset"],
 				input[type="submit"],
-				.more-link:link,
-				.more-link:visited,
+				.main-navigation-menu ul,
+				.more-link,
 				.entry-categories .meta-category a,
 				.widget_tag_cloud .tagcloud a,
 				.entry-tags .meta-tags a,
+				.post-navigation .nav-links a:hover,
+				.post-navigation .nav-links a:active,
 				.pagination a:hover,
+				.pagination a:active,
 				.pagination .current,
-				.infinite-scroll #infinite-handle span,
-				.footer-social-icons .social-icons-menu li a,
+				.infinite-scroll #infinite-handle span:hover,
+				.infinite-scroll #infinite-handle span:active,
+				.reply .comment-reply-link:hover,
+				.reply .comment-reply-link:active,
 				.tzwb-tabbed-content .tzwb-tabnavi li a:hover,
 				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
 				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab,
-				.tzwb-social-icons .social-icons-menu li a {
-					background: ' . $theme_options['content_secondary_color'] . ';
+				.tzwb-social-icons .social-icons-menu li a:link,
+				.tzwb-social-icons .social-icons-menu li a:visited {
+					background: ' . $theme_options['link_color'] . ';
 				}
 
-				button:hover,
-				input[type="button"]:hover,
-				input[type="reset"]:hover,
-				input[type="submit"]:hover,
-				.more-link:hover,
-				.more-link:active,
-				.entry-categories .meta-category a:hover,
-				.entry-categories .meta-category a:active,
-				.widget_tag_cloud .tagcloud a:hover,
-				.widget_tag_cloud .tagcloud a:active,
-				.entry-tags .meta-tags a:hover,
-				.entry-tags .meta-tags a:active,
-				.pagination a,
-				.infinite-scroll #infinite-handle span:hover,
-				.footer-social-icons .social-icons-menu li a:hover,
-				.tzwb-social-icons .social-icons-menu li a:hover {
-					background: #222;
+				.tzwb-social-icons .social-icons-menu li a:hover,
+				.tzwb-social-icons .social-icons-menu li a:active {
+					background: #242424;
 				}
 				';
-
-		}
-
-		// Set Primary Hover Content Color.
-		if ( $theme_options['content_primary_color'] !== $default_options['content_primary_color'] || $is_customize_preview ) {
-
-			$custom_css .= '
-				/* Content Primary Hover Color Setting */
-				button:hover,
-				input[type="button"]:hover,
-				input[type="reset"]:hover,
-				input[type="submit"]:hover,
-				.more-link:hover,
-				.more-link:active,
-				.entry-categories .meta-category a:hover,
-				.entry-categories .meta-category a:active,
-				.widget_tag_cloud .tagcloud a:hover,
-				.widget_tag_cloud .tagcloud a:active,
-				.entry-tags .meta-tags a:hover,
-				.entry-tags .meta-tags a:active,
-				.pagination a,
-				.infinite-scroll #infinite-handle span:hover,
-				.footer-social-icons .social-icons-menu li a:hover,
-				.tzwb-tabbed-content .tzwb-tabnavi li a,
-				.tzwb-social-icons .social-icons-menu li a:hover {
-					background: ' . $theme_options['content_primary_color'] . ';
-				}
-				';
-
-		}
-
-		// Set Widget Title Color.
-		if ( $theme_options['widget_title_color'] !== $default_options['widget_title_color'] || $is_customize_preview ) {
-
-			$custom_css .= '
-				/* Widget Title Color Setting */
-				.page-header .archive-title,
-				.comments-header .comments-title,
-				.comment-reply-title span,
-				.widget-title,
-				.widget-title a:link,
-				.widget-title a:visited,
-				.widget-title a:hover,
-				.widget-title a:active  {
-					color: ' . $theme_options['widget_title_color'] . ';
-				}
-				';
-
-		}
-
-		// Set Footer Color.
-		if ( $theme_options['footer_color'] !== $default_options['footer_color'] || $is_customize_preview ) {
-
-			$custom_css .= '
-				/* Footer Color Setting */
-				.footer-wrap,
-				.footer-widgets-background {
-					background: ' . $theme_options['footer_color'] . ';
-				}
-				';
-
 		}
 
 		return $custom_css;
@@ -257,9 +245,6 @@ class Pocono_Pro_Custom_Colors {
 	 */
 	static function color_settings( $wp_customize ) {
 
-		// Set Transport method. Only use postMessage if selective refresh is supported.
-		$transport = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
-
 		// Add Section for Theme Colors.
 		$wp_customize->add_section( 'pocono_pro_section_colors', array(
 			'title'    => __( 'Theme Colors', 'pocono-pro' ),
@@ -271,105 +256,71 @@ class Pocono_Pro_Custom_Colors {
 		// Get Default Colors from settings.
 		$default_options = Pocono_Pro_Customizer::get_default_options();
 
-		// Add Widget Title Color setting.
-		$wp_customize->add_setting( 'pocono_theme_options[top_navi_color]', array(
-			'default'           => $default_options['top_navi_color'],
-			'type'           	=> 'option',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_hex_color',
-			)
-		);
-		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'pocono_theme_options[top_navi_color]', array(
-				'label'      => _x( 'Top Navigation', 'color setting', 'pocono-pro' ),
-				'section'    => 'pocono_pro_section_colors',
-				'settings'   => 'pocono_theme_options[top_navi_color]',
-				'priority' => 1,
-			)
-		) );
-
 		// Add Navigation Primary Color setting.
-		$wp_customize->add_setting( 'pocono_theme_options[navi_primary_color]', array(
-			'default'           => $default_options['navi_primary_color'],
+		$wp_customize->add_setting( 'pocono_theme_options[header_color]', array(
+			'default'           => $default_options['header_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'pocono_theme_options[navi_primary_color]', array(
-				'label'      => _x( 'Navigation (primary)', 'color setting', 'pocono-pro' ),
+			$wp_customize, 'pocono_theme_options[header_color]', array(
+				'label'      => _x( 'Header', 'color setting', 'pocono-pro' ),
 				'section'    => 'pocono_pro_section_colors',
-				'settings'   => 'pocono_theme_options[navi_primary_color]',
-				'priority' => 2,
+				'settings'   => 'pocono_theme_options[header_color]',
+				'priority' => 10,
 			)
 		) );
 
-		// Add Navigation Secondary Color setting.
-		$wp_customize->add_setting( 'pocono_theme_options[navi_secondary_color]', array(
-			'default'           => $default_options['navi_secondary_color'],
+		// Add Navigation Color setting.
+		$wp_customize->add_setting( 'pocono_theme_options[navigation_color]', array(
+			'default'           => $default_options['navigation_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'pocono_theme_options[navi_secondary_color]', array(
-				'label'      => _x( 'Navigation (secondary)', 'color setting', 'pocono-pro' ),
+			$wp_customize, 'pocono_theme_options[navigation_color]', array(
+				'label'      => _x( 'Navigation', 'color setting', 'pocono-pro' ),
 				'section'    => 'pocono_pro_section_colors',
-				'settings'   => 'pocono_theme_options[navi_secondary_color]',
-				'priority' => 3,
+				'settings'   => 'pocono_theme_options[navigation_color]',
+				'priority' => 20,
 			)
 		) );
 
-		// Add Post Primary Color setting.
-		$wp_customize->add_setting( 'pocono_theme_options[content_primary_color]', array(
-			'default'           => $default_options['content_primary_color'],
+		// Add Content Primary Color setting.
+		$wp_customize->add_setting( 'pocono_theme_options[link_color]', array(
+			'default'           => $default_options['link_color'],
 			'type'           	=> 'option',
-			'transport'         => $transport,
+			'transport'         => 'refresh',
 			'sanitize_callback' => 'sanitize_hex_color',
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'pocono_theme_options[content_primary_color]', array(
-				'label'      => _x( 'Content (primary)', 'color setting', 'pocono-pro' ),
+			$wp_customize, 'pocono_theme_options[link_color]', array(
+				'label'      => _x( 'Links and Buttons', 'color setting', 'pocono-pro' ),
 				'section'    => 'pocono_pro_section_colors',
-				'settings'   => 'pocono_theme_options[content_primary_color]',
-				'priority' => 4,
+				'settings'   => 'pocono_theme_options[link_color]',
+				'priority' => 30,
 			)
 		) );
 
-		// Add Link and Button Color setting.
-		$wp_customize->add_setting( 'pocono_theme_options[content_secondary_color]', array(
-			'default'           => $default_options['content_secondary_color'],
+		// Add Content Secondary Color setting.
+		$wp_customize->add_setting( 'pocono_theme_options[title_color]', array(
+			'default'           => $default_options['title_color'],
 			'type'           	=> 'option',
-			'transport'         => $transport,
+			'transport'         => 'refresh',
 			'sanitize_callback' => 'sanitize_hex_color',
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'pocono_theme_options[content_secondary_color]', array(
-				'label'      => _x( 'Content (secondary)', 'color setting', 'pocono-pro' ),
+			$wp_customize, 'pocono_theme_options[title_color]', array(
+				'label'      => _x( 'Headings', 'color setting', 'pocono-pro' ),
 				'section'    => 'pocono_pro_section_colors',
-				'settings'   => 'pocono_theme_options[content_secondary_color]',
-				'priority' => 5,
-			)
-		) );
-
-		// Add Widget Title Color setting.
-		$wp_customize->add_setting( 'pocono_theme_options[widget_title_color]', array(
-			'default'           => $default_options['widget_title_color'],
-			'type'           	=> 'option',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_hex_color',
-			)
-		);
-		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'pocono_theme_options[widget_title_color]', array(
-				'label'      => _x( 'Widget Titles', 'color setting', 'pocono-pro' ),
-				'section'    => 'pocono_pro_section_colors',
-				'settings'   => 'pocono_theme_options[widget_title_color]',
-				'priority' => 6,
+				'settings'   => 'pocono_theme_options[title_color]',
+				'priority' => 40,
 			)
 		) );
 
@@ -386,30 +337,46 @@ class Pocono_Pro_Custom_Colors {
 				'label'      => _x( 'Footer', 'color setting', 'pocono-pro' ),
 				'section'    => 'pocono_pro_section_colors',
 				'settings'   => 'pocono_theme_options[footer_color]',
-				'priority' => 7,
+				'priority' => 50,
 			)
 		) );
 
-		// Add support for selective refresh.
-		if ( isset( $wp_customize->selective_refresh ) ) {
+	}
 
-			$wp_customize->selective_refresh->add_partial( 'pocono_pro_custom_colors', array(
-				'selector' => '#pocono-pro-custom-colors-css',
-				'settings' => array(
-					'pocono_theme_options[top_navi_color]',
-					'pocono_theme_options[navi_primary_color]',
-					'pocono_theme_options[navi_secondary_color]',
-					'pocono_theme_options[content_primary_color]',
-					'pocono_theme_options[content_secondary_color]',
-					'pocono_theme_options[widget_title_color]',
-					'pocono_theme_options[footer_color]',
-				),
-				'container_inclusive' => false,
-				'render_callback' => array( __CLASS__, 'custom_colors_css' ),
-			) );
+	/**
+	 * Returns color brightness.
+	 *
+	 * @param int Number of brightness.
+	 */
+	static function get_color_brightness( $hex_color ) {
 
-		}
+		// Remove # string.
+		$hex_color = str_replace( '#', '', $hex_color );
 
+		// Convert into RGB.
+		$r = hexdec( substr( $hex_color, 0, 2 ) );
+		$g = hexdec( substr( $hex_color, 2, 2 ) );
+		$b = hexdec( substr( $hex_color, 4, 2 ) );
+
+		return ( ( ( $r * 299 ) + ( $g * 587 ) + ( $b * 114 ) ) / 1000 );
+	}
+
+	/**
+	 * Check if the color is light.
+	 *
+	 * @param bool True if color is light.
+	 */
+	static function is_color_light( $hex_color ) {
+		return ( self::get_color_brightness( $hex_color ) > 130 );
+	}
+
+	/**
+	 * Check if the color is dark.
+	 *
+	 * @param bool True if color is dark.
+	 */
+	static function is_color_dark( $hex_color ) {
+		return ( self::get_color_brightness( $hex_color ) <= 130 );
 	}
 }
 

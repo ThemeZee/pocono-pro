@@ -9,81 +9,46 @@
 ( function( $ ) {
 
 	/* Header Color Option */
-	wp.customize( 'pocono_theme_options[top_navi_color]', function( value ) {
-		value.bind( function( newval ) {
-			$( '.header-bar-wrap, .top-navigation-menu ul' )
-				.css( 'background', newval );
-
-			var textcolor, hovercolor;
-
-			if( isColorLight( newval ) ) {
-				textcolor = '#000000';
-				hovercolor = 'rgba(0,0,0,0.4)';
-			} else {
-				textcolor = '#ffffff';
-				hovercolor = 'rgba(255,255,255,0.5)';
-			}
-
-			$( '.top-navigation-menu a, .top-navigation-toggle, .top-navigation-menu .submenu-dropdown-toggle, .header-bar .social-icons-menu li a' )
-				.css( 'color', textcolor );
-			$('.top-navigation-menu a, .top-navigation-toggle, .top-navigation-menu .submenu-dropdown-toggle, .header-bar .social-icons-menu li a')
-				.hover( function() { $( this ).css( 'color', hovercolor ); },
-						function() { $( this ).css( 'color', textcolor ); }
-				);
-		} );
-	} );
-
-	/* Header Color Option */
 	wp.customize( 'pocono_theme_options[header_color]', function( value ) {
 		value.bind( function( newval ) {
-			$( '.site-header, .main-navigation-menu ul' )
+			$( '.site-header' )
 				.css( 'background', newval );
 
-			var textcolor, hovercolor;
+			var textcolor;
 
 			if( isColorDark( newval ) ) {
 				textcolor = '#ffffff';
-				hovercolor = 'rgba(255,255,255,0.5)';
 			} else {
 				textcolor = '#000000';
-				hovercolor = 'rgba(0,0,0,0.4)';
 			}
 
-			$( '.site-title a, .main-navigation-menu a, .main-navigation-toggle, .main-navigation-menu .submenu-dropdown-toggle' )
+			$( '.site-title, .site-title a, .sidebar-navigation-toggle, .header-social-icons .social-icons-menu li a' )
 				.css( 'color', textcolor );
-			$('.site-title a, .main-navigation-menu a, .main-navigation-toggle, .main-navigation-menu .submenu-dropdown-toggle')
-				.hover( function() { $( this ).css( 'color', hovercolor ); },
+			$('.site-title a, .sidebar-navigation-toggle, .header-social-icons .social-icons-menu li a')
+				.hover( function() { $( this ).css( 'color', textcolor ); },
 						function() { $( this ).css( 'color', textcolor ); }
 				);
 		} );
 	} );
 
-	/* Footer Widgets Color Option */
-	wp.customize( 'pocono_theme_options[footer_widgets_color]', function( value ) {
+	/* Navigation Color Option */
+	wp.customize( 'pocono_theme_options[navigation_color]', function( value ) {
 		value.bind( function( newval ) {
-			$( '.footer-widgets-background' )
+			$( '.primary-navigation-wrap' )
 				.css( 'background', newval );
 
-			var titlecolor, textcolor, hovercolor;
+			var textcolor;
 
-			if( isColorLight( newval ) ) {
-				titlecolor ='rgba(0,0,0,0.75)';
-				textcolor = 'rgba(0,0,0,0.75)';
-				hovercolor = 'rgba(0,0,0,0.5)';
+			if( isColorDark( newval ) ) {
+				textcolor = '#ffffff';
 			} else {
-				titlecolor = '#ffffff';
-				textcolor = 'rgba(255,255,255,0.75)';
-				hovercolor = 'rgba(255,255,255,0.5)';
+				textcolor = '#000000';
 			}
 
-			$( '.footer-widgets-background' )
-				.css( 'border-top', '1px solid rgba(0,0,0,0.1)' );
-			$( '.footer-widgets .widget, .footer-widgets .widget-title' )
-				.css( 'color', titlecolor );
-			$('.footer-widgets .widget a')
-				.not( $( '.footer-widgets .widget_tag_cloud .tagcloud a' ) )
-				.css( 'color', textcolor )
-				.hover( function() { $( this ).css( 'color', hovercolor ); },
+			$( '.main-navigation-menu > a' )
+				.css( 'color', textcolor );
+			$('.main-navigation-menu > a')
+				.hover( function() { $( this ).css( 'color', textcolor ); },
 						function() { $( this ).css( 'color', textcolor ); }
 				);
 		} );
@@ -93,28 +58,21 @@
 	wp.customize( 'pocono_theme_options[footer_color]', function( value ) {
 		value.bind( function( newval ) {
 			$( '.footer-wrap' )
-				.css( 'background', newval )
-				.css( 'border-top', '1px solid rgba(0,0,0,0.1)' );
+				.css( 'background', newval );
 
-			var textcolor, linkcolor, hovercolor;
+			var textcolor;
 
 			if( isColorDark( newval ) ) {
 				textcolor = '#ffffff';
-				linkcolor = 'rgba(255,255,255,0.5)';
-				hovercolor = 'rgba(255,255,255,0.75)';
 			} else {
 				textcolor = '#000000';
-				linkcolor = 'rgba(0,0,0,0.5)';
-				hovercolor = 'rgba(0,0,0,0.75)';
 			}
 
-			$( '.site-footer' )
+			$( '.site-footer, .site-footer .site-info a, .footer-navigation-menu a' )
 				.css( 'color', textcolor );
-			$( '.site-footer .site-info a, .footer-navigation-menu a' )
-				.css( 'color', linkcolor );
-			$('.site-footer .site-info a, .footer-navigation-menu a')
-				.hover( function() { $( this ).css( 'color', hovercolor ); },
-						function() { $( this ).css( 'color', linkcolor ); }
+			$('.site-footer, .site-footer .site-info a, .footer-navigation-menu a')
+				.hover( function() { $( this ).css( 'color', textcolor ); },
+						function() { $( this ).css( 'color', textcolor ); }
 				);
 		} );
 	} );

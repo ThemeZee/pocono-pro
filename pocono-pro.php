@@ -65,7 +65,7 @@ class Pocono_Pro {
 		define( 'POCONO_PRO_VERSION', '1.0' );
 
 		// Define Plugin Name.
-		define( 'POCONO_PRO_PRODUCT_ID', 81120 );
+		define( 'POCONO_PRO_PRODUCT_ID', 89730 );
 
 		// Define Update API URL.
 		define( 'POCONO_PRO_STORE_API_URL', 'https://themezee.com' );
@@ -109,7 +109,7 @@ class Pocono_Pro {
 		require_once POCONO_PRO_PLUGIN_DIR . '/includes/customizer/class-customizer.php';
 
 		// Include Pro Features.
-		#require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-custom-colors.php';
+		require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-custom-colors.php';
 		require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-custom-fonts.php';
 		require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-footer-line.php';
 		require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-footer-widgets.php';
