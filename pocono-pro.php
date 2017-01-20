@@ -255,7 +255,7 @@ class Pocono_Pro {
 
 		if ( $options->get( 'license_key' ) <> '' ) :
 
-			$license_key = $options->get( 'license_key' );
+			$license_key = trim( $options->get( 'license_key' ) );
 
 			// Setup the updater.
 			$pocono_pro_updater = new Pocono_Pro_Plugin_Updater( POCONO_PRO_STORE_API_URL, __FILE__, array(
