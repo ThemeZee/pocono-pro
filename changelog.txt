@@ -2,6 +2,10 @@
 Pocono Pro Changelog
 ===================================
 
+Version 1.0.1
+-----------------------------------
+* updated EDD Plugin Updater class
+
 Version 1.0
 -----------------------------------
 Initial Version
