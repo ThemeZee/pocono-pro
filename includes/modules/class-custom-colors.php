@@ -223,7 +223,10 @@ class Pocono_Pro_Custom_Colors {
 				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
 				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab,
 				.tzwb-social-icons .social-icons-menu li a:link,
-				.tzwb-social-icons .social-icons-menu li a:visited {
+				.tzwb-social-icons .social-icons-menu li a:visited,
+				.scroll-to-top-button,
+				.scroll-to-top-button:focus,
+				.scroll-to-top-button:active {
 					background: ' . $theme_options['link_color'] . ';
 				}
 
