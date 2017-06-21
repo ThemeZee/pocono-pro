@@ -59,21 +59,22 @@ class Pocono_Pro_Customizer {
 	static function get_default_options() {
 
 		$default_options = array(
-			'header_bar_text'             => '',
-			'logo_spacing'                => 0,
-			'header_spacing'              => 20,
-			'footer_social_icons_text'    => __( 'Stay in Touch', 'pocono-pro' ),
-			'footer_text'                 => '',
-			'credit_link'                 => true,
-			'title_color'                 => '#373737',
-			'link_color'                  => '#ff5555',
-			'header_color'                => '#ffffff',
-			'navigation_color'            => '#fafafa',
-			'footer_color'                => '#ffffff',
-			'text_font'                   => 'Roboto',
-			'title_font'                  => 'Montserrat',
-			'navi_font'                   => 'Montserrat',
-			'available_fonts'             => 'favorites',
+			'header_bar_text'          => '',
+			'logo_spacing'             => 0,
+			'header_spacing'           => 20,
+			'scroll_to_top'            => false,
+			'footer_social_icons_text' => __( 'Stay in Touch', 'pocono-pro' ),
+			'footer_text'              => '',
+			'credit_link'              => true,
+			'title_color'              => '#373737',
+			'link_color'               => '#ff5555',
+			'header_color'             => '#ffffff',
+			'navigation_color'         => '#fafafa',
+			'footer_color'             => '#ffffff',
+			'text_font'                => 'Roboto',
+			'title_font'               => 'Montserrat',
+			'navi_font'                => 'Montserrat',
+			'available_fonts'          => 'favorites',
 		);
 
 		return $default_options;

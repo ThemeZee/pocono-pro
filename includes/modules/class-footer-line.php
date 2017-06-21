@@ -167,7 +167,7 @@ class Pocono_Pro_Footer_Line {
 			'section'  => 'pocono_pro_section_footer',
 			'settings' => 'pocono_theme_options[footer_text]',
 			'type'     => 'textarea',
-			'priority' => 10,
+			'priority' => 30,
 			)
 		);
 
@@ -184,7 +184,7 @@ class Pocono_Pro_Footer_Line {
 			'section'  => 'pocono_pro_section_footer',
 			'settings' => 'pocono_theme_options[credit_link]',
 			'type'     => 'checkbox',
-			'priority' => 20,
+			'priority' => 40,
 			)
 		);
 

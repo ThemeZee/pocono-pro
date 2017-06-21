@@ -12,6 +12,10 @@
 	margin-top: 16px;
 }
 
+#customize-control-pocono_theme_options-scroll_top_title {
+	margin-bottom: 0;
+}
+
 #customize-control-pocono_theme_options-footer_text textarea {
 	height: 4em;
 }

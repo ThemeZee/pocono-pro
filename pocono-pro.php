@@ -113,6 +113,7 @@ class Pocono_Pro {
 		require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-custom-fonts.php';
 		require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-footer-line.php';
 		require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-footer-widgets.php';
+		require_once POCONO_PRO_PLUGIN_DIR . '/includes/modules/class-scroll-to-top.php';
 
 		// Include Magazine Widgets.
 		require_once POCONO_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-columns.php';
@@ -129,10 +130,10 @@ class Pocono_Pro {
 	 */
 	static function setup_actions() {
 
-		// Enqueue Frontend Widget Styles.
+		// Enqueue Pocono Pro Stylesheet.
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_styles' ), 11 );
 
-		// Register additional Magazine Post Widgets.
+		// Register additional Magazine Widgets.
 		add_action( 'widgets_init', array( __CLASS__, 'register_widgets' ) );
 
 		// Add Settings link to Plugin actions.
