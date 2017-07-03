@@ -24,7 +24,7 @@ class Pocono_Pro_Magazine_Columns_Widget extends WP_Widget {
 			esc_html__( 'Magazine (Columns)', 'pocono-pro' ), // Name.
 			array(
 				'classname' => 'pocono-magazine-columns-widget',
-				'description' => esc_html__( 'Displays your posts from two selected categories. Please use this widget ONLY in the Magazine Homepage widget area.', 'pocono-pro' ),
+				'description' => esc_html__( 'Displays your posts from two selected categories.', 'pocono-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
@@ -36,12 +36,12 @@ class Pocono_Pro_Magazine_Columns_Widget extends WP_Widget {
 	private function default_settings() {
 
 		$defaults = array(
-			'category_one'			=> 0,
-			'category_two'			=> 0,
-			'category_one_title'	=> '',
-			'category_two_title'	=> '',
-			'number'				=> 4,
-			'highlight_post'		=> true,
+			'category_one'       => 0,
+			'category_two'       => 0,
+			'category_one_title' => esc_html__( 'Left Category', 'pocono-pro' ),
+			'category_two_title' => esc_html__( 'Right Category', 'pocono-pro' ),
+			'number'             => 4,
+			'highlight_post'     => true,
 		);
 
 		return $defaults;
