@@ -24,7 +24,7 @@ class Pocono_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 			esc_html__( 'Magazine (Horizontal Box)', 'pocono-pro' ), // Name.
 			array(
 				'classname' => 'pocono-magazine-horizontal-box-widget',
-				'description' => esc_html__( 'Displays your posts from a selected category in a horizontal box layout.', 'pocono-pro' ),
+				'description' => esc_html__( 'Displays your posts from a selected category in a horizontal box.', 'pocono-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);

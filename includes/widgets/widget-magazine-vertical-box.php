@@ -24,7 +24,7 @@ class Pocono_Pro_Magazine_Vertical_Box_Widget extends WP_Widget {
 			esc_html__( 'Magazine (Vertical Box)', 'pocono-pro' ), // Name.
 			array(
 				'classname' => 'pocono-magazine-vertical-box-widget',
-				'description' => esc_html__( 'Displays your posts from a selected category in a vertical box layout.', 'pocono-pro' ),
+				'description' => esc_html__( 'Displays your posts from a selected category in a vertical box.', 'pocono-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
