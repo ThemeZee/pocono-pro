@@ -74,7 +74,6 @@ class Pocono_Pro_Customizer {
 			'text_font'                => 'Roboto',
 			'title_font'               => 'Montserrat',
 			'navi_font'                => 'Montserrat',
-			'available_fonts'          => 'favorites',
 		);
 
 		return $default_options;
