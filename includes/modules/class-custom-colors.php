@@ -8,7 +8,9 @@
  */
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Custom Colors Class
@@ -30,9 +32,11 @@ class Pocono_Pro_Custom_Colors {
 		// Add Custom Color CSS code to custom stylesheet output.
 		add_filter( 'pocono_pro_custom_css_stylesheet', array( __CLASS__, 'custom_colors_css' ) );
 
+		// Add Custom Color CSS code to the Gutenberg editor.
+		add_action( 'enqueue_block_editor_assets', array( __CLASS__, 'custom_editor_colors_css' ) );
+
 		// Add Custom Color Settings.
 		add_action( 'customize_register', array( __CLASS__, 'color_settings' ) );
-
 	}
 
 	/**
@@ -56,7 +60,7 @@ class Pocono_Pro_Custom_Colors {
 				.site-header {
 					background: ' . $theme_options['header_color'] . ';
 				}
-				';
+			';
 
 			// Check if a dark background color was chosen.
 			if ( self::is_color_dark( $theme_options['header_color'] ) ) {
@@ -72,7 +76,7 @@ class Pocono_Pro_Custom_Colors {
 					.site-title a:active {
 						color: #ff5555;
 					}
-					';
+				';
 			}
 		}
 
@@ -83,7 +87,7 @@ class Pocono_Pro_Custom_Colors {
 				.primary-navigation-wrap {
 					background: ' . $theme_options['navigation_color'] . ';
 				}
-				';
+			';
 
 			// Check if a dark background color was chosen.
 			if ( self::is_color_dark( $theme_options['navigation_color'] ) ) {
@@ -98,7 +102,7 @@ class Pocono_Pro_Custom_Colors {
 					.main-navigation-menu a:active {
 						color: #ff5555;
 					}
-					';
+				';
 			}
 		}
 
@@ -109,7 +113,7 @@ class Pocono_Pro_Custom_Colors {
 				.footer-wrap {
 					background: ' . $theme_options['footer_color'] . ';
 				}
-				';
+			';
 
 			// Check if a dark background color was chosen.
 			if ( self::is_color_dark( $theme_options['footer_color'] ) ) {
@@ -125,7 +129,7 @@ class Pocono_Pro_Custom_Colors {
 					.footer-navigation-menu a:active {
 						color: #ff5555;
 					}
-					';
+				';
 			}
 		}
 
@@ -149,7 +153,7 @@ class Pocono_Pro_Custom_Colors {
 				.entry-title a:active {
 					color: #ff5555;
 				}
-				';
+			';
 		}
 
 		// Set Primary Content Color.
@@ -181,7 +185,8 @@ class Pocono_Pro_Custom_Colors {
 				.entry-categories .meta-category a:hover,
 				.entry-categories .meta-category a:active,
 				.footer-navigation-menu a:hover,
-				.footer-navigation-menu a:active {
+				.footer-navigation-menu a:active,
+				.has-primary-color {
 					color: ' . $theme_options['link_color'] . ';
 				}
 
@@ -226,19 +231,69 @@ class Pocono_Pro_Custom_Colors {
 				.tzwb-social-icons .social-icons-menu li a:visited,
 				.scroll-to-top-button,
 				.scroll-to-top-button:focus,
-				.scroll-to-top-button:active {
-					background: ' . $theme_options['link_color'] . ';
+				.scroll-to-top-button:active,
+				.has-primary-background-color {
+					background-color: ' . $theme_options['link_color'] . ';
 				}
 
 				.tzwb-social-icons .social-icons-menu li a:hover,
 				.tzwb-social-icons .social-icons-menu li a:active {
 					background: #242424;
 				}
-				';
+			';
 		}
 
 		return $custom_css;
+	}
 
+	/**
+	 * Adds Color CSS styles in the Gutenberg Editor to override default colors
+	 *
+	 * @return void
+	 */
+	static function custom_editor_colors_css() {
+
+		// Get Theme Options from Database.
+		$theme_options = Pocono_Pro_Customizer::get_theme_options();
+
+		// Get Default Fonts from settings.
+		$default_options = Pocono_Pro_Customizer::get_default_options();
+
+		// Set Primary Color.
+		if ( $theme_options['link_color'] !== $default_options['link_color'] ) {
+
+			$custom_css = '
+				.has-primary-color,
+				.edit-post-visual-editor .editor-block-list__block a {
+					color: ' . $theme_options['link_color'] . ';
+				}
+				.has-primary-background-color {
+					background-color: ' . $theme_options['link_color'] . ';
+				}
+			';
+
+			wp_add_inline_style( 'pocono-editor-styles', $custom_css );
+		}
+	}
+
+	/**
+	 * Change primary color in Gutenberg Editor.
+	 *
+	 * @return array $editor_settings
+	 */
+	static function change_primary_color( $color ) {
+		// Get Theme Options from Database.
+		$theme_options = Pocono_Pro_Customizer::get_theme_options();
+
+		// Get Default Fonts from settings.
+		$default_options = Pocono_Pro_Customizer::get_default_options();
+
+		// Set Primary Color.
+		if ( $theme_options['link_color'] !== $default_options['link_color'] ) {
+			$color = $theme_options['link_color'];
+		}
+
+		return $color;
 	}
 
 	/**
@@ -252,9 +307,8 @@ class Pocono_Pro_Custom_Colors {
 		$wp_customize->add_section( 'pocono_pro_section_colors', array(
 			'title'    => __( 'Theme Colors', 'pocono-pro' ),
 			'priority' => 60,
-			'panel' => 'pocono_options_panel',
-			)
-		);
+			'panel'    => 'pocono_options_panel',
+		) );
 
 		// Get Default Colors from settings.
 		$default_options = Pocono_Pro_Customizer::get_default_options();
@@ -262,16 +316,15 @@ class Pocono_Pro_Custom_Colors {
 		// Add Navigation Primary Color setting.
 		$wp_customize->add_setting( 'pocono_theme_options[header_color]', array(
 			'default'           => $default_options['header_color'],
-			'type'           	=> 'option',
+			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
-			)
-		);
+		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'pocono_theme_options[header_color]', array(
-				'label'      => _x( 'Header', 'color setting', 'pocono-pro' ),
-				'section'    => 'pocono_pro_section_colors',
-				'settings'   => 'pocono_theme_options[header_color]',
+				'label'    => _x( 'Header', 'color setting', 'pocono-pro' ),
+				'section'  => 'pocono_pro_section_colors',
+				'settings' => 'pocono_theme_options[header_color]',
 				'priority' => 10,
 			)
 		) );
@@ -279,16 +332,15 @@ class Pocono_Pro_Custom_Colors {
 		// Add Navigation Color setting.
 		$wp_customize->add_setting( 'pocono_theme_options[navigation_color]', array(
 			'default'           => $default_options['navigation_color'],
-			'type'           	=> 'option',
+			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
-			)
-		);
+		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'pocono_theme_options[navigation_color]', array(
-				'label'      => _x( 'Navigation', 'color setting', 'pocono-pro' ),
-				'section'    => 'pocono_pro_section_colors',
-				'settings'   => 'pocono_theme_options[navigation_color]',
+				'label'    => _x( 'Navigation', 'color setting', 'pocono-pro' ),
+				'section'  => 'pocono_pro_section_colors',
+				'settings' => 'pocono_theme_options[navigation_color]',
 				'priority' => 20,
 			)
 		) );
@@ -296,16 +348,15 @@ class Pocono_Pro_Custom_Colors {
 		// Add Content Primary Color setting.
 		$wp_customize->add_setting( 'pocono_theme_options[link_color]', array(
 			'default'           => $default_options['link_color'],
-			'type'           	=> 'option',
+			'type'              => 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => 'sanitize_hex_color',
-			)
-		);
+		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'pocono_theme_options[link_color]', array(
-				'label'      => _x( 'Links and Buttons', 'color setting', 'pocono-pro' ),
-				'section'    => 'pocono_pro_section_colors',
-				'settings'   => 'pocono_theme_options[link_color]',
+				'label'    => _x( 'Links and Buttons', 'color setting', 'pocono-pro' ),
+				'section'  => 'pocono_pro_section_colors',
+				'settings' => 'pocono_theme_options[link_color]',
 				'priority' => 30,
 			)
 		) );
@@ -313,16 +364,15 @@ class Pocono_Pro_Custom_Colors {
 		// Add Content Secondary Color setting.
 		$wp_customize->add_setting( 'pocono_theme_options[title_color]', array(
 			'default'           => $default_options['title_color'],
-			'type'           	=> 'option',
+			'type'              => 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => 'sanitize_hex_color',
-			)
-		);
+		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'pocono_theme_options[title_color]', array(
-				'label'      => _x( 'Headings', 'color setting', 'pocono-pro' ),
-				'section'    => 'pocono_pro_section_colors',
-				'settings'   => 'pocono_theme_options[title_color]',
+				'label'    => _x( 'Headings', 'color setting', 'pocono-pro' ),
+				'section'  => 'pocono_pro_section_colors',
+				'settings' => 'pocono_theme_options[title_color]',
 				'priority' => 40,
 			)
 		) );
@@ -330,20 +380,18 @@ class Pocono_Pro_Custom_Colors {
 		// Add Footer Color setting.
 		$wp_customize->add_setting( 'pocono_theme_options[footer_color]', array(
 			'default'           => $default_options['footer_color'],
-			'type'           	=> 'option',
+			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
-			)
-		);
+		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'pocono_theme_options[footer_color]', array(
-				'label'      => _x( 'Footer', 'color setting', 'pocono-pro' ),
-				'section'    => 'pocono_pro_section_colors',
-				'settings'   => 'pocono_theme_options[footer_color]',
+				'label'    => _x( 'Footer', 'color setting', 'pocono-pro' ),
+				'section'  => 'pocono_pro_section_colors',
+				'settings' => 'pocono_theme_options[footer_color]',
 				'priority' => 50,
 			)
 		) );
-
 	}
 
 	/**
@@ -385,3 +433,4 @@ class Pocono_Pro_Custom_Colors {
 
 // Run Class.
 add_action( 'init', array( 'Pocono_Pro_Custom_Colors', 'setup' ) );
+add_filter( 'pocono_primary_color', array( 'Pocono_Pro_Custom_Colors', 'change_primary_color' ) );
