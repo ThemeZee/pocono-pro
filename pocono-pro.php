@@ -5,14 +5,14 @@ Plugin URI: http://themezee.com/addons/pocono-pro/
 Description: Adds additional features like custom colors, google fonts, widget areas and footer copyright to the Pocono theme.
 Author: ThemeZee
 Author URI: https://themezee.com/
-Version: 1.5.1
+Version: 1.5.2
 Text Domain: pocono-pro
 Domain Path: /languages/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Pocono Pro
-Copyright(C) 2016, ThemeZee.com - support@themezee.com
+Copyright(C) 2021, ThemeZee.com - support@themezee.com
 
 */
 
@@ -63,7 +63,7 @@ class Pocono_Pro {
 		define( 'POCONO_PRO_NAME', 'Pocono Pro' );
 
 		// Define Version Number.
-		define( 'POCONO_PRO_VERSION', '1.5.1' );
+		define( 'POCONO_PRO_VERSION', '1.5.2' );
 
 		// Define Plugin Name.
 		define( 'POCONO_PRO_PRODUCT_ID', 89730 );
